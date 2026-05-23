@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import contactImg from "@/assets/contact-meeting.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -27,19 +28,31 @@ function ContactPage() {
 
   return (
     <SiteLayout>
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-            Contact
-          </span>
-          <h1 className="mt-6 max-w-3xl font-serif text-5xl leading-[1.05] text-foreground md:text-6xl">
-            Schedule a <span className="italic">consultation</span>.
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Whether you are launching a new advisory firm or strengthening an existing
-            compliance program, ACS can help you navigate your regulatory obligations with
-            confidence.
-          </p>
+      <section className="relative isolate overflow-hidden border-b border-border">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={contactImg}
+            alt=""
+            className="h-full w-full object-cover animate-kenburns"
+            width={1280}
+            height={1600}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/80 to-primary/95" />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 py-28 md:py-36">
+          <div className="max-w-3xl animate-fade-up">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              Contact
+            </span>
+            <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-primary-foreground md:text-6xl">
+              Schedule a <span className="italic text-accent">consultation</span>.
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
+              Whether you are launching a new advisory firm or strengthening an existing
+              compliance program, ACS can help you navigate your regulatory obligations with
+              confidence.
+            </p>
+          </div>
         </div>
       </section>
 

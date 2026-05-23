@@ -58,6 +58,24 @@ function CareersPage() {
         </div>
       </section>
 
+      {/* WHY ACS */}
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <div className="grid gap-px border border-border bg-border md:grid-cols-3">
+            {[
+              { t: "Senior-Level Work", b: "Substantive client engagements from day one — no manual-shuffling, no busywork." },
+              { t: "Collaborative Team", b: "A small, experienced group of compliance professionals who share judgment, not silos." },
+              { t: "Flexible Structure", b: "Remote-first with a results-focused culture built for senior practitioners." },
+            ].map((v) => (
+              <div key={v.t} className="bg-background p-10">
+                <h3 className="font-serif text-2xl text-foreground">{v.t}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{v.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 py-24">
           <div className="rounded-sm border border-border bg-background p-8 md:p-12">
