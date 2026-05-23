@@ -1,13 +1,12 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/logo.jpeg";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-secondary/40">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="font-serif text-xl font-semibold text-foreground">
-            Advisory Consulting Solutions
-          </div>
+          <img src={logo} alt="Advisory Consulting Solutions" className="h-14 w-auto rounded-sm" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             Practical, regulator-focused compliance consulting for registered
             investment advisers — from registration through ongoing oversight.
