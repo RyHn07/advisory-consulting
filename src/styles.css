@@ -48,14 +48,14 @@
   --secondary-foreground: oklch(0.21 0.04 260);
   --muted: oklch(0.94 0.012 70);
   --muted-foreground: oklch(0.48 0.02 260);
-  --accent: oklch(0.68 0.13 185);
-  --accent-foreground: oklch(0.99 0.005 70);
+  --accent: oklch(0.74 0.13 75);
+  --accent-foreground: oklch(0.21 0.04 260);
   --gold: oklch(0.66 0.08 75);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0.005 70);
   --border: oklch(0.21 0.04 260 / 0.12);
   --input: oklch(0.21 0.04 260 / 0.18);
-  --ring: oklch(0.68 0.13 185);
+  --ring: oklch(0.74 0.13 75);
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
