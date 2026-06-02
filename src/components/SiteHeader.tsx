@@ -52,7 +52,7 @@ export function SiteHeader() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className="group relative text-[13px] font-medium uppercase tracking-[0.18em] text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+                  className="group relative font-['Open_Sans'] text-[16px] font-semibold uppercase leading-normal text-white transition-colors hover:text-white/80"
                   activeProps={{ className: "text-primary-foreground" }}
                 >
                   {n.label}
