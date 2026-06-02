@@ -31,15 +31,14 @@ export function SiteHeader() {
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 md:px-10">
         <Link
           to="/"
-          className="flex items-center gap-4"
+          className="flex items-center"
           aria-label="Advisory Consulting Solutions home"
         >
-          <img src={logo} alt="ACS" className="h-16 w-16" />
-          <span className="hidden flex-col leading-[1.15] sm:flex">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-primary-foreground">Advisory</span>
-            <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-primary-foreground">Consulting</span>
-            <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-primary-foreground">Solutions LLC</span>
-          </span>
+          <img
+            src={logo}
+            alt="Advisory Consulting Solutions LLC"
+            className="h-16 w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">
