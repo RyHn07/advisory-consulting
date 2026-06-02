@@ -117,6 +117,60 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* BY THE NUMBERS */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              By the Numbers
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
+              Experience that <span className="italic">compounds</span>.
+            </h2>
+          </div>
+          <div className="grid gap-px border border-primary-foreground/10 bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { n: "20+", l: "Years of combined compliance experience" },
+              { n: "100%", l: "Investment adviser focus" },
+              { n: "50+", l: "Firms supported through SEC and state exams" },
+              { n: "1 BD", l: "Average response time" },
+            ].map((s) => (
+              <div key={s.l} className="bg-primary p-10">
+                <div className="font-serif text-5xl text-accent md:text-6xl">{s.n}</div>
+                <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">{s.l}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHO WE SERVE */}
+      <section className="border-b border-border bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              Who We Serve
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              Built for advisers at <span className="italic">every stage</span>.
+            </h2>
+          </div>
+          <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { t: "Newly Forming RIAs", b: "First-time registrants navigating Form ADV, policies, and operational setup." },
+              { t: "Established RIAs", b: "Firms scaling their compliance program alongside AUM and headcount growth." },
+              { t: "State-Registered Advisers", b: "Smaller advisers managing state-specific rules and renewal cycles." },
+              { t: "Exempt Reporting Advisers", b: "Private fund advisers meeting their narrower — but still real — obligations." },
+            ].map((g) => (
+              <div key={g.t} className="bg-background p-10">
+                <h3 className="font-serif text-2xl text-foreground">{g.t}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{g.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2 className="font-serif text-4xl leading-tight md:text-5xl">
