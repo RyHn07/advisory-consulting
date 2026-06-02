@@ -64,7 +64,8 @@ function HomePage() {
               Regulatory Compliance
             </span>
             <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
-              Practical compliance.{" "}
+              Practical compliance.
+              <br />
               <span className="text-accent">Built to be defensible.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
