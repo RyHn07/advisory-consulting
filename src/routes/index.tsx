@@ -60,12 +60,12 @@ function HomePage() {
         </div>
         <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
           <div className="max-w-3xl animate-fade-up">
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-              Regulatory Compliance Advisory
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              Regulatory Compliance
             </span>
-            <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-primary-foreground md:text-7xl">
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
               Practical compliance.{" "}
-              <span className="italic text-accent">Built to be defensible.</span>
+              <span className="text-accent">Built to be defensible.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
               Customized compliance consulting for registered investment advisers — from
