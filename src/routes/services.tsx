@@ -118,6 +118,69 @@ function ServicesPage() {
         </div>
       </section>
 
+      {/* HOW WE WORK */}
+      <section className="border-y border-border bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              How We Work
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              Engagements built around <span className="italic">your firm</span>.
+            </h2>
+          </div>
+          <div className="grid gap-px border border-border bg-border md:grid-cols-3">
+            {[
+              { k: "01", t: "Discovery", b: "We learn how your firm operates, what regulators have asked of you, and where the real risks sit." },
+              { k: "02", t: "Scoped Engagement", b: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work." },
+              { k: "03", t: "Ongoing Partnership", b: "Many engagements roll into retained relationships — quarterly testing, annual reviews, exam standby." },
+            ].map((s) => (
+              <div key={s.k} className="bg-background p-10">
+                <span className="font-sans text-sm font-semibold text-accent">{s.k}</span>
+                <h3 className="mt-6 font-serif text-2xl text-foreground">{s.t}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{s.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-2xl">
+              <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+                Industries Served
+              </span>
+              <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+                Specialized across the <span className="italic">adviser landscape</span>.
+              </h2>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {[
+              "Wealth Management",
+              "Private Funds",
+              "Hedge Funds",
+              "Family Offices",
+              "Robo / Digital Advisers",
+              "Institutional Advisers",
+              "Real Estate Advisers",
+              "Venture & PE Advisers",
+              "Multi-Family Offices",
+            ].map((i) => (
+              <div
+                key={i}
+                className="border-l-2 border-accent bg-secondary/40 px-6 py-5 font-serif text-lg text-foreground"
+              >
+                {i}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2 className="font-serif text-4xl leading-tight md:text-5xl">
