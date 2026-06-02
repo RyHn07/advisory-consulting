@@ -14,13 +14,29 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-primary text-primary-foreground">
+      {/* Top contact bar - full width, lighter background */}
+      <div className="hidden w-full bg-primary-foreground/[0.08] md:block">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <div className="flex h-10 items-center justify-end gap-8 pl-[140px] text-[12px] text-primary-foreground/80">
+            <a href="mailto:info@acscompliance.com" className="inline-flex items-center gap-2 hover:text-primary-foreground">
+              <Mail className="h-3.5 w-3.5" strokeWidth={1.5} />
+              info@acscompliance.com
+            </a>
+            <a href="tel:+10001112223333" className="inline-flex items-center gap-2 hover:text-primary-foreground">
+              <Phone className="h-3.5 w-3.5" strokeWidth={1.5} />
+              000 111 222 3333
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="relative flex flex-col">
           {/* Logo overlapping both rows */}
           <Link
             to="/"
             aria-label="Advisory Consulting Solutions home"
-            className="absolute left-0 top-1/2 z-10 -translate-y-1/2"
+            className="absolute left-0 z-10 -translate-y-[calc(50%+1.25rem)] top-1/2"
           >
             <img
               src={logo}
@@ -28,21 +44,6 @@ export function SiteHeader() {
               className="h-[120px] w-auto"
             />
           </Link>
-
-          {/* Top contact bar */}
-          <div className="hidden md:block">
-            <div className="flex h-10 items-center justify-end gap-8 pl-[140px] text-[12px] text-primary-foreground/80">
-              <a href="mailto:info@acscompliance.com" className="inline-flex items-center gap-2 hover:text-primary-foreground">
-                <Mail className="h-3.5 w-3.5" strokeWidth={1.5} />
-                info@acscompliance.com
-              </a>
-              <a href="tel:+10001112223333" className="inline-flex items-center gap-2 hover:text-primary-foreground">
-                <Phone className="h-3.5 w-3.5" strokeWidth={1.5} />
-                000 111 222 3333
-              </a>
-            </div>
-            <div className="h-px w-full bg-primary-foreground/15" />
-          </div>
 
           {/* Main bar */}
           <div className="flex h-20 items-center justify-end gap-10 pl-[140px]">
