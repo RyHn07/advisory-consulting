@@ -41,13 +41,15 @@ function ContactPage() {
         </div>
         <div className="mx-auto max-w-7xl px-6 py-28 md:py-36">
           <div className="max-w-3xl animate-fade-up">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               Contact
             </span>
-            <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-primary-foreground md:text-6xl">
-              Schedule a <span className="italic text-accent">consultation</span>.
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
+              Schedule a
+              <br />
+              <span className="text-accent">consultation.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
               Whether you are launching a new advisory firm or strengthening an existing
               compliance program, ACS can help you navigate your regulatory obligations with
               confidence.

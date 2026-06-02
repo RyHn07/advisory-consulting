@@ -29,31 +29,33 @@ function CareersPage() {
 
   return (
     <SiteLayout>
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-12 md:py-32">
-          <div className="md:col-span-7">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+      <section className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={careersImg}
+            alt=""
+            className="h-full w-full object-cover animate-kenburns"
+            width={1280}
+            height={1600}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/95" />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
+          <div className="max-w-3xl animate-fade-up">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               Careers
             </span>
-            <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-foreground md:text-6xl">
-              Join a <span className="italic">collaborative</span>, client-focused team.
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
+              Join a collaborative,
+              <br />
+              <span className="text-accent">client-focused team.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
               Advisory Consulting Solutions offers opportunities for experienced compliance
               professionals, former Chief Compliance Officers, attorneys, and regulatory
               consultants. If you are interested in joining ACS, please submit your
               information and resume confidentially through the form below.
             </p>
-          </div>
-          <div className="md:col-span-5">
-            <img
-              src={careersImg}
-              alt="Modern workspace"
-              className="aspect-[4/5] w-full rounded-sm object-cover"
-              width={1280}
-              height={900}
-              loading="lazy"
-            />
           </div>
         </div>
       </section>

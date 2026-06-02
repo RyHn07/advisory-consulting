@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import servicesHero from "@/assets/hero-office.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -62,18 +63,32 @@ const services = [
 function ServicesPage() {
   return (
     <SiteLayout>
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
-            Services
-          </span>
-          <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[1.05] text-foreground md:text-6xl">
-            Full-lifecycle compliance support for <span className="italic">investment advisers</span>.
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            From initial registration to ongoing oversight and examination defense, we deliver
-            the specific compliance services your firm needs at each stage.
-          </p>
+      <section className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={servicesHero}
+            alt=""
+            className="h-full w-full object-cover animate-kenburns"
+            width={1280}
+            height={1600}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/95" />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
+          <div className="max-w-3xl animate-fade-up">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              Services
+            </span>
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
+              Full-lifecycle support
+              <br />
+              <span className="text-accent">for investment advisers.</span>
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+              From initial registration to ongoing oversight and examination defense, we
+              deliver the specific compliance services your firm needs at each stage.
+            </p>
+          </div>
         </div>
       </section>
 
