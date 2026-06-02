@@ -97,6 +97,67 @@ function ApproachPage() {
         </div>
       </section>
 
+      {/* PRINCIPLES */}
+      <section className="border-y border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              Principles
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              The standards we hold <span className="italic">every program to</span>.
+            </h2>
+          </div>
+          <div className="grid gap-px border border-border bg-border md:grid-cols-2">
+            {[
+              { t: "Risk-Calibrated", b: "Controls are sized to your firm's actual risk profile — not pulled from a generic template." },
+              { t: "Operationally Realistic", b: "Procedures your team can actually follow on a busy week, not aspirational paperwork." },
+              { t: "Examination-Ready", b: "Documentation, testing, and records structured the way examiners actually request them." },
+              { t: "Continuously Tested", b: "Programs are reviewed, retested, and refined as your firm and the rulebook evolve." },
+            ].map((p) => (
+              <div key={p.t} className="bg-background p-10">
+                <h3 className="font-serif text-2xl text-foreground">{p.t}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{p.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOU GET */}
+      <section className="bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              What You Get
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              Concrete deliverables at <span className="italic">every step</span>.
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              "Tailored compliance policies and procedures",
+              "Annual compliance review report",
+              "Mock examination findings and remediation plan",
+              "Marketing rule review memos",
+              "Risk assessment matrix and testing schedule",
+              "Form ADV, Form CRS, and regulatory filing support",
+              "Code of ethics and personal trading framework",
+              "Examination response toolkit and document index",
+            ].map((d) => (
+              <div
+                key={d}
+                className="flex items-start gap-4 border-l-2 border-accent bg-background px-6 py-5"
+              >
+                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span className="text-base text-foreground">{d}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-border bg-primary text-primary-foreground">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <p className="font-serif text-3xl italic leading-snug md:text-4xl">
