@@ -78,6 +78,69 @@ function CareersPage() {
         </div>
       </section>
 
+      {/* WHAT WE LOOK FOR */}
+      <section className="border-b border-border bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              What We Look For
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              Senior judgment, <span className="italic">not just years</span>.
+            </h2>
+          </div>
+          <div className="grid gap-px border border-border bg-border md:grid-cols-2">
+            {[
+              { t: "Investment Adviser Depth", b: "Hands-on experience with the Advisers Act, Form ADV, and SEC / state examination practice." },
+              { t: "Client-Ready Communication", b: "You can sit across from a CCO or CEO and translate regulatory complexity into clear guidance." },
+              { t: "Owner's Mindset", b: "You take responsibility for outcomes — not just deliverables." },
+              { t: "Collaborative Default", b: "You'd rather sharpen a colleague's analysis than guard your own corner." },
+            ].map((q) => (
+              <div key={q.t} className="bg-background p-10">
+                <h3 className="font-serif text-2xl text-foreground">{q.t}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{q.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OPEN ROLES */}
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="max-w-2xl">
+              <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+                Open Roles
+              </span>
+              <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+                Where we're <span className="italic">hiring</span>.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm text-muted-foreground">
+              We always welcome confidential introductions from senior compliance professionals, even when a role isn't actively posted.
+            </p>
+          </div>
+          <div className="divide-y divide-border border-y border-border">
+            {[
+              { t: "Senior Compliance Consultant", l: "Remote · Full-time", b: "Lead client engagements across registration, ongoing oversight, and exam support." },
+              { t: "Outsourced CCO", l: "Remote · Full-time", b: "Serve as named CCO for a portfolio of advisory firms with senior-level autonomy." },
+              { t: "Marketing Rule Specialist", l: "Remote · Part-time / Full-time", b: "Review advertising, websites, and marketing materials under SEC Rule 206(4)-1." },
+            ].map((r) => (
+              <article key={r.t} className="grid gap-6 py-10 md:grid-cols-12">
+                <div className="md:col-span-5">
+                  <h3 className="font-serif text-2xl text-foreground md:text-3xl">{r.t}</h3>
+                  <div className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{r.l}</div>
+                </div>
+                <p className="text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">
+                  {r.b}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 py-24">
           <div className="rounded-sm border border-border bg-background p-8 md:p-12">

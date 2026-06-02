@@ -139,6 +139,37 @@ function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <section className="border-t border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="mb-16 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              Frequently Asked
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              What to expect when you <span className="italic">reach out</span>.
+            </h2>
+          </div>
+          <div className="divide-y divide-border border-y border-border">
+            {[
+              { q: "How quickly will I hear back?", a: "We respond to every inquiry within one business day, typically the same day during business hours." },
+              { q: "Do you charge for an initial consultation?", a: "No. The first conversation is a scoping call so we both understand fit, timing, and what a useful engagement would look like." },
+              { q: "Do you work with firms that aren't registered yet?", a: "Yes — we routinely guide newly forming RIAs through Form ADV preparation, initial policies, and registration filings." },
+              { q: "Can you support us during an active SEC exam?", a: "Yes. We provide hands-on exam support including document preparation, response drafting, and communication with examiners." },
+              { q: "Are engagements project-based or ongoing?", a: "Both. Many clients start with a defined project — a mock audit, registration, or annual review — and move into ongoing oversight." },
+            ].map((f) => (
+              <details key={f.q} className="group py-6">
+                <summary className="flex cursor-pointer items-start justify-between gap-6 list-none">
+                  <h3 className="font-serif text-xl text-foreground md:text-2xl">{f.q}</h3>
+                  <span className="mt-1 font-serif text-2xl text-accent transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }
