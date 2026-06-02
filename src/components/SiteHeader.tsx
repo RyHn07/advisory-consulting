@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpeg";
+import { Menu, X, Mail, Phone } from "lucide-react";
+import logo from "@/assets/logo.svg";
 
 const nav = [
   { to: "/our-approach", label: "Our Approach" },
@@ -14,24 +14,31 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-primary text-primary-foreground">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
+      {/* Top contact bar */}
+      <div className="hidden bg-primary-foreground/[0.06] md:block">
+        <div className="mx-auto flex h-10 max-w-7xl items-center justify-end gap-8 px-6 md:px-10 text-[12px] text-primary-foreground/80">
+          <a href="mailto:info@acscompliance.com" className="inline-flex items-center gap-2 hover:text-primary-foreground">
+            <Mail className="h-3.5 w-3.5" strokeWidth={1.5} />
+            info@acscompliance.com
+          </a>
+          <a href="tel:+10001112223333" className="inline-flex items-center gap-2 hover:text-primary-foreground">
+            <Phone className="h-3.5 w-3.5" strokeWidth={1.5} />
+            000 111 222 3333
+          </a>
+        </div>
+      </div>
+
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 md:px-10">
         <Link
           to="/"
           className="flex items-center gap-4"
           aria-label="Advisory Consulting Solutions home"
         >
-          <img
-            src={logo}
-            alt=""
-            className="h-12 w-12 object-cover"
-          />
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-serif text-base font-medium tracking-wide text-primary-foreground">
-              Advisory Consulting
-            </span>
-            <span className="text-[10px] font-semibold uppercase tracking-[0.32em] text-primary-foreground/60">
-              Solutions LLC
-            </span>
+          <img src={logo} alt="ACS" className="h-16 w-16" />
+          <span className="hidden flex-col leading-[1.15] sm:flex">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-primary-foreground">Advisory</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-primary-foreground">Consulting</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-primary-foreground">Solutions LLC</span>
           </span>
         </Link>
 
@@ -49,7 +56,7 @@ export function SiteHeader() {
           ))}
           <Link
             to="/contact"
-            className="ml-2 inline-flex items-center border border-primary-foreground/40 px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
+            className="ml-2 inline-flex items-center border border-primary-foreground/60 px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
           >
             Contact
           </Link>
