@@ -27,30 +27,32 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-12 md:py-32">
-          <div className="md:col-span-7">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+      <section className="relative isolate overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={aboutImg}
+            alt=""
+            className="h-full w-full object-cover animate-kenburns"
+            width={1280}
+            height={1600}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/95" />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
+          <div className="max-w-3xl animate-fade-up">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
               About
             </span>
-            <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-foreground md:text-6xl">
-              A specialized partner for <span className="italic">advisory firms</span>.
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
+              A specialized partner
+              <br />
+              <span className="text-accent">for advisory firms.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
               Advisory Consulting Solutions is built around one focus — helping registered
               investment advisers run compliance programs that are practical, defensible, and
               ready for regulatory scrutiny.
             </p>
-          </div>
-          <div className="md:col-span-5">
-            <img
-              src={aboutImg}
-              alt="Conference room"
-              className="aspect-[4/5] w-full rounded-sm object-cover"
-              width={1280}
-              height={900}
-              loading="lazy"
-            />
           </div>
         </div>
       </section>
