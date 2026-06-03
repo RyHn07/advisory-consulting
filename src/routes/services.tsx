@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog } from "lucide-react";
+import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import servicesHero from "@/assets/hero-office.jpg";
 
@@ -57,6 +57,16 @@ const services = [
     icon: UserCog,
     title: "Outsourced CCO Services",
     body: "Our outsourced CCO services provide firms with experienced compliance leadership without the cost of a full-time executive. We oversee day-to-day compliance responsibilities, manage regulatory requirements, provide strategic guidance, and serve as a dedicated compliance resource for your organization.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Regulatory Filings",
+    body: "We manage the full cycle of regulatory filings for investment advisers — including Form ADV (Parts 1, 2A, 2B, and 3/CRS) amendments, Form D notice filings for private fund offerings, Form PF, state notice filings, and IARD/CRD updates. Our team tracks filing calendars, prepares supporting disclosures, and submits on time so your firm stays in good standing with the SEC and state regulators.",
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Policies & Procedures",
+    body: "We draft and maintain custom compliance manuals tailored to your firm's business model, client base, and operational realities — not generic templates. Coverage includes the written supervisory procedures required under Rule 206(4)-7, code of ethics, personal trading, insider information, custody, best execution, valuation, business continuity, cybersecurity, and privacy. Manuals are kept current as your firm and the regulatory landscape evolve.",
   },
 ];
 

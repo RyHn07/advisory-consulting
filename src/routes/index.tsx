@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog } from "lucide-react";
+import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroOffice from "@/assets/hero-office.jpg";
 import whoWeAreImg from "@/assets/who-we-are.jpg";
@@ -34,6 +34,8 @@ const services = [
   { icon: BarChart3, title: "Examination Support", body: "Hands-on guidance through SEC and state examinations." },
   { icon: GraduationCap, title: "Compliance Training", body: "Tailored training to build a culture of compliance at every level." },
   { icon: UserCog, title: "Outsourced CCO", body: "Senior compliance leadership without the cost of a full-time hire." },
+  { icon: ClipboardList, title: "Regulatory Filings", body: "Timely ADV, Form D, and all required regulatory submissions." },
+  { icon: SlidersHorizontal, title: "Policies & Procedures", body: "Custom compliance manuals tailored to your firm." },
 ];
 
 const approach = [
