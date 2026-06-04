@@ -79,21 +79,48 @@ function ApproachPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="grid gap-px border border-border bg-border md:grid-cols-2">
-            {steps.map((s) => (
-              <div key={s.step} className="bg-background p-10 md:p-14">
-                <div className="flex items-baseline gap-6">
-                  <span className="font-sans text-sm font-semibold text-accent">{s.step}</span>
-                  <h2 className="font-serif text-3xl text-foreground md:text-4xl">{s.title}</h2>
-                </div>
-                <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
-                  {s.body}
-                </p>
-              </div>
-            ))}
+      {/* METHODOLOGY — sleek vertical rhythm, no boxes */}
+      <section className="relative bg-background">
+        <div className="mx-auto max-w-6xl px-6 py-28 md:py-36">
+          <div className="mb-20 max-w-2xl">
+            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              Methodology
+            </span>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              A four-part rhythm, <span className="italic">repeated as you grow</span>.
+            </h2>
           </div>
+          <ol className="relative">
+            {/* vertical accent rail */}
+            <span
+              aria-hidden
+              className="absolute left-[7px] top-3 hidden h-[calc(100%-3rem)] w-px bg-gradient-to-b from-accent/70 via-accent/20 to-transparent md:block"
+            />
+            {steps.map((s, i) => (
+              <li
+                key={s.step}
+                className="group relative grid grid-cols-[auto_1fr] gap-x-8 gap-y-4 py-12 md:grid-cols-[200px_1fr] md:gap-x-16"
+              >
+                <span
+                  aria-hidden
+                  className="absolute left-0 top-[3.25rem] hidden h-3.5 w-3.5 -translate-x-[5px] rounded-full border-2 border-accent bg-background md:block transition-transform group-hover:scale-125"
+                />
+                <div className="flex items-start gap-4 md:pl-10">
+                  <span className="font-serif text-[5rem] leading-none text-accent/30 transition-colors group-hover:text-accent md:text-[7rem]">
+                    {s.step}
+                  </span>
+                </div>
+                <div className="pt-3 md:pt-6">
+                  <h3 className="font-serif text-4xl text-foreground md:text-5xl">
+                    {s.title}
+                  </h3>
+                  <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                    {s.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -108,16 +135,20 @@ function ApproachPage() {
               The standards we hold <span className="italic">every program to</span>.
             </h2>
           </div>
-          <div className="grid gap-px border border-border bg-border md:grid-cols-2">
+          <div className="grid gap-x-12 gap-y-14 md:grid-cols-2">
             {[
               { t: "Risk-Calibrated", b: "Controls are sized to your firm's actual risk profile — not pulled from a generic template." },
               { t: "Operationally Realistic", b: "Procedures your team can actually follow on a busy week, not aspirational paperwork." },
               { t: "Examination-Ready", b: "Documentation, testing, and records structured the way examiners actually request them." },
               { t: "Continuously Tested", b: "Programs are reviewed, retested, and refined as your firm and the rulebook evolve." },
-            ].map((p) => (
-              <div key={p.t} className="bg-background p-10">
-                <h3 className="font-serif text-2xl text-foreground">{p.t}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{p.b}</p>
+            ].map((p, i) => (
+              <div key={p.t} className="group relative pl-8">
+                <span className="absolute left-0 top-2 h-8 w-px bg-accent transition-all duration-300 group-hover:h-12" />
+                <span className="font-sans text-xs font-semibold tracking-[0.2em] text-accent/70">
+                  / {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 font-serif text-3xl text-foreground">{p.t}</h3>
+                <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">{p.b}</p>
               </div>
             ))}
           </div>
@@ -135,7 +166,7 @@ function ApproachPage() {
               Concrete deliverables at <span className="italic">every step</span>.
             </h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-x-10 md:grid-cols-2">
             {[
               "Tailored compliance policies and procedures",
               "Annual compliance review report",
@@ -148,10 +179,10 @@ function ApproachPage() {
             ].map((d) => (
               <div
                 key={d}
-                className="flex items-start gap-4 border-l-2 border-accent bg-background px-6 py-5"
+                className="group flex items-center gap-5 border-b border-border/60 py-5 transition-colors hover:border-accent"
               >
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                <span className="text-base text-foreground">{d}</span>
+                <span className="h-px w-6 bg-accent transition-all duration-300 group-hover:w-10" />
+                <span className="font-serif text-lg text-foreground md:text-xl">{d}</span>
               </div>
             ))}
           </div>
