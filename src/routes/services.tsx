@@ -102,23 +102,44 @@ function ServicesPage() {
         </div>
       </section>
 
+      {/* SERVICES — sleek hover-reveal rows, no boxes or hard dividers */}
       <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-6 pb-24">
-          <div className="divide-y divide-border border-y border-border">
+        <div className="mx-auto max-w-7xl px-6 pb-24 pt-8">
+          <div>
             {services.map((s, idx) => {
               const Icon = s.icon;
               return (
-                <article key={s.title} className="grid gap-8 py-14 md:grid-cols-12">
-                  <div className="md:col-span-1">
-                    <span className="font-sans text-sm font-semibold text-accent">
+                <article
+                  key={s.title}
+                  className="group relative grid grid-cols-1 items-start gap-6 py-10 transition-colors md:grid-cols-12 md:gap-10 md:py-14"
+                >
+                  {/* hover sweep underline */}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-0 bottom-0 h-px bg-border"
+                  />
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-700 ease-out group-hover:w-full"
+                  />
+
+                  <div className="md:col-span-1 flex items-baseline gap-3 md:block">
+                    <span className="font-serif text-5xl leading-none text-accent/40 transition-colors group-hover:text-accent md:text-6xl">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <div className="md:col-span-4">
-                    <Icon className="mb-5 h-8 w-8 text-accent" strokeWidth={1.5} />
-                    <h2 className="font-serif text-3xl text-foreground md:text-4xl">{s.title}</h2>
+
+                  <div className="md:col-span-5">
+                    <Icon
+                      className="mb-5 h-7 w-7 text-accent transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-110"
+                      strokeWidth={1.5}
+                    />
+                    <h2 className="font-serif text-3xl leading-tight text-foreground transition-colors group-hover:text-accent md:text-4xl">
+                      {s.title}
+                    </h2>
                   </div>
-                  <p className="text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">
+
+                  <p className="text-base leading-relaxed text-muted-foreground md:col-span-6 md:text-lg">
                     {s.body}
                   </p>
                 </article>
@@ -139,15 +160,18 @@ function ServicesPage() {
               Engagements built around <span className="italic">your firm</span>.
             </h2>
           </div>
-          <div className="grid gap-px border border-border bg-border md:grid-cols-3">
+          <div className="grid gap-x-12 gap-y-14 md:grid-cols-3">
             {[
               { k: "01", t: "Discovery", b: "We learn how your firm operates, what regulators have asked of you, and where the real risks sit." },
               { k: "02", t: "Scoped Engagement", b: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work." },
               { k: "03", t: "Ongoing Partnership", b: "Many engagements roll into retained relationships — quarterly testing, annual reviews, exam standby." },
             ].map((s) => (
-              <div key={s.k} className="bg-background p-10">
-                <span className="font-sans text-sm font-semibold text-accent">{s.k}</span>
-                <h3 className="mt-6 font-serif text-2xl text-foreground">{s.t}</h3>
+              <div key={s.k} className="group relative">
+                <span className="block font-serif text-6xl leading-none text-accent/40 transition-colors group-hover:text-accent">
+                  {s.k}
+                </span>
+                <span className="mt-5 block h-px w-10 bg-accent transition-all duration-300 group-hover:w-20" />
+                <h3 className="mt-6 font-serif text-3xl text-foreground">{s.t}</h3>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">{s.b}</p>
               </div>
             ))}
@@ -168,7 +192,7 @@ function ServicesPage() {
               </h2>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-x-8 sm:grid-cols-2 md:grid-cols-3">
             {[
               "Wealth Management",
               "Private Funds",
@@ -182,9 +206,10 @@ function ServicesPage() {
             ].map((i) => (
               <div
                 key={i}
-                className="border-l-2 border-accent bg-secondary/40 px-6 py-5 font-serif text-lg text-foreground"
+                className="group flex items-center justify-between gap-4 border-b border-border/60 py-5 transition-colors hover:border-accent"
               >
-                {i}
+                <span className="font-serif text-xl text-foreground">{i}</span>
+                <ArrowRight className="h-4 w-4 -translate-x-2 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </div>
             ))}
           </div>
