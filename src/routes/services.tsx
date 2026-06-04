@@ -111,37 +111,38 @@ function ServicesPage() {
               return (
                 <article
                   key={s.title}
-                  className="group relative grid grid-cols-1 items-start gap-6 py-10 transition-colors md:grid-cols-12 md:gap-10 md:py-14"
+                  className="group relative cursor-pointer py-8 md:py-10"
                 >
-                  {/* hover sweep underline */}
-                  <span
-                    aria-hidden
-                    className="absolute inset-x-0 bottom-0 h-px bg-border"
-                  />
+                  <span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-border" />
                   <span
                     aria-hidden
                     className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-700 ease-out group-hover:w-full"
                   />
 
-                  <div className="md:col-span-1 flex items-baseline gap-3 md:block">
-                    <span className="font-serif text-5xl leading-none text-accent/40 transition-colors group-hover:text-accent md:text-6xl">
+                  <div className="grid grid-cols-[auto_1fr_auto] items-center gap-6 md:gap-10">
+                    <span className="font-serif text-4xl leading-none text-accent/40 transition-colors group-hover:text-accent md:text-5xl">
                       {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <div className="flex items-center gap-5">
+                      <Icon
+                        className="h-6 w-6 shrink-0 text-accent transition-transform duration-500 group-hover:scale-110"
+                        strokeWidth={1.5}
+                      />
+                      <h2 className="font-serif text-2xl leading-tight text-foreground transition-colors group-hover:text-accent md:text-4xl">
+                        {s.title}
+                      </h2>
+                    </div>
+                    <span className="hidden font-['Open_Sans'] text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover:text-accent md:inline">
+                      Hover to read
                     </span>
                   </div>
 
-                  <div className="md:col-span-5">
-                    <Icon
-                      className="mb-5 h-7 w-7 text-accent transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:scale-110"
-                      strokeWidth={1.5}
-                    />
-                    <h2 className="font-serif text-3xl leading-tight text-foreground transition-colors group-hover:text-accent md:text-4xl">
-                      {s.title}
-                    </h2>
+                  {/* details revealed on hover */}
+                  <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:pt-6">
+                    <p className="overflow-hidden pl-0 text-base leading-relaxed text-muted-foreground md:pl-[calc(3rem+2.5rem)] md:text-lg">
+                      {s.body}
+                    </p>
                   </div>
-
-                  <p className="text-base leading-relaxed text-muted-foreground md:col-span-6 md:text-lg">
-                    {s.body}
-                  </p>
                 </article>
               );
             })}
