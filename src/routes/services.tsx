@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal, Plus } from "lucide-react";
+import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import servicesHero from "@/assets/hero-office.jpg";
 
@@ -111,42 +111,43 @@ function ServicesPage() {
               return (
                 <article
                   key={s.title}
-                  className="group relative cursor-pointer py-8 md:py-10"
+                  className="group relative cursor-pointer border-b border-border/70 py-10 md:py-12"
                 >
-                  <span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-border" />
+                  {/* left accent rail — grows on hover */}
                   <span
                     aria-hidden
-                    className="absolute bottom-0 left-0 h-px w-0 bg-accent transition-all duration-700 ease-out group-hover:w-full"
+                    className="absolute left-0 top-1/2 h-0 w-[2px] -translate-y-1/2 bg-accent transition-all duration-500 ease-out group-hover:h-[70%]"
                   />
 
-                  <div className="grid grid-cols-[auto_1fr_auto] items-center gap-6 md:gap-10">
-                    <span className="font-serif text-4xl leading-none text-accent/40 transition-colors group-hover:text-accent md:text-5xl">
-                      {String(idx + 1).padStart(2, "0")}
+                  <div className="grid grid-cols-12 items-start gap-x-6 md:gap-x-10">
+                    {/* number */}
+                    <span className="col-span-2 font-serif text-xl leading-none text-muted-foreground/60 transition-colors group-hover:text-accent md:col-span-1 md:text-2xl">
+                      —{String(idx + 1).padStart(2, "0")}
                     </span>
-                    <div className="flex items-center gap-5">
-                      <Icon
-                        className="h-6 w-6 shrink-0 text-accent transition-transform duration-500 group-hover:scale-110"
-                        strokeWidth={1.5}
-                      />
-                      <h2 className="font-serif text-2xl leading-tight text-foreground transition-colors group-hover:text-accent md:text-4xl">
-                        {s.title}
-                      </h2>
-                    </div>
-                    <span className="hidden items-center gap-3 md:inline-flex">
-                      <span className="font-['Open_Sans'] text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover:text-accent">
-                        Overview
-                      </span>
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all duration-500 group-hover:rotate-45 group-hover:border-accent group-hover:text-accent">
-                        <Plus className="h-4 w-4" strokeWidth={1.5} />
-                      </span>
-                    </span>
-                  </div>
 
-                  {/* details revealed on hover */}
-                  <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:pt-6">
-                    <p className="overflow-hidden pl-0 text-base leading-relaxed text-muted-foreground md:pl-[calc(3rem+2.5rem)] md:text-lg">
-                      {s.body}
-                    </p>
+                    {/* title + icon — shifts on hover */}
+                    <div className="col-span-10 md:col-span-7">
+                      <div className="flex items-center gap-4 transition-transform duration-500 ease-out group-hover:translate-x-2">
+                        <Icon
+                          className="h-5 w-5 shrink-0 text-accent opacity-70 transition-opacity duration-500 group-hover:opacity-100"
+                          strokeWidth={1.5}
+                        />
+                        <h2 className="font-serif text-2xl leading-tight text-foreground transition-colors group-hover:text-accent md:text-[2.25rem]">
+                          {s.title}
+                        </h2>
+                      </div>
+                    </div>
+
+                    {/* right-side body — fades & slides in on hover */}
+                    <div className="col-span-12 md:col-span-4">
+                      <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr]">
+                        <div className="overflow-hidden">
+                          <p className="translate-y-2 pt-5 text-sm leading-relaxed text-muted-foreground opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 md:pt-1 md:text-[15px]">
+                            {s.body}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </article>
               );
