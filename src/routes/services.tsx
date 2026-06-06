@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
+import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal, Plus } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import servicesHero from "@/assets/hero-office.jpg";
 
@@ -132,8 +132,13 @@ function ServicesPage() {
                         {s.title}
                       </h2>
                     </div>
-                    <span className="hidden font-['Open_Sans'] text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover:text-accent md:inline">
-                      Hover to read
+                    <span className="hidden items-center gap-3 md:inline-flex">
+                      <span className="font-['Open_Sans'] text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground transition-colors group-hover:text-accent">
+                        Overview
+                      </span>
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all duration-500 group-hover:rotate-45 group-hover:border-accent group-hover:text-accent">
+                        <Plus className="h-4 w-4" strokeWidth={1.5} />
+                      </span>
                     </span>
                   </div>
 
