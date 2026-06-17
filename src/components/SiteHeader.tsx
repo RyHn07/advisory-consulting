@@ -19,7 +19,7 @@ export function SiteHeader() {
       <Link
         to="/"
         aria-label="Advisory Consulting Solutions home"
-        className="absolute left-10 top-0 z-20 hidden bg-[#3b5a73] p-5 md:block"
+        className="absolute left-10 top-0 z-20 hidden border border-white/40 p-5 md:block"
       >
         <img
           src={logo}
