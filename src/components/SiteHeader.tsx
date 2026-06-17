@@ -15,6 +15,19 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-primary text-primary-foreground">
+      {/* Logo - overlaps top bar and main bar */}
+      <Link
+        to="/"
+        aria-label="Advisory Consulting Solutions home"
+        className="absolute left-10 top-0 z-20 hidden bg-[#3b5a73] p-5 md:block"
+      >
+        <img
+          src={logo}
+          alt="Advisory Consulting Solutions LLC"
+          className="h-[130px] w-auto"
+        />
+      </Link>
+
       {/* Top contact bar - full width, lighter background */}
       <div className="hidden w-full bg-primary-foreground/[0.08] md:block">
         <div className="flex h-12 items-center justify-end gap-10 px-10 font-serif text-[20px] font-normal text-white">
@@ -30,19 +43,6 @@ export function SiteHeader() {
       </div>
 
       <div className="relative">
-        {/* Logo overlapping top bar */}
-        <Link
-          to="/"
-          aria-label="Advisory Consulting Solutions home"
-          className="absolute left-10 top-0 z-10 hidden -translate-y-12 bg-[#3b5a73] p-4 md:block"
-        >
-          <img
-            src={logo}
-            alt="Advisory Consulting Solutions LLC"
-            className="h-[120px] w-auto"
-          />
-        </Link>
-
         {/* Main bar */}
         <div className="flex h-24 items-stretch justify-between px-6 md:justify-end md:pr-10">
           <Link to="/" className="flex items-center md:hidden" aria-label="Home">
