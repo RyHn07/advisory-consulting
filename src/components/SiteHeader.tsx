@@ -4,6 +4,7 @@ import { Menu, X, Mail, Phone } from "lucide-react";
 import logo from "@/assets/logo.svg";
 
 const nav = [
+  { to: "/", label: "Home" },
   { to: "/our-approach", label: "Our Approach" },
   { to: "/services", label: "Services" },
   { to: "/about", label: "About" },
@@ -16,65 +17,65 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 bg-primary text-primary-foreground">
       {/* Top contact bar - full width, lighter background */}
       <div className="hidden w-full bg-primary-foreground/[0.08] md:block">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="flex h-10 items-center justify-end gap-8 pl-[140px] text-[12px] text-primary-foreground/80">
-            <a href="mailto:info@acscompliance.com" className="inline-flex items-center gap-2 hover:text-primary-foreground">
-              <Mail className="h-3.5 w-3.5" strokeWidth={1.5} />
-              info@acscompliance.com
-            </a>
-            <a href="tel:+10001112223333" className="inline-flex items-center gap-2 hover:text-primary-foreground">
-              <Phone className="h-3.5 w-3.5" strokeWidth={1.5} />
-              000 111 222 3333
-            </a>
-          </div>
+        <div className="flex h-12 items-center justify-end gap-10 px-10 font-serif text-[20px] font-normal text-white">
+          <a href="mailto:info@adv-cs.com" className="inline-flex items-center gap-3 hover:text-white/80">
+            <Mail className="h-5 w-5" strokeWidth={1.5} />
+            info@adv-cs.com
+          </a>
+          <a href="tel:+16466183447" className="inline-flex items-center gap-3 hover:text-white/80">
+            <Phone className="h-5 w-5" strokeWidth={1.5} />
+            (646) 618-3447
+          </a>
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="relative flex flex-col">
-          {/* Logo overlapping both rows */}
-          <Link
-            to="/"
-            aria-label="Advisory Consulting Solutions home"
-            className="absolute left-0 z-10 -translate-y-[calc(50%+1.25rem)] top-1/2"
-          >
-            <img
-              src={logo}
-              alt="Advisory Consulting Solutions LLC"
-              className="h-[120px] w-auto"
-            />
+      <div className="relative">
+        {/* Logo overlapping top bar */}
+        <Link
+          to="/"
+          aria-label="Advisory Consulting Solutions home"
+          className="absolute left-10 top-0 z-10 hidden -translate-y-12 bg-[#3b5a73] p-4 md:block"
+        >
+          <img
+            src={logo}
+            alt="Advisory Consulting Solutions LLC"
+            className="h-[120px] w-auto"
+          />
+        </Link>
+
+        {/* Main bar */}
+        <div className="flex h-24 items-stretch justify-between px-6 md:justify-end md:pr-10">
+          <Link to="/" className="flex items-center md:hidden" aria-label="Home">
+            <img src={logo} alt="ACS" className="h-12 w-auto" />
           </Link>
 
-          {/* Main bar */}
-          <div className="flex h-20 items-center justify-end gap-10 pl-[140px]">
-            <nav className="hidden items-center gap-10 md:flex">
-              {nav.map((n) => (
-                <Link
-                  key={n.to}
-                  to={n.to}
-                  className="group relative font-['Open_Sans'] text-[16px] font-semibold uppercase leading-normal text-white transition-colors hover:text-white/80"
-                  activeProps={{ className: "text-primary-foreground" }}
-                >
-                  {n.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
-                </Link>
-              ))}
+          <nav className="hidden items-stretch gap-10 md:flex">
+            {nav.map((n) => (
               <Link
-                to="/contact"
-                className="ml-2 inline-flex items-center border border-primary-foreground/60 px-6 py-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
+                key={n.to}
+                to={n.to}
+                className="group relative inline-flex items-center font-serif text-[18px] font-normal uppercase leading-none text-white transition-colors hover:text-white/80"
+                activeProps={{ className: "text-accent" }}
               >
-                Contact
+                {n.label}
+                <span className="absolute bottom-6 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
               </Link>
-            </nav>
-
-            <button
-              onClick={() => setOpen(!open)}
-              className="ml-auto text-primary-foreground md:hidden"
-              aria-label="Menu"
+            ))}
+            <Link
+              to="/contact"
+              className="my-4 inline-flex items-center border border-white/70 px-8 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
+              Contact
+            </Link>
+          </nav>
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="ml-auto text-white md:hidden"
+            aria-label="Menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 
