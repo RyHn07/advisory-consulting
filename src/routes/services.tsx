@@ -70,7 +70,7 @@ const services = [
 function ServicesPage() {
   return (
     <SiteLayout>
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={servicesHero}
@@ -81,15 +81,16 @@ function ServicesPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/95" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
-          <div className="max-w-3xl animate-fade-up">
+        <div className="mx-auto w-full max-w-6xl px-6 pt-40 pb-28 md:pt-56 md:pb-36">
+          <div className="max-w-3xl animate-fade-up text-left">
             <span className="section-eyebrow">
               Services
             </span>
-            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
-              Full-lifecycle support
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+                style={{ fontFamily: 'Playfair Display, Playfair, serif' }}>
+              <span style={{ color: '#FFF' }}>Full-lifecycle support</span>
               <br />
-              <span className="text-accent">for investment advisers.</span>
+              <span style={{ color: '#DA9E3F' }}>for investment advisers.</span>
             </h1>
             <p className="mt-8 max-w-2xl section-body-light">
               From initial registration to ongoing oversight and examination defense, we
