@@ -49,7 +49,7 @@ const steps = [
 function ApproachPage() {
   return (
     <SiteLayout>
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate flex min-h-[80vh] items-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={approachImg}
