@@ -68,7 +68,7 @@ export function SiteHeader() {
             ))}
             <Link
               to="/contact"
-              className="my-7 inline-flex items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-6 py-[13px] font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              className="my-7 inline-flex h-[54px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
               Contact
             </Link>
