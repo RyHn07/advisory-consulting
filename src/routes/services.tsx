@@ -1,13 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText, ShieldCheck, Search, BarChart3, LifeBuoy, GraduationCap } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import servicesHero from "@/assets/hero-office.jpg";
-import s0 from "@/assets/services/service-0.png.asset.json";
-import s1 from "@/assets/services/service-1.png.asset.json";
-import s2 from "@/assets/services/service-2.png.asset.json";
-import s3 from "@/assets/services/service-3.png.asset.json";
-import s4 from "@/assets/services/service-4.png.asset.json";
-import s5 from "@/assets/services/service-5.png.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -30,40 +24,34 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    img: s0.url,
+    icon: FileText,
     title: "Registration Services",
-    body: "State and federal registration, filings, and licensing — done right the first time.",
-    offset: 0,
+    body: "State and federal registration, filings, and licensing handled end-to-end so your firm launches cleanly and stays in good standing from day one.",
   },
   {
-    img: s4.url,
+    icon: ShieldCheck,
     title: "Compliance Programs",
-    body: "Customized policies, monthly tasks, annual reports, and continuous oversight.",
-    offset: 96,
+    body: "We partner with advisers to develop and maintain compliance programs that evolve alongside regulatory requirements. Through ongoing oversight, regulatory monitoring, compliance testing, and annual reviews, we help ensure your program remains effective, defensible, and examination-ready.",
   },
   {
-    img: s2.url,
+    icon: Search,
     title: "Mock Audits & Risk Assessments",
-    body: "Find and address issues before regulators do.",
-    offset: 192,
+    body: "Independent mock examinations and risk assessments that surface issues before regulators do — with a clear remediation roadmap your team can act on.",
   },
   {
-    img: s1.url,
+    icon: BarChart3,
     title: "Marketing Review",
-    body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and advertisements.",
-    offset: 48,
+    body: "SEC Marketing Rule reviews of websites, decks, social posts, testimonials, and advertisements so every claim you make is substantiated and defensible.",
   },
   {
-    img: s3.url,
+    icon: LifeBuoy,
     title: "Examination Support",
-    body: "Hands-on guidance through SEC and state examinations.",
-    offset: 144,
+    body: "Hands-on guidance through SEC and state examinations — document preparation, response drafting, and on-call senior support from kickoff to close.",
   },
   {
-    img: s5.url,
-    title: "Policies & Procedures",
-    body: "Tailored training to build a culture of compliance at every level.",
-    offset: 240,
+    icon: GraduationCap,
+    title: "Compliance Training",
+    body: "Tailored training programs that build a culture of compliance at every level — from the front office to the C-suite.",
   },
 ];
 
@@ -100,14 +88,14 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* SERVICES — sleek hover-reveal rows, no boxes or hard dividers */}
-      <section className="bg-background">
+      {/* SERVICES — numbered hover-reveal rows */}
+      <section style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-[1320px] px-6 pb-32 pt-20 md:pt-28">
           {/* Header row */}
           <div className="mb-16 flex flex-col items-start justify-between gap-8 md:mb-20 md:flex-row md:items-end">
             <div className="max-w-3xl">
               <span className="section-eyebrow">Our Services</span>
-              <h2 className="mt-6 section-title">
+              <h2 className="mt-6 section-title" style={{ color: '#0D182B' }}>
                 Compliance programs that work in practice, not just on paper.
               </h2>
             </div>
@@ -120,52 +108,51 @@ function ServicesPage() {
             </Link>
           </div>
 
-          {/* Staggered service grid */}
-          <div className="grid gap-x-10 gap-y-16 md:grid-cols-3 md:gap-x-12 md:gap-y-4">
-            {services.map((s) => (
-              <article
-                key={s.title}
-                className="group flex flex-col"
-                style={{ marginTop: `var(--svc-offset, 0px)`, ['--svc-offset' as any]: `${s.offset}px` }}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    loading="lazy"
-                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                    style={{
-                      clipPath:
-                        "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
-                    }}
+          {/* Numbered rows with hover-reveal description */}
+          <div className="border-t" style={{ borderColor: 'rgba(13,24,43,0.18)' }}>
+            {services.map((s, i) => {
+              const Icon = s.icon;
+              const num = String(i + 1);
+              return (
+                <article
+                  key={s.title}
+                  className="group relative grid grid-cols-1 gap-6 border-b py-8 md:grid-cols-12 md:gap-8 md:py-10"
+                  style={{ borderColor: 'rgba(13,24,43,0.18)' }}
+                >
+                  {/* Left gold bar reveal on hover */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 transition-all duration-500 group-hover:h-[70%]"
+                    style={{ backgroundColor: '#DA9E3F' }}
                   />
-                </div>
-                <h3
-                  className="mt-8"
-                  style={{
-                    color: "#DA9E3F",
-                    fontFamily: '"Playfair Display", Georgia, serif',
-                    fontSize: "32px",
-                    fontWeight: 600,
-                    lineHeight: "38px",
-                    letterSpacing: "-1.2px",
-                  }}
-                >
-                  {s.title}
-                </h3>
-                <p
-                  className="mt-5 max-w-[26rem]"
-                  style={{
-                    color: "#575E69",
-                    fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
-                    fontSize: "22px",
-                    lineHeight: "150%",
-                  }}
-                >
-                  {s.body}
-                </p>
-              </article>
-            ))}
+                  <div className="md:col-span-7 flex items-center gap-6 md:gap-10 md:pl-6">
+                    <span
+                      className="font-serif text-5xl md:text-6xl font-semibold leading-none transition-colors duration-300 group-hover:text-[#DA9E3F]"
+                      style={{ color: '#0D182B', fontFamily: '"Playfair Display", Georgia, serif' }}
+                    >
+                      {num}
+                    </span>
+                    <div className="flex items-center gap-4">
+                      <Icon className="h-7 w-7 shrink-0" style={{ color: '#DA9E3F' }} strokeWidth={1.5} />
+                      <h3
+                        className="font-serif text-3xl md:text-4xl"
+                        style={{ color: '#DA9E3F', fontFamily: '"Playfair Display", Georgia, serif', fontWeight: 600, letterSpacing: '-0.5px' }}
+                      >
+                        {s.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="md:col-span-5 md:pr-2 overflow-hidden grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
+                    <p
+                      className="min-h-0"
+                      style={{ color: '#0D182B', fontFamily: '"Aptos Serif", ui-serif, Georgia, serif', fontSize: '17px', lineHeight: '1.65' }}
+                    >
+                      {s.body}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
