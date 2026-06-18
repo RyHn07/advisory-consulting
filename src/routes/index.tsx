@@ -245,7 +245,7 @@ function HomePage() {
                   style={{
                     color: "#575E69",
                     fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
-                    fontSize: "20px",
+                    fontSize: "22px",
                     lineHeight: "150%",
                   }}
                 >
