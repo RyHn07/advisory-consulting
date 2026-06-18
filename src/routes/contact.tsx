@@ -28,7 +28,7 @@ function ContactPage() {
 
   return (
     <SiteLayout>
-      <section className="relative isolate overflow-hidden border-b border-border">
+      <section className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img
             src={contactImg}
@@ -39,15 +39,16 @@ function ContactPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/80 to-primary/95" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 py-28 md:py-36">
-          <div className="max-w-3xl animate-fade-up">
+        <div className="mx-auto w-full max-w-6xl px-6 pt-40 pb-28 md:pt-56 md:pb-36">
+          <div className="max-w-3xl animate-fade-up text-left">
             <span className="section-eyebrow">
               Contact
             </span>
-            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
-              Schedule a
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+                style={{ fontFamily: 'Playfair Display, Playfair, serif' }}>
+              <span style={{ color: '#FFF' }}>Schedule a</span>
               <br />
-              <span className="text-accent">consultation.</span>
+              <span style={{ color: '#DA9E3F' }}>consultation.</span>
             </h1>
             <p className="mt-8 max-w-2xl section-body-light">
               Whether you are launching a new advisory firm or strengthening an existing
