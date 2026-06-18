@@ -73,7 +73,7 @@ function ApproachPage() {
             </h1>
             <p className="mt-8 max-w-2xl section-body-light">
               We build compliance programs designed to function in practice, not just on
-              paper — programs that are operationally sound, examination-ready, and aligned
+              paper programs that are operationally sound, examination-ready, and aligned
               with how your firm actually runs.
             </p>
           </div>
