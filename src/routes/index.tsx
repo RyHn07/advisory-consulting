@@ -41,9 +41,9 @@ const services = [
 ];
 
 const approach = [
-  { step: "1", title: "Discovery", body: "We take the time to understand your business, compliance program, regulatory history, and areas of greatest risk." },
-  { step: "2", title: "Scoped Engagement", body: "Every engagement begins with a clearly defined scope, transparent deliverables, and direct access to a senior consultant responsible for the work." },
-  { step: "3", title: "Ongoing Partnership", body: "Whether through a defined project or an ongoing engagement, we provide the level of support that best fits your firm's compliance needs." },
+  { step: "1", title: "Discovery", body: "We learn how your firm operates, what regulators have asked of you, and where the real risks sit." },
+  { step: "2", title: "Scoped Engagement", body: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work." },
+  { step: "3", title: "Ongoing Partnership", body: "Many engagements roll into retained relationships — quarterly testing, annual reviews, exam standby." },
 ];
 
 function HomePage() {
@@ -139,7 +139,7 @@ function HomePage() {
       </section>
 
       {/* APPROACH TEASER */}
-      <section className="bg-primary text-primary-foreground">
+      <section className="text-primary-foreground" style={{ background: '#172C47', borderBottom: '1px solid #DEDBD9' }}>
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-20">
             <span className="section-eyebrow">How We Work</span>
