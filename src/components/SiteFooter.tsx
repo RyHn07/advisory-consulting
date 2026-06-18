@@ -30,24 +30,32 @@ export function SiteFooter() {
           </div>
 
           <nav
-            className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3"
+            className="mt-6 space-y-3"
             style={{
-              fontFamily: '"Playfair Display", Georgia, serif',
-              fontSize: "22px",
-              fontWeight: 500,
+              color: "#FFF",
+              fontFamily: '"Aptos Serif", Georgia, serif',
+              fontSize: "24px",
+              fontWeight: 400,
+              fontStyle: "normal",
+              lineHeight: "120%",
+              fontVariantNumeric: "oldstyle-nums proportional-nums",
             }}
           >
-            {navLinks.map((link, i) => (
-              <span key={link.to} className="flex items-center gap-x-5">
-                <Link to={link.to} className="text-white transition-colors hover:text-[#DA9E3F]">
-                  {link.label}
-                </Link>
-                {i < navLinks.length - 1 && (
-                  <span className="text-white/40" aria-hidden="true">
-                    /
+            {[navLinks.slice(0, 3), navLinks.slice(3)].map((row, rIdx) => (
+              <div key={rIdx} className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                {row.map((link, i) => (
+                  <span key={link.to} className="flex items-center gap-x-5">
+                    <Link to={link.to} className="text-white transition-colors hover:text-[#DA9E3F]">
+                      {link.label}
+                    </Link>
+                    {i < row.length - 1 && (
+                      <span className="text-white/40" aria-hidden="true">
+                        /
+                      </span>
+                    )}
                   </span>
-                )}
-              </span>
+                ))}
+              </div>
             ))}
           </nav>
         </div>
