@@ -29,7 +29,6 @@ export const Route = createFileRoute("/services")({
 });
 
 const services = [
-const services = [
   {
     img: s0.url,
     title: "Registration Services",
