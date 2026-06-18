@@ -140,14 +140,14 @@ function ServicesPage() {
                     className="pointer-events-none absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 transition-all duration-500 group-hover:h-[70%]"
                     style={{ backgroundColor: '#DA9E3F' }}
                   />
-                  <div className="md:col-span-7 flex items-start gap-6 md:gap-10 md:pl-6">
+                  <div className="md:col-span-7 flex items-center gap-6 md:gap-10 md:pl-6 self-start">
                     <span
-                      className="font-serif text-5xl md:text-6xl font-semibold leading-none transition-colors duration-300 group-hover:text-[#DA9E3F]"
+                      className="font-serif text-6xl md:text-7xl font-semibold leading-none transition-colors duration-300 group-hover:text-[#DA9E3F] -mt-2"
                       style={{ color: '#0D182B', fontFamily: '"Playfair Display", Georgia, serif' }}
                     >
                       {num}
                     </span>
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       <Icon className="h-7 w-7 shrink-0" style={{ color: '#DA9E3F' }} strokeWidth={1.5} />
                       <h3
                         className="font-serif text-3xl md:text-4xl leading-none"
