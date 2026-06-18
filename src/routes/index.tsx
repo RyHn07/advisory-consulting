@@ -164,7 +164,18 @@ function HomePage() {
                 >
                   {a.step}
                 </div>
-                <h3 className="mt-6 font-serif text-2xl text-primary-foreground">{a.title}</h3>
+                <h3
+                  className="mt-6 self-stretch text-white"
+                  style={{
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: '38px',
+                    fontWeight: 600,
+                    lineHeight: '42px',
+                    letterSpacing: '-2.28px',
+                  }}
+                >
+                  {a.title}
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">{a.body}</p>
               </div>
             ))}
