@@ -274,7 +274,7 @@ function HomePage() {
           >
             Ready to strengthen your compliance program?
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          <p className="section-body-dark mx-auto mt-6 max-w-2xl text-center">
             Whether you are launching a new advisory firm or strengthening an existing program,
             ACS can help you navigate your regulatory obligations with confidence.
           </p>
