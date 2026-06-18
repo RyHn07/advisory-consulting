@@ -208,20 +208,51 @@ function HomePage() {
               All services <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => {
-              const Icon = s.icon;
-              return (
-                <article
-                  key={s.title}
-                  className="group border-t border-border bg-card p-8 transition-colors hover:border-accent"
+          <div className="grid gap-x-10 gap-y-16 md:grid-cols-3 md:gap-x-12 md:gap-y-4">
+            {services.map((s) => (
+              <article
+                key={s.title}
+                className="group flex flex-col"
+                style={{ marginTop: `${s.offset}px` }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    style={{
+                      clipPath:
+                        "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
+                    }}
+                  />
+                </div>
+                <h3
+                  className="mt-8"
+                  style={{
+                    color: "#DA9E3F",
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "38px",
+                    letterSpacing: "-1.2px",
+                  }}
                 >
-                  <Icon className="h-7 w-7 text-accent" strokeWidth={1.5} />
-                  <h3 className="mt-6 font-serif text-2xl text-foreground">{s.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-                </article>
-              );
-            })}
+                  {s.title}
+                </h3>
+                <p
+                  className="mt-5 max-w-[26rem]"
+                  style={{
+                    color: "#575E69",
+                    fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
+                    fontSize: "20px",
+                    lineHeight: "150%",
+                  }}
+                >
+                  {s.body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
