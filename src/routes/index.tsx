@@ -112,7 +112,7 @@ function HomePage() {
               Who We Are
             </span>
             <h2 className="mt-4 section-title">
-              A strategic partner for <span className="italic">emerging and established</span> advisory firms.
+              A strategic partner for emerging and established advisory firms.
             </h2>
           </div>
           <div className="section-body space-y-6 md:col-span-7">
