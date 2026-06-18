@@ -40,7 +40,7 @@ function AboutPage() {
         </div>
         <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
           <div className="max-w-3xl animate-fade-up">
-            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               About
             </span>
             <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
@@ -61,7 +61,7 @@ function AboutPage() {
       <section className="bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               What Guides Us
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
@@ -98,7 +98,7 @@ function AboutPage() {
             />
           </div>
           <div className="md:col-span-7">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               Leadership
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
@@ -121,7 +121,7 @@ function AboutPage() {
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
-            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               By the Numbers
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
@@ -148,7 +148,7 @@ function AboutPage() {
       <section className="border-b border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
-            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               Who We Serve
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">

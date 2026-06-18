@@ -42,7 +42,7 @@ function CareersPage() {
         </div>
         <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
           <div className="max-w-3xl animate-fade-up">
-            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               Careers
             </span>
             <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
@@ -82,7 +82,7 @@ function CareersPage() {
       <section className="border-b border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
-            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               What We Look For
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
@@ -110,7 +110,7 @@ function CareersPage() {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div className="max-w-2xl">
-              <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              <span className="section-eyebrow">
                 Open Roles
               </span>
               <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">

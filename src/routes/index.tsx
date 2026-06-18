@@ -108,7 +108,7 @@ function HomePage() {
       <section className="border-b border-border bg-background">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-12">
           <div className="md:col-span-5">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+            <span className="section-eyebrow">
               Who We Are
             </span>
             <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
@@ -149,7 +149,7 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              <span className="section-eyebrow">
                 Our Approach
               </span>
               <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight md:text-5xl">
@@ -183,7 +183,7 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+              <span className="section-eyebrow">
                 Services
               </span>
               <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight text-foreground md:text-5xl">
