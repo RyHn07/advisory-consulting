@@ -110,6 +110,17 @@
   align-self: stretch;
 }
 
+@utility section-title-light {
+  color: #FFF;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -2.88px;
+  align-self: stretch;
+}
+
 @utility section-body {
   color: #575E69;
   font-family: "Aptos Serif", ui-serif, Georgia, serif;
