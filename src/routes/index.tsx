@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
-import heroOffice from "@/assets/header-hero.jpg";
+import heroOffice from "@/assets/header-city-hero.jpg";
 import whoWeAreImg from "@/assets/who-we-are.jpg";
 
 export const Route = createFileRoute("/")({
@@ -58,7 +58,7 @@ function HomePage() {
             width={1920}
             height={838}
           />
-          <div className="absolute inset-0 bg-primary/60" />
+          <div className="absolute inset-0 bg-primary/55" />
         </div>
         <div className="mx-auto flex min-h-[730px] max-w-[1320px] items-center px-6 py-24 text-center md:justify-center">
           <div className="max-w-[1180px] animate-fade-up">
