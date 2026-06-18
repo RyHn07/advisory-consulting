@@ -172,17 +172,17 @@ function ApproachPage() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section className="bg-secondary/40">
+      <section style={{ backgroundColor: '#F4EFE3' }}>
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
             <span className="section-eyebrow">
               What You Get
             </span>
-            <h2 className="mt-4 section-title">
-              Concrete deliverables at every step.
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight md:text-5xl" style={{ color: '#0D182B' }}>
+              Concrete deliverables<br />at every step.
             </h2>
           </div>
-          <div className="grid gap-x-10 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {[
               "Tailored compliance policies and procedures",
               "Annual compliance review report",
@@ -191,14 +191,18 @@ function ApproachPage() {
               "Risk assessment matrix and testing schedule",
               "Form ADV, Form CRS, and regulatory filing support",
               "Code of ethics and personal trading framework",
-              "Examination response toolkit and document index",
+              "Examination response package, document index, and deficiency letter remediation support",
             ].map((d) => (
               <div
                 key={d}
-                className="group flex items-center gap-5 border-b border-border/60 py-5 transition-colors hover:border-accent"
+                className="group relative flex items-center px-8 py-7 transition-all duration-300 hover:translate-x-1"
+                style={{ backgroundColor: '#FAF6EC' }}
               >
-                <span className="h-px w-6 bg-accent transition-all duration-300 group-hover:w-10" />
-                <span className="font-serif text-lg text-foreground md:text-xl">{d}</span>
+                <span
+                  className="absolute left-0 top-1/2 h-[60%] w-[3px] -translate-y-1/2 transition-all duration-300 group-hover:h-[80%]"
+                  style={{ backgroundColor: '#DA9E3F' }}
+                />
+                <span className="font-serif text-lg md:text-xl" style={{ color: '#0D182B' }}>{d}</span>
               </div>
             ))}
           </div>
