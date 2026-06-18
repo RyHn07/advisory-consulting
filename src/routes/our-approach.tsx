@@ -104,7 +104,7 @@ function ApproachPage() {
               >
                 <span
                   aria-hidden
-                  className="absolute left-0 top-[3.25rem] hidden h-3.5 w-3.5 -translate-x-[5px] rounded-full border-2 border-accent bg-background md:block transition-transform group-hover:scale-125"
+                  className="absolute left-[7px] top-[6.625rem] hidden h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent md:block transition-transform group-hover:scale-125"
                 />
                 <div className="md:pl-10">
                   <span
