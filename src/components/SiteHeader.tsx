@@ -19,7 +19,7 @@ export function SiteHeader() {
       <Link
         to="/"
         aria-label="Advisory Consulting Solutions home"
-        className="absolute left-6 top-0 z-20 hidden h-[140px] w-[140px] md:block lg:left-[8%] lg:h-[160px] lg:w-[160px] xl:left-[16%] xl:h-[184px] xl:w-[184px]"
+        className="absolute left-6 top-0 z-20 hidden h-[140px] w-[140px] md:block lg:left-[6%] lg:h-[160px] lg:w-[160px] 2xl:left-[16%] 2xl:h-[184px] 2xl:w-[184px]"
       >
         <img
           src={logo}
@@ -30,7 +30,7 @@ export function SiteHeader() {
 
       {/* Top contact bar - full width, lighter background */}
       <div className="hidden w-full bg-[#293d55] md:block">
-        <div className="flex h-[43px] items-center justify-end gap-8 pr-6 font-serif text-[20px] font-normal leading-none text-white lg:pr-[8%] xl:pr-[16.2%]">
+        <div className="flex h-[43px] items-center justify-end gap-8 pr-6 font-serif text-[20px] font-normal leading-none text-white lg:pr-[6%] 2xl:pr-[16.2%]">
           <a href="mailto:info@adv-cs.com" className="inline-flex items-center gap-3 hover:text-white/80">
             <Mail className="h-4 w-4" strokeWidth={1.5} />
             info@adv-cs.com
@@ -44,17 +44,17 @@ export function SiteHeader() {
 
       <div className="relative">
         {/* Main bar */}
-        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pl-[160px] md:pr-6 lg:pl-[calc(8%+180px)] lg:pr-[8%] xl:pl-[calc(16%+200px)] xl:pr-[16.15%]">
+        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pl-[160px] md:pr-6 lg:pl-[calc(6%+180px)] lg:pr-[6%] 2xl:pl-[calc(16%+200px)] 2xl:pr-[16.15%]">
           <Link to="/" className="flex items-center md:hidden" aria-label="Home">
             <img src={logo} alt="ACS" className="h-12 w-auto" />
           </Link>
 
-          <nav className="hidden items-stretch gap-6 md:flex lg:gap-10 xl:gap-[52px]">
+          <nav className="hidden items-stretch gap-6 md:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
-                className="group relative inline-flex items-center font-serif text-[18px] font-normal uppercase leading-none text-white transition-colors hover:text-white/80"
+                className="group relative inline-flex items-center whitespace-nowrap font-serif text-[18px] font-normal uppercase leading-none text-white transition-colors hover:text-white/80"
                 activeProps={{ className: "text-accent" }}
               >
                 {n.label}
@@ -63,7 +63,7 @@ export function SiteHeader() {
             ))}
             <Link
               to="/contact"
-              className="my-7 inline-flex items-center border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              className="my-7 inline-flex items-center whitespace-nowrap border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
               Contact
             </Link>
