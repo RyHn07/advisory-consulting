@@ -54,7 +54,7 @@ export function SiteHeader() {
             <img src={logo} alt="ACS" className="h-12 w-auto" />
           </Link>
 
-          <nav className="hidden items-stretch gap-6 md:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
+          <nav className="hidden items-center gap-6 md:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -68,7 +68,7 @@ export function SiteHeader() {
             ))}
             <Link
               to="/contact"
-              className="my-7 inline-flex h-[54px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              className="inline-flex h-[54px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
               Contact
             </Link>
