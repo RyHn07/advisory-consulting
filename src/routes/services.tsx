@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, FileText, ShieldCheck, Search, BarChart3, LifeBuoy, GraduationCap } from "lucide-react";
+import { ArrowRight, FileText, ShieldCheck, Search, Megaphone, LifeBuoy, GraduationCap, UserCog, FileSignature, BookOpen } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import servicesHero from "@/assets/hero-office.jpg";
 
@@ -26,7 +26,7 @@ const services = [
   {
     icon: FileText,
     title: "Registration Services",
-    body: "State and federal registration, filings, and licensing handled end-to-end so your firm launches cleanly and stays in good standing from day one.",
+    body: "We guide firms through the registration process at both the state and federal levels. Our team prepares and files required regulatory documents, coordinates filings, and helps ensure your business meets applicable licensing and disclosure requirements from day one.",
   },
   {
     icon: ShieldCheck,
@@ -36,22 +36,37 @@ const services = [
   {
     icon: Search,
     title: "Mock Audits & Risk Assessments",
-    body: "Independent mock examinations and risk assessments that surface issues before regulators do — with a clear remediation roadmap your team can act on.",
+    body: "We perform comprehensive mock audits and risk assessments designed to identify operational and regulatory vulnerabilities. These reviews help firms strengthen internal controls, improve documentation practices, and proactively address compliance gaps.",
   },
   {
-    icon: BarChart3,
+    icon: Megaphone,
     title: "Marketing Review",
-    body: "SEC Marketing Rule reviews of websites, decks, social posts, testimonials, and advertisements so every claim you make is substantiated and defensible.",
+    body: "We review marketing and client communications to help firms comply with SEC marketing rules and related regulatory requirements. From websites and pitch books to social media content and testimonials, our reviews help ensure disclosures are accurate, communications are balanced and, and marketing align with regulatory expectations.",
   },
   {
     icon: LifeBuoy,
     title: "Examination Support",
-    body: "Hands-on guidance through SEC and state examinations — document preparation, response drafting, and on-call senior support from kickoff to close.",
+    body: "We provide hands-on support throughout SEC and state examinations. Our team assists with document preparation, response coordination, regulator communications, and deficiency letter responses to help firms navigate the examination process efficiently and confidently.",
   },
   {
     icon: GraduationCap,
     title: "Compliance Training",
-    body: "Tailored training programs that build a culture of compliance at every level — from the front office to the C-suite.",
+    body: "Our compliance training programs educate employees and compliance officers on regulatory obligations, ethical standards, and industry best practices. Training sessions are tailored to your organization and designed to strengthen compliance awareness and promote a culture of compliance across all levels of your firm.",
+  },
+  {
+    icon: UserCog,
+    title: "Outsourced CCO",
+    body: "Our outsourced CCO services provide firms with experienced compliance leadership without the cost of a full-time executive. We oversee day-to-day compliance responsibilities, manage regulatory requirements, provide strategic guidance, and serve as a dedicated compliance resource for your organization.",
+  },
+  {
+    icon: FileSignature,
+    title: "Regulatory Filings",
+    body: "We manage regulatory filing requirements for investment advisers, including Form ADV amendments, Form CRS, Form D, Form PF, Forms 13F, 13D, and 13H, state notice filings, and IARD/CRD updates. Our team monitors filing calendars, prepares disclosures, and coordinates submissions to help firms stay compliant and in good standing with regulators.",
+  },
+  {
+    icon: BookOpen,
+    title: "Policies & Procedures",
+    body: "We draft and maintain customized compliance manuals designed around to your firm's business model, client base, and operational realities — not generic templates. Coverage includes the written supervisory procedures required under Rule 206(4)-7, code of ethics personal trading, insider information, custody, best execution, valuation, business continuity, cybersecurity, and privacy. Manuals are kept current as your firm and the regulatory landscape evolve.",
   },
 ];
 
