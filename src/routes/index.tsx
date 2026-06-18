@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroOffice from "@/assets/header-city-hero.jpg";
+import s0 from "@/assets/services/service-0.png.asset.json";
+import s1 from "@/assets/services/service-1.png.asset.json";
+import s2 from "@/assets/services/service-2.png.asset.json";
+import s3 from "@/assets/services/service-3.png.asset.json";
+import s4 from "@/assets/services/service-4.png.asset.json";
+import s5 from "@/assets/services/service-5.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,15 +32,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: FileText, title: "Registration Services", body: "State and federal registration, filings, and licensing — done right the first time." },
-  { icon: Shield, title: "Compliance Programs", body: "Customized policies, monthly tasks, annual reports, and continuous oversight." },
-  { icon: ClipboardCheck, title: "Mock Audits & Risk Assessments", body: "Find and address issues before regulators do." },
-  { icon: Megaphone, title: "Marketing Review", body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and ads." },
-  { icon: BarChart3, title: "Examination Support", body: "Hands-on guidance through SEC and state examinations." },
-  { icon: GraduationCap, title: "Compliance Training", body: "Tailored training to build a culture of compliance at every level." },
-  { icon: UserCog, title: "Outsourced CCO", body: "Senior compliance leadership without the cost of a full-time hire." },
-  { icon: ClipboardList, title: "Regulatory Filings", body: "Timely ADV, Form D, and all required regulatory submissions." },
-  { icon: SlidersHorizontal, title: "Policies & Procedures", body: "Custom compliance manuals tailored to your firm." },
+  { img: s0.url, title: "Registration Services", body: "State and federal registration, filings, and licensing — done right the first time.", offset: 0 },
+  { img: s4.url, title: "Compliance Programs", body: "Customized policies, monthly tasks, annual reports, and continuous oversight.", offset: 96 },
+  { img: s2.url, title: "Mock Audits & Risk Assessments", body: "Find and address issues before regulators do.", offset: 192 },
+  { img: s1.url, title: "Marketing Review", body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and ads.", offset: 48 },
+  { img: s3.url, title: "Examination Support", body: "Hands-on guidance through SEC and state examinations.", offset: 144 },
+  { img: s5.url, title: "Policies & Procedures", body: "Custom compliance manuals tailored to your firm.", offset: 240 },
 ];
 
 const approach = [
@@ -205,20 +208,51 @@ function HomePage() {
               All services <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => {
-              const Icon = s.icon;
-              return (
-                <article
-                  key={s.title}
-                  className="group border-t border-border bg-card p-8 transition-colors hover:border-accent"
+          <div className="grid gap-x-10 gap-y-16 md:grid-cols-3 md:gap-x-12 md:gap-y-4">
+            {services.map((s) => (
+              <article
+                key={s.title}
+                className="group flex flex-col"
+                style={{ marginTop: `${s.offset}px` }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    style={{
+                      clipPath:
+                        "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
+                    }}
+                  />
+                </div>
+                <h3
+                  className="mt-8"
+                  style={{
+                    color: "#DA9E3F",
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "38px",
+                    letterSpacing: "-1.2px",
+                  }}
                 >
-                  <Icon className="h-7 w-7 text-accent" strokeWidth={1.5} />
-                  <h3 className="mt-6 font-serif text-2xl text-foreground">{s.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-                </article>
-              );
-            })}
+                  {s.title}
+                </h3>
+                <p
+                  className="mt-5 max-w-[26rem]"
+                  style={{
+                    color: "#575E69",
+                    fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
+                    fontSize: "20px",
+                    lineHeight: "150%",
+                  }}
+                >
+                  {s.body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
