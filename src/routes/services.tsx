@@ -94,7 +94,7 @@ function ServicesPage() {
               <br />
               <span className="text-accent">for investment advisers.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+            <p className="mt-8 max-w-2xl section-body-light">
               From initial registration to ongoing oversight and examination defense, we
               deliver the specific compliance services your firm needs at each stage.
             </p>
