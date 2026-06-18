@@ -60,7 +60,7 @@ function HomePage() {
           />
           <div className="absolute inset-0 bg-primary/55" />
         </div>
-        <div className="mx-auto flex min-h-[730px] max-w-[1320px] items-center px-6 py-24 text-center md:justify-center">
+        <div className="mx-auto flex min-h-[730px] max-w-[1320px] items-center px-6 py-24 text-left">
           <div className="max-w-[1180px] animate-fade-up">
             <span className="font-serif text-[24px] font-semibold uppercase tracking-[0.34em] text-accent">
               Regulatory Compliance
@@ -70,11 +70,11 @@ function HomePage() {
               <br />
               <span className="italic text-accent">Built to be defensible.</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-[1030px] font-serif text-xl leading-[1.55] text-white md:text-[24px]">
+            <p className="mt-8 max-w-[1030px] font-serif text-xl leading-[1.55] text-white md:text-[24px]">
               Customized compliance consulting for registered investment advisers — from
               registration through ongoing oversight, mock audits, and exam readiness.
             </p>
-            <div className="mt-9 flex flex-wrap justify-center gap-6">
+            <div className="mt-9 flex flex-wrap gap-6">
               <Link
                 to="/contact"
                 className="inline-flex min-w-[291px] items-center justify-center rounded-none bg-accent px-6 py-[17px] font-serif text-[24px] font-normal text-accent-foreground transition-all hover:brightness-110"
