@@ -260,7 +260,18 @@ function HomePage() {
       {/* CTA */}
       <section className="bg-secondary">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="section-title">
+          <h2
+            className="self-stretch"
+            style={{
+              color: "#172C47",
+              textAlign: "center",
+              fontFamily: '"Playfair Display", serif',
+              fontSize: "34px",
+              fontStyle: "italic",
+              fontWeight: 600,
+              lineHeight: "48px",
+            }}
+          >
             Ready to strengthen your compliance program?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
