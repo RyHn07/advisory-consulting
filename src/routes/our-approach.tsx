@@ -87,7 +87,7 @@ function ApproachPage() {
               Methodology
             </span>
             <h2 className="mt-4 section-title">
-              A four-part rhythm, <span className="italic">repeated as you grow</span>.
+              A four-part rhythm, repeated as you grow.
             </h2>
           </div>
           <ol className="relative">
@@ -132,7 +132,7 @@ function ApproachPage() {
               Principles
             </span>
             <h2 className="mt-4 section-title">
-              The standards we hold <span className="italic">every program to</span>.
+              The standards we hold every program to.
             </h2>
           </div>
           <div className="grid gap-x-12 gap-y-14 md:grid-cols-2">
@@ -163,7 +163,7 @@ function ApproachPage() {
               What You Get
             </span>
             <h2 className="mt-4 section-title">
-              Concrete deliverables at <span className="italic">every step</span>.
+              Concrete deliverables at every step.
             </h2>
           </div>
           <div className="grid gap-x-10 md:grid-cols-2">

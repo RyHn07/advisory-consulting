@@ -86,7 +86,7 @@ function CareersPage() {
               What We Look For
             </span>
             <h2 className="mt-4 section-title">
-              Senior judgment, <span className="italic">not just years</span>.
+              Senior judgment, not just years.
             </h2>
           </div>
           <div className="grid gap-px border border-border bg-border md:grid-cols-2">
@@ -114,7 +114,7 @@ function CareersPage() {
                 Open Roles
               </span>
               <h2 className="mt-4 section-title">
-                Where we're <span className="italic">hiring</span>.
+                Where we're hiring.
               </h2>
             </div>
             <p className="max-w-sm text-sm text-muted-foreground">
