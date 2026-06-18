@@ -68,10 +68,15 @@ function HomePage() {
             >
               Regulatory Compliance
             </span>
-            <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[90px] md:leading-[76px]">
+            <h1 className="mt-8 self-stretch font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[90px] md:font-semibold md:leading-[100px] md:tracking-[-3.6px]">
               Practical compliance.
               <br />
-              <span className="italic text-accent">Built to be defensible.</span>
+              <span
+                className="italic md:tracking-[-1.8px]"
+                style={{ color: "#DA9E3F" }}
+              >
+                Built to be defensible.
+              </span>
             </h1>
             <p className="mt-8 max-w-[1030px] font-serif text-xl leading-[1.55] text-white md:text-[24px]">
               Customized compliance consulting for registered investment advisers — from
