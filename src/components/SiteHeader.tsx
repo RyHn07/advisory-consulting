@@ -15,6 +15,11 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="absolute left-0 top-0 z-50 w-full bg-transparent text-primary-foreground">
+      {/* Left fill behind logo - matches logo height, header (primary) color */}
+      <div
+        aria-hidden
+        className="absolute left-0 top-0 z-0 hidden bg-primary md:block md:h-[140px] md:w-[calc(1.5rem+5px+140px)] lg:h-[160px] lg:w-[calc(6%+5px+160px)] 2xl:h-[184px] 2xl:w-[calc(16%+5px+184px)]"
+      />
       {/* Logo - overlaps top bar and main bar */}
       <Link
         to="/"
