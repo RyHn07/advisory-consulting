@@ -65,10 +65,11 @@ function ApproachPage() {
             <span className="section-eyebrow">
               Our Approach
             </span>
-            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
-              Practical, scalable,
+            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+                style={{ fontFamily: 'Playfair Display, Playfair, serif' }}>
+              <span style={{ color: '#FFF' }}>Practical, scalable,</span>
               <br />
-              <span className="text-accent">regulator-focused.</span>
+              <span style={{ color: '#DA9E3F' }}>regulator-focused.</span>
             </h1>
             <p className="mt-8 max-w-2xl section-body-light">
               We build compliance programs designed to function in practice, not just on
