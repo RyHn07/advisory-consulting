@@ -19,12 +19,12 @@ export function SiteHeader() {
       <Link
         to="/"
         aria-label="Advisory Consulting Solutions home"
-        className="absolute left-[16%] top-0 z-20 hidden h-[184px] w-[184px] border border-white/80 bg-primary md:flex md:items-center md:justify-center"
+        className="absolute left-[16%] top-0 z-20 hidden h-[184px] w-[184px] md:block"
       >
         <img
           src={logo}
           alt="Advisory Consulting Solutions LLC"
-          className="h-[127px] w-[127px] object-contain"
+          className="h-full w-full object-contain"
         />
       </Link>
 
