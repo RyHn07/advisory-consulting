@@ -41,10 +41,9 @@ const services = [
 ];
 
 const approach = [
-  { step: "1", title: "Assess", body: "Evaluate your current compliance framework, operational risks, and regulatory exposure." },
-  { step: "2", title: "Design", body: "Develop customized policies, procedures, and controls aligned with your business model." },
-  { step: "3", title: "Implement", body: "Integrate compliance into daily operations through practical processes and report-based deliverables." },
-  { step: "4", title: "Test & Improve", body: "Conduct mock examinations, reviews, and ongoing testing to maintain regulatory readiness." },
+  { step: "1", title: "Discovery", body: "We take the time to understand your business, compliance program, regulatory history, and areas of greatest risk." },
+  { step: "2", title: "Scoped Engagement", body: "Every engagement begins with a clearly defined scope, transparent deliverables, and direct access to a senior consultant responsible for the work." },
+  { step: "3", title: "Ongoing Partnership", body: "Whether through a defined project or an ongoing engagement, we provide the level of support that best fits your firm's compliance needs." },
 ];
 
 function HomePage() {
@@ -142,50 +141,45 @@ function HomePage() {
       {/* APPROACH TEASER */}
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <span className="section-eyebrow">
-                Our Approach
-              </span>
-              <h2 className="mt-4 max-w-2xl section-title-light">
-                Compliance programs that work in practice, not just on paper.
-              </h2>
-            </div>
-            <Link
-              to="/our-approach"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
-            >
-              Explore the methodology <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="mb-20">
+            <span className="section-eyebrow">How We Work</span>
+            <h2 className="mt-6 max-w-2xl section-title-light">
+              Engagements built around
+              <br />
+              your firm.
+            </h2>
           </div>
-          <div className="grid gap-px border border-primary-foreground/10 bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
             {approach.map((a) => (
-              <div key={a.step} className="bg-primary p-8">
+              <div key={a.step}>
                 <div
-                  className="self-stretch font-sans text-[16px] font-bold uppercase text-[#DA9E3F]"
-                  style={{ fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif', letterSpacing: '3.2px', lineHeight: 'normal' }}
+                  style={{
+                    color: '#DA9E3F',
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: '72px',
+                    fontWeight: 600,
+                    lineHeight: '1',
+                  }}
                 >
                   {a.step}
                 </div>
+                <div className="mt-6 h-px w-12 bg-[#DA9E3F]" />
                 <h3
-                  className="mt-6 self-stretch text-white"
+                  className="mt-8 text-white"
                   style={{
                     fontFamily: '"Playfair Display", Georgia, serif',
-                    fontSize: '38px',
+                    fontSize: '28px',
                     fontWeight: 600,
-                    lineHeight: '42px',
-                    letterSpacing: '-2.28px',
+                    lineHeight: '34px',
+                    letterSpacing: '-0.5px',
                   }}
                 >
                   {a.title}
                 </h3>
-                <p className="mt-3 section-body-light">{a.body}</p>
+                <p className="mt-5 section-body-light">{a.body}</p>
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-3xl font-serif text-2xl italic text-primary-foreground/90 md:text-3xl">
-            “Our focus is simple — identify and address issues before they become deficiencies.”
-          </p>
         </div>
       </section>
 
