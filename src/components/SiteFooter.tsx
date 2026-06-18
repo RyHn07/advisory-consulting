@@ -102,10 +102,15 @@ export function SiteFooter() {
 
       <div style={{ background: "#0A1322" }}>
         <div
-          className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 text-white/60 md:flex-row md:items-center"
+          className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 md:flex-row md:items-center"
           style={{
-            fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
-            fontSize: "14px",
+            color: "#FFF",
+            fontFamily: '"Aptos Serif", Georgia, serif',
+            fontSize: "22px",
+            fontStyle: "normal",
+            fontWeight: 400,
+            lineHeight: "140%",
+            fontVariantNumeric: "oldstyle-nums proportional-nums",
           }}
         >
           <span>© {new Date().getFullYear()} — Copyright</span>
