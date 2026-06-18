@@ -144,8 +144,8 @@ function HomePage() {
               <span className="section-eyebrow">
                 Our Approach
               </span>
-              <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight md:text-5xl">
-                Compliance programs that work in <span className="italic">practice</span>, not just on paper.
+              <h2 className="mt-4 max-w-2xl section-title-light">
+                Compliance programs that work in practice, not just on paper.
               </h2>
             </div>
             <Link
@@ -178,7 +178,7 @@ function HomePage() {
               <span className="section-eyebrow">
                 Services
               </span>
-              <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-4 max-w-2xl section-title">
                 Comprehensive support across the compliance lifecycle.
               </h2>
             </div>
@@ -210,7 +210,7 @@ function HomePage() {
       {/* CTA */}
       <section className="bg-secondary">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="font-serif text-4xl leading-tight text-foreground md:text-5xl">
+          <h2 className="section-title">
             Ready to strengthen your compliance program?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">

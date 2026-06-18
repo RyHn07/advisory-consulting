@@ -65,7 +65,7 @@ function AboutPage() {
               What Guides Us
             </span>
             <h2 className="mt-4 section-title">
-              Built on <span className="italic">judgment</span>, not just checklists.
+              Built on judgment, not just checklists.
             </h2>
           </div>
           <div className="grid gap-px border border-border bg-border md:grid-cols-3">
@@ -102,7 +102,7 @@ function AboutPage() {
               Leadership
             </span>
             <h2 className="mt-4 section-title">
-              Senior compliance experience, <span className="italic">at your side</span>.
+              Senior compliance experience, at your side.
             </h2>
             <p className="mt-8 section-body">
               Our principal brings years of regulatory, in-house, and consulting experience
@@ -124,8 +124,8 @@ function AboutPage() {
             <span className="section-eyebrow">
               By the Numbers
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">
-              Experience that <span className="italic">compounds</span>.
+            <h2 className="mt-4 section-title-light">
+              Experience that compounds.
             </h2>
           </div>
           <div className="grid gap-px border border-primary-foreground/10 bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
@@ -152,7 +152,7 @@ function AboutPage() {
               Who We Serve
             </span>
             <h2 className="mt-4 section-title">
-              Built for advisers at <span className="italic">every stage</span>.
+              Built for advisers at every stage.
             </h2>
           </div>
           <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
@@ -173,7 +173,7 @@ function AboutPage() {
 
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="font-serif text-4xl leading-tight md:text-5xl">
+          <h2 className="section-title-light">
             Let's talk about your compliance program.
           </h2>
           <Link

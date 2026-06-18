@@ -148,7 +148,7 @@ function ContactPage() {
               Frequently Asked
             </span>
             <h2 className="mt-4 section-title">
-              What to expect when you <span className="italic">reach out</span>.
+              What to expect when you reach out.
             </h2>
           </div>
           <div className="divide-y divide-border border-y border-border">
