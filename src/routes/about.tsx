@@ -65,7 +65,7 @@ function AboutPage() {
               What Guides Us
             </span>
             <h2 className="mt-4 section-title">
-              Built on <span className="italic">judgment</span>, not just checklists.
+              Built on judgment, not just checklists.
             </h2>
           </div>
           <div className="grid gap-px border border-border bg-border md:grid-cols-3">
@@ -102,7 +102,7 @@ function AboutPage() {
               Leadership
             </span>
             <h2 className="mt-4 section-title">
-              Senior compliance experience, <span className="italic">at your side</span>.
+              Senior compliance experience, at your side.
             </h2>
             <p className="mt-8 section-body">
               Our principal brings years of regulatory, in-house, and consulting experience
