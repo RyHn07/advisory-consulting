@@ -60,8 +60,8 @@ function ApproachPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/95" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
-          <div className="max-w-3xl animate-fade-up">
+        <div className="mx-auto flex max-w-[1920px] flex-col items-start gap-[34px] self-stretch px-6 py-28 md:px-[310px] md:py-[160px]">
+          <div className="animate-fade-up">
             <span className="section-eyebrow">
               Our Approach
             </span>
