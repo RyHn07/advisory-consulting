@@ -176,7 +176,7 @@ function HomePage() {
                 >
                   {a.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">{a.body}</p>
+                <p className="mt-3 section-body-light">{a.body}</p>
               </div>
             ))}
           </div>

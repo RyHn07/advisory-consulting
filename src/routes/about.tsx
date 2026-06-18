@@ -48,7 +48,7 @@ function AboutPage() {
               <br />
               <span className="text-accent">for advisory firms.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+            <p className="mt-8 max-w-2xl section-body-light">
               Advisory Consulting Solutions is built around one focus — helping registered
               investment advisers run compliance programs that are practical, defensible, and
               ready for regulatory scrutiny.
@@ -137,7 +137,7 @@ function AboutPage() {
             ].map((s) => (
               <div key={s.l} className="bg-primary p-10">
                 <div className="font-serif text-5xl text-accent md:text-6xl">{s.n}</div>
-                <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">{s.l}</p>
+                <p className="mt-4 section-body-light">{s.l}</p>
               </div>
             ))}
           </div>

@@ -50,7 +50,7 @@ function CareersPage() {
               <br />
               <span className="text-accent">client-focused team.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+            <p className="mt-8 max-w-2xl section-body-light">
               Advisory Consulting Solutions offers opportunities for experienced compliance
               professionals, former Chief Compliance Officers, attorneys, and regulatory
               consultants. If you are interested in joining ACS, please submit your
