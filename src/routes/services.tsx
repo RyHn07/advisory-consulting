@@ -237,18 +237,19 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground">
+      <section style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="section-title-light">
+          <h2 className="section-title-dark" style={{ color: '#0D182B' }}>
             Not sure which services fit?
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/75">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed" style={{ color: '#0D182B', opacity: 0.8 }}>
             We'll walk you through your firm's regulatory obligations and recommend the right
             mix of services for your stage and structure.
           </p>
           <Link
             to="/contact"
-            className="btn-consult mt-10 bg-accent text-accent-foreground transition-all hover:brightness-110"
+            className="btn-consult mt-10 text-white transition-all hover:brightness-110"
+            style={{ backgroundColor: '#0D182B' }}
           >
             Schedule a Consultation
             <ArrowRight className="h-4 w-4" />
