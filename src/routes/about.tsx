@@ -178,7 +178,7 @@ function AboutPage() {
           </h2>
           <Link
             to="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-sm bg-accent px-8 py-4 text-sm font-semibold text-accent-foreground transition-all hover:brightness-110"
+            className="btn-consult mt-10 bg-accent text-accent-foreground transition-all hover:brightness-110"
           >
             Schedule a Consultation
             <ArrowRight className="h-4 w-4" />

@@ -148,6 +148,21 @@
   line-height: 150%;
 }
 
+@utility btn-consult {
+  display: inline-flex;
+  height: 64px;
+  padding: 13px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 0;
+  font-family: "Aptos Serif", ui-serif, Georgia, serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }

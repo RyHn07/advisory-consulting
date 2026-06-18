@@ -90,7 +90,7 @@ function HomePage() {
             <div className="mt-9 flex flex-wrap gap-6">
               <Link
                 to="/contact"
-                className="inline-flex h-[64px] items-center justify-center gap-[10px] rounded-none px-6 py-4 font-serif text-[24px] font-normal text-accent-foreground transition-all hover:brightness-110"
+                className="btn-consult text-accent-foreground transition-all hover:brightness-110"
                 style={{ background: "#DA9E3F" }}
               >
                 Schedule a Consultation
@@ -282,7 +282,7 @@ function HomePage() {
           </p>
           <Link
             to="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-sm bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent"
+            className="btn-consult mt-10 bg-primary text-primary-foreground transition-colors hover:bg-accent"
           >
             Schedule a Consultation
             <ArrowRight className="h-4 w-4" />
