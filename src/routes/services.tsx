@@ -173,29 +173,48 @@ function ServicesPage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section className="border-y border-border bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-16 max-w-2xl">
-            <span className="section-eyebrow">
-              How We Work
-            </span>
-            <h2 className="mt-4 section-title">
-              Engagements built around your firm.
+      <section className="text-white" style={{ background: '#172C47', borderBottom: '1px solid #DEDBD9' }}>
+        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+          <div className="mb-20">
+            <span className="section-eyebrow">How We Work</span>
+            <h2 className="mt-6 max-w-2xl section-title-light">
+              Engagements built around
+              <br />
+              your firm.
             </h2>
           </div>
-          <div className="grid gap-x-12 gap-y-14 md:grid-cols-3">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
             {[
-              { k: "01", t: "Discovery", b: "We learn how your firm operates, what regulators have asked of you, and where the real risks sit." },
-              { k: "02", t: "Scoped Engagement", b: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work." },
-              { k: "03", t: "Ongoing Partnership", b: "Many engagements roll into retained relationships — quarterly testing, annual reviews, exam standby." },
+              { k: "1", t: "Discovery", b: "We learn how your firm operates, what regulators have asked of you, and where the real risks sit." },
+              { k: "2", t: "Scoped Engagement", b: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work." },
+              { k: "3", t: "Ongoing Partnership", b: "Many engagements roll into retained relationships — quarterly testing, annual reviews, exam standby." },
             ].map((s) => (
-              <div key={s.k} className="group relative">
-                <span className="block font-serif text-6xl leading-none text-accent/40 transition-colors group-hover:text-accent">
+              <div key={s.k}>
+                <div
+                  style={{
+                    color: '#DA9E3F',
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: '72px',
+                    fontWeight: 600,
+                    lineHeight: '1',
+                  }}
+                >
                   {s.k}
-                </span>
-                <span className="mt-5 block h-px w-10 bg-accent transition-all duration-300 group-hover:w-20" />
-                <h3 className="mt-6 font-serif text-3xl text-foreground">{s.t}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{s.b}</p>
+                </div>
+                <div className="mt-6 h-px w-12 bg-[#DA9E3F]" />
+                <h3
+                  className="mt-8 text-white"
+                  style={{
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: '28px',
+                    fontWeight: 600,
+                    lineHeight: '34px',
+                    letterSpacing: '-0.5px',
+                  }}
+                >
+                  {s.t}
+                </h3>
+                <p className="mt-5 section-body-light">{s.b}</p>
               </div>
             ))}
           </div>
