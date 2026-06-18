@@ -62,7 +62,10 @@ function HomePage() {
         </div>
         <div className="mx-auto flex min-h-[730px] max-w-[1320px] items-center px-6 py-24 text-left">
           <div className="max-w-[1180px] animate-fade-up">
-            <span className="font-serif text-[24px] font-semibold uppercase tracking-[0.34em] text-accent">
+            <span
+              className="text-[22px] font-bold uppercase leading-[150%] tracking-[4.4px] text-accent"
+              style={{ fontFamily: '"Aptos Serif", ui-serif, Georgia, serif', color: "#DA9E3F" }}
+            >
               Regulatory Compliance
             </span>
             <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[90px] md:leading-[76px]">
