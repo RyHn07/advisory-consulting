@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import servicesHero from "@/assets/hero-office.jpg";
+import s0 from "@/assets/services/service-0.png.asset.json";
+import s1 from "@/assets/services/service-1.png.asset.json";
+import s2 from "@/assets/services/service-2.png.asset.json";
+import s3 from "@/assets/services/service-3.png.asset.json";
+import s4 from "@/assets/services/service-4.png.asset.json";
+import s5 from "@/assets/services/service-5.png.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -24,49 +30,40 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    icon: FileText,
+    img: s0.url,
     title: "Registration Services",
-    body: "We handle the registration process at both the state and federal levels. Our team prepares and files required regulatory documents, coordinates filings, and helps ensure your business meets all licensing and disclosure requirements from the outset.",
+    body: "State and federal registration, filings, and licensing — done right the first time.",
+    offset: 0,
   },
   {
-    icon: Shield,
+    img: s4.url,
     title: "Compliance Programs",
-    body: "Ongoing oversight and maintenance of your firm's compliance program. We develop customized policies and procedures, monitor regulatory changes, administer your monthly compliance tasks and annual compliance reports, and help ensure your compliance framework remains current and effective.",
+    body: "Customized policies, monthly tasks, annual reports, and continuous oversight.",
+    offset: 96,
   },
   {
-    icon: ClipboardCheck,
-    title: "Mock Audits / Risk Assessments",
-    body: "We perform comprehensive mock audits and risk assessments designed to identify operational and regulatory vulnerabilities before regulators do. These reviews help firms strengthen internal controls, improve documentation practices, and proactively address compliance gaps.",
+    img: s2.url,
+    title: "Mock Audits & Risk Assessments",
+    body: "Find and address issues before regulators do.",
+    offset: 192,
   },
   {
-    icon: Megaphone,
-    title: "Marketing Review Services",
-    body: "We review advertising and marketing materials to help firms comply with SEC marketing rules and regulatory advertising requirements. Our reviews include websites, presentations, social media content, pitch books, testimonials, and other communications to help reduce regulatory risk and ensure disclosures are accurate and compliant.",
+    img: s1.url,
+    title: "Marketing Review",
+    body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and advertisements.",
+    offset: 48,
   },
   {
-    icon: BarChart3,
+    img: s3.url,
     title: "Examination Support",
-    body: "We provide hands-on support during SEC and state examinations. Our team assists with document preparation, response coordination, and communication management to help firms navigate examinations efficiently and confidently.",
+    body: "Hands-on guidance through SEC and state examinations.",
+    offset: 144,
   },
   {
-    icon: GraduationCap,
-    title: "Compliance Training",
-    body: "Our compliance training programs educate employees and compliance officers on regulatory obligations, ethical standards, and industry best practices. Training sessions are tailored to your organization and designed to promote a culture of compliance across all levels of the firm.",
-  },
-  {
-    icon: UserCog,
-    title: "Outsourced CCO Services",
-    body: "Our outsourced CCO services provide firms with experienced compliance leadership without the cost of a full-time executive. We oversee day-to-day compliance responsibilities, manage regulatory requirements, provide strategic guidance, and serve as a dedicated compliance resource for your organization.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Regulatory Filings",
-    body: "We manage the full cycle of regulatory filings for investment advisers — including Form ADV (Parts 1, 2A, 2B, and 3/CRS) amendments, Form D notice filings for private fund offerings, Form PF, state notice filings, and IARD/CRD updates. Our team tracks filing calendars, prepares supporting disclosures, and submits on time so your firm stays in good standing with the SEC and state regulators.",
-  },
-  {
-    icon: SlidersHorizontal,
+    img: s5.url,
     title: "Policies & Procedures",
-    body: "We draft and maintain custom compliance manuals tailored to your firm's business model, client base, and operational realities — not generic templates. Coverage includes the written supervisory procedures required under Rule 206(4)-7, code of ethics, personal trading, insider information, custody, best execution, valuation, business continuity, cybersecurity, and privacy. Manuals are kept current as your firm and the regulatory landscape evolve.",
+    body: "Tailored training to build a culture of compliance at every level.",
+    offset: 240,
   },
 ];
 
@@ -104,54 +101,70 @@ function ServicesPage() {
 
       {/* SERVICES — sleek hover-reveal rows, no boxes or hard dividers */}
       <section className="bg-background">
-        <div className="mx-auto max-w-7xl px-6 pb-24 pt-8">
-          <div>
-            {services.map((s, idx) => {
-              const Icon = s.icon;
-              return (
-                <article
-                  key={s.title}
-                  className="group relative cursor-pointer border-b border-border/70 py-10 md:py-12"
-                >
-                  {/* left accent rail — grows on hover */}
-                  <span
-                    aria-hidden
-                    className="absolute left-0 top-1/2 h-0 w-[2px] -translate-y-1/2 bg-accent transition-all duration-500 ease-out group-hover:h-[70%]"
+        <div className="mx-auto max-w-[1320px] px-6 pb-32 pt-20 md:pt-28">
+          {/* Header row */}
+          <div className="mb-16 flex flex-col items-start justify-between gap-8 md:mb-20 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <span className="section-eyebrow">Our Services</span>
+              <h2 className="mt-6 section-title">
+                Compliance programs that work in practice, not just on paper.
+              </h2>
+            </div>
+            <Link
+              to="/contact"
+              className="group inline-flex items-center gap-2 font-serif text-[20px] text-[#DA9E3F] transition-all hover:gap-3"
+            >
+              All services
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+
+          {/* Staggered service grid */}
+          <div className="grid gap-x-10 gap-y-16 md:grid-cols-3 md:gap-x-12 md:gap-y-4">
+            {services.map((s) => (
+              <article
+                key={s.title}
+                className="group flex flex-col"
+                style={{ marginTop: `var(--svc-offset, 0px)`, ['--svc-offset' as any]: `${s.offset}px` }}
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    style={{
+                      clipPath:
+                        "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
+                    }}
                   />
-
-                  <div className="grid grid-cols-12 items-start gap-x-6 md:gap-x-10">
-                    {/* number */}
-                    <span className="col-span-2 font-serif text-xl leading-none text-muted-foreground/60 transition-colors group-hover:text-accent md:col-span-1 md:text-2xl">
-                      —{String(idx + 1).padStart(2, "0")}
-                    </span>
-
-                    {/* title + icon — shifts on hover */}
-                    <div className="col-span-10 md:col-span-7">
-                      <div className="flex items-center gap-4 transition-transform duration-500 ease-out group-hover:translate-x-2">
-                        <Icon
-                          className="h-5 w-5 shrink-0 text-accent opacity-70 transition-opacity duration-500 group-hover:opacity-100"
-                          strokeWidth={1.5}
-                        />
-                        <h2 className="font-serif text-2xl leading-tight text-foreground transition-colors group-hover:text-accent md:text-[2.25rem]">
-                          {s.title}
-                        </h2>
-                      </div>
-                    </div>
-
-                    {/* right-side body — fades & slides in on hover */}
-                    <div className="col-span-12 md:col-span-4">
-                      <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr]">
-                        <div className="overflow-hidden">
-                          <p className="translate-y-2 pt-5 text-sm leading-relaxed text-muted-foreground opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 md:pt-1 md:text-[15px]">
-                            {s.body}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
+                </div>
+                <h3
+                  className="mt-8"
+                  style={{
+                    color: "#DA9E3F",
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "38px",
+                    letterSpacing: "-1.2px",
+                  }}
+                >
+                  {s.title}
+                </h3>
+                <p
+                  className="mt-5 max-w-[26rem]"
+                  style={{
+                    color: "#575E69",
+                    fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
+                    fontSize: "20px",
+                    lineHeight: "150%",
+                  }}
+                >
+                  {s.body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
