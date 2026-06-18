@@ -135,30 +135,36 @@ function ApproachPage() {
       </section>
 
       {/* PRINCIPLES */}
-      <section className="border-y border-border bg-background">
+      <section style={{ backgroundColor: '#0D182B' }}>
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
             <span className="section-eyebrow">
               Principles
             </span>
-            <h2 className="mt-4 section-title">
-              The standards we hold every program to.
+            <h2 className="mt-4 font-serif text-4xl font-semibold text-white md:text-5xl">
+              The standards we<br />hold every program to.
             </h2>
           </div>
-          <div className="grid gap-x-12 gap-y-14 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {[
               { t: "Risk-Calibrated", b: "Controls are sized to your firm's actual risk profile — not pulled from a generic template." },
               { t: "Operationally Realistic", b: "Procedures your team can actually follow on a busy week, not aspirational paperwork." },
               { t: "Examination-Ready", b: "Documentation, testing, and records structured the way examiners actually request them." },
               { t: "Continuously Tested", b: "Programs are reviewed, retested, and refined as your firm and the rulebook evolve." },
-            ].map((p, i) => (
-              <div key={p.t} className="group relative pl-8">
-                <span className="absolute left-0 top-2 h-8 w-px bg-accent transition-all duration-300 group-hover:h-12" />
-                <span className="font-sans text-xs font-semibold tracking-[0.2em] text-accent/70">
-                  / {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 font-serif text-3xl text-foreground">{p.t}</h3>
-                <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">{p.b}</p>
+            ].map((p) => (
+              <div
+                key={p.t}
+                className="group p-10 transition-colors duration-300"
+                style={{ backgroundColor: '#172C47' }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#DA9E3F')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#172C47')}
+              >
+                <h3 className="font-serif text-3xl font-semibold text-white transition-colors duration-300 group-hover:text-[#0D182B] md:text-4xl">
+                  {p.t}
+                </h3>
+                <p className="mt-5 max-w-md text-base leading-relaxed text-white/80 transition-colors duration-300 group-hover:text-[#0D182B]">
+                  {p.b}
+                </p>
               </div>
             ))}
           </div>
