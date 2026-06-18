@@ -78,7 +78,10 @@ function HomePage() {
                 Built to be defensible.
               </span>
             </h1>
-            <p className="mt-8 max-w-[1030px] font-serif text-xl leading-[1.55] text-white md:text-[24px]">
+            <p
+              className="mt-8 w-full max-w-[818px] text-[22px] font-normal leading-[150%] text-white"
+              style={{ fontFamily: '"Aptos Serif", ui-serif, Georgia, serif' }}
+            >
               Customized compliance consulting for registered investment advisers — from
               registration through ongoing oversight, mock audits, and exam readiness.
             </p>
