@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroOffice from "@/assets/header-city-hero.jpg";
+import s0 from "@/assets/services/service-0.png.asset.json";
+import s1 from "@/assets/services/service-1.png.asset.json";
+import s2 from "@/assets/services/service-2.png.asset.json";
+import s3 from "@/assets/services/service-3.png.asset.json";
+import s4 from "@/assets/services/service-4.png.asset.json";
+import s5 from "@/assets/services/service-5.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,15 +32,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: FileText, title: "Registration Services", body: "State and federal registration, filings, and licensing — done right the first time." },
-  { icon: Shield, title: "Compliance Programs", body: "Customized policies, monthly tasks, annual reports, and continuous oversight." },
-  { icon: ClipboardCheck, title: "Mock Audits & Risk Assessments", body: "Find and address issues before regulators do." },
-  { icon: Megaphone, title: "Marketing Review", body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and ads." },
-  { icon: BarChart3, title: "Examination Support", body: "Hands-on guidance through SEC and state examinations." },
-  { icon: GraduationCap, title: "Compliance Training", body: "Tailored training to build a culture of compliance at every level." },
-  { icon: UserCog, title: "Outsourced CCO", body: "Senior compliance leadership without the cost of a full-time hire." },
-  { icon: ClipboardList, title: "Regulatory Filings", body: "Timely ADV, Form D, and all required regulatory submissions." },
-  { icon: SlidersHorizontal, title: "Policies & Procedures", body: "Custom compliance manuals tailored to your firm." },
+  { img: s0.url, title: "Registration Services", body: "State and federal registration, filings, and licensing — done right the first time.", offset: 0 },
+  { img: s4.url, title: "Compliance Programs", body: "Customized policies, monthly tasks, annual reports, and continuous oversight.", offset: 96 },
+  { img: s2.url, title: "Mock Audits & Risk Assessments", body: "Find and address issues before regulators do.", offset: 192 },
+  { img: s1.url, title: "Marketing Review", body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and ads.", offset: 48 },
+  { img: s3.url, title: "Examination Support", body: "Hands-on guidance through SEC and state examinations.", offset: 144 },
+  { img: s5.url, title: "Policies & Procedures", body: "Custom compliance manuals tailored to your firm.", offset: 240 },
 ];
 
 const approach = [
