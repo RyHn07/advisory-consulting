@@ -18,12 +18,17 @@ export function SiteFooter() {
           <img src={footerLogo} alt="Advisory Consulting Solutions LLC" className="h-[127px] w-[127px]" />
 
           <div
-            className="mt-16 text-white/70"
+            className="mt-16"
             style={{
-              fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
-              fontSize: "14px",
-              fontWeight: 600,
-              letterSpacing: "3px",
+              color: "rgba(255, 255, 255, 0.60)",
+              fontFamily: '"Aptos Serif", Georgia, serif',
+              fontSize: "18px",
+              fontStyle: "normal",
+              fontWeight: 700,
+              lineHeight: "140%",
+              letterSpacing: "0.72px",
+              textTransform: "uppercase",
+              fontVariantNumeric: "oldstyle-nums proportional-nums",
             }}
           >
             CATALOG
@@ -63,12 +68,16 @@ export function SiteFooter() {
         {/* Right: contact */}
         <div className="md:justify-self-end">
           <div
-            className="text-white/70"
             style={{
-              fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
-              fontSize: "14px",
-              fontWeight: 600,
-              letterSpacing: "3px",
+              color: "rgba(255, 255, 255, 0.60)",
+              fontFamily: '"Aptos Serif", Georgia, serif',
+              fontSize: "18px",
+              fontStyle: "normal",
+              fontWeight: 700,
+              lineHeight: "140%",
+              letterSpacing: "0.72px",
+              textTransform: "uppercase",
+              fontVariantNumeric: "oldstyle-nums proportional-nums",
             }}
           >
             CONTACT US
