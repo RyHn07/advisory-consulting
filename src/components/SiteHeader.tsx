@@ -19,7 +19,7 @@ export function SiteHeader() {
       <Link
         to="/"
         aria-label="Advisory Consulting Solutions home"
-        className="absolute left-[16%] top-0 z-20 hidden h-[184px] w-[184px] md:block"
+        className="absolute left-6 top-0 z-20 hidden h-[140px] w-[140px] md:block lg:left-[8%] lg:h-[160px] lg:w-[160px] xl:left-[16%] xl:h-[184px] xl:w-[184px]"
       >
         <img
           src={logo}
@@ -30,7 +30,7 @@ export function SiteHeader() {
 
       {/* Top contact bar - full width, lighter background */}
       <div className="hidden w-full bg-[#293d55] md:block">
-        <div className="flex h-[43px] items-center justify-end gap-8 pr-[16.2%] font-serif text-[20px] font-normal leading-none text-white">
+        <div className="flex h-[43px] items-center justify-end gap-8 pr-6 font-serif text-[20px] font-normal leading-none text-white lg:pr-[8%] xl:pr-[16.2%]">
           <a href="mailto:info@adv-cs.com" className="inline-flex items-center gap-3 hover:text-white/80">
             <Mail className="h-4 w-4" strokeWidth={1.5} />
             info@adv-cs.com
@@ -44,12 +44,12 @@ export function SiteHeader() {
 
       <div className="relative">
         {/* Main bar */}
-        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pr-[16.15%]">
+        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pl-[180px] md:pr-6 lg:pl-[calc(8%+180px)] lg:pr-[8%] xl:pl-0 xl:pr-[16.15%]">
           <Link to="/" className="flex items-center md:hidden" aria-label="Home">
             <img src={logo} alt="ACS" className="h-12 w-auto" />
           </Link>
 
-          <nav className="hidden items-stretch gap-[52px] md:flex">
+          <nav className="hidden items-stretch gap-6 md:flex lg:gap-10 xl:gap-[52px]">
             {nav.map((n) => (
               <Link
                 key={n.to}
