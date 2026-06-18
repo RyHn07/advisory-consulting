@@ -258,7 +258,7 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-secondary">
+      <section style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2
             className="self-stretch"
@@ -282,7 +282,8 @@ function HomePage() {
           </p>
           <Link
             to="/contact"
-            className="btn-consult mt-10 bg-primary text-primary-foreground transition-colors hover:bg-accent"
+            className="btn-consult mt-10 text-white transition-all hover:brightness-110"
+            style={{ backgroundColor: '#0D182B' }}
           >
             Schedule a Consultation
             <ArrowRight className="h-4 w-4" />
