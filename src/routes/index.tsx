@@ -272,7 +272,9 @@ function HomePage() {
               lineHeight: "48px",
             }}
           >
-            Ready to strengthen your compliance program?
+            Ready to strengthen
+            <br />
+            your compliance program?
           </h2>
           <p className="section-body-dark mx-auto mt-6 max-w-2xl text-center">
             Whether you are launching a new advisory firm or strengthening an existing program,
