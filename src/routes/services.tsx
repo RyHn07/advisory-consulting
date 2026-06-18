@@ -163,7 +163,7 @@ function ServicesPage() {
             <span className="section-eyebrow">
               How We Work
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 section-title">
               Engagements built around <span className="italic">your firm</span>.
             </h2>
           </div>
@@ -194,7 +194,7 @@ function ServicesPage() {
               <span className="section-eyebrow">
                 Industries Served
               </span>
-              <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-4 section-title">
                 Specialized across the <span className="italic">adviser landscape</span>.
               </h2>
             </div>

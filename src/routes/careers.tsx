@@ -85,7 +85,7 @@ function CareersPage() {
             <span className="section-eyebrow">
               What We Look For
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 section-title">
               Senior judgment, <span className="italic">not just years</span>.
             </h2>
           </div>
@@ -113,7 +113,7 @@ function CareersPage() {
               <span className="section-eyebrow">
                 Open Roles
               </span>
-              <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-4 section-title">
                 Where we're <span className="italic">hiring</span>.
               </h2>
             </div>

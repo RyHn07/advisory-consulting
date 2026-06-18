@@ -147,7 +147,7 @@ function ContactPage() {
             <span className="section-eyebrow">
               Frequently Asked
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 section-title">
               What to expect when you <span className="italic">reach out</span>.
             </h2>
           </div>
