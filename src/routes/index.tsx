@@ -110,30 +110,11 @@ function HomePage() {
             <span className="section-eyebrow">
               Who We Are
             </span>
-            <h2
-              className="mt-4 self-stretch font-semibold"
-              style={{
-                color: "#0D182B",
-                fontFamily: '"Playfair Display", Georgia, serif',
-                fontSize: "48px",
-                lineHeight: "60px",
-                letterSpacing: "-2.88px",
-              }}
-            >
+            <h2 className="mt-4 section-title">
               A strategic partner for <span className="italic">emerging and established</span> advisory firms.
             </h2>
           </div>
-          <div
-            className="space-y-6 md:col-span-7"
-            style={{
-              flex: "1 0 0",
-              color: "#575E69",
-              fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
-              fontSize: "22px",
-              fontWeight: 400,
-              lineHeight: "150%",
-            }}
-          >
+          <div className="section-body space-y-6 md:col-span-7">
             <p>
               Advisory Consulting Solutions (ACS) provides customized compliance consulting
               services to registered investment advisers. We support firms with registration

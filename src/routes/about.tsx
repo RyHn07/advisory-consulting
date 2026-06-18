@@ -64,7 +64,7 @@ function AboutPage() {
             <span className="section-eyebrow">
               What Guides Us
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 section-title">
               Built on <span className="italic">judgment</span>, not just checklists.
             </h2>
           </div>
@@ -101,10 +101,10 @@ function AboutPage() {
             <span className="section-eyebrow">
               Leadership
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 section-title">
               Senior compliance experience, <span className="italic">at your side</span>.
             </h2>
-            <p className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="mt-8 section-body">
               Our principal brings years of regulatory, in-house, and consulting experience
               advising registered investment advisers — from first-time registrants to multi-
               billion-dollar firms. The result is judgment-led guidance grounded in how
@@ -151,7 +151,7 @@ function AboutPage() {
             <span className="section-eyebrow">
               Who We Serve
             </span>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 section-title">
               Built for advisers at <span className="italic">every stage</span>.
             </h2>
           </div>
