@@ -44,7 +44,7 @@ export function SiteHeader() {
 
       <div className="relative">
         {/* Main bar */}
-        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pl-[180px] md:pr-6 lg:pl-[calc(8%+180px)] lg:pr-[8%] xl:pl-0 xl:pr-[16.15%]">
+        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pl-[160px] md:pr-6 lg:pl-[calc(8%+180px)] lg:pr-[8%] xl:pl-[calc(16%+200px)] xl:pr-[16.15%]">
           <Link to="/" className="flex items-center md:hidden" aria-label="Home">
             <img src={logo} alt="ACS" className="h-12 w-auto" />
           </Link>
