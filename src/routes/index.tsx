@@ -38,10 +38,10 @@ const services = [
 ];
 
 const approach = [
-  { step: "01", title: "Assess", body: "Evaluate your current compliance framework, operational risks, and regulatory exposure." },
-  { step: "02", title: "Design", body: "Develop customized policies, procedures, and controls aligned with your business model." },
-  { step: "03", title: "Implement", body: "Integrate compliance into daily operations through practical processes and report-based deliverables." },
-  { step: "04", title: "Test & Improve", body: "Conduct mock examinations, reviews, and ongoing testing to maintain regulatory readiness." },
+  { step: "1", title: "Assess", body: "Evaluate your current compliance framework, operational risks, and regulatory exposure." },
+  { step: "2", title: "Design", body: "Develop customized policies, procedures, and controls aligned with your business model." },
+  { step: "3", title: "Implement", body: "Integrate compliance into daily operations through practical processes and report-based deliverables." },
+  { step: "4", title: "Test & Improve", body: "Conduct mock examinations, reviews, and ongoing testing to maintain regulatory readiness." },
 ];
 
 function HomePage() {
@@ -158,7 +158,12 @@ function HomePage() {
           <div className="grid gap-px border border-primary-foreground/10 bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
             {approach.map((a) => (
               <div key={a.step} className="bg-primary p-8">
-                <div className="font-sans text-xs font-semibold text-accent">{a.step}</div>
+                <div
+                  className="self-stretch font-sans text-[16px] font-bold uppercase text-[#DA9E3F]"
+                  style={{ fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif', letterSpacing: '3.2px', lineHeight: 'normal' }}
+                >
+                  {a.step}
+                </div>
                 <h3 className="mt-6 font-serif text-2xl text-primary-foreground">{a.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-primary-foreground/70">{a.body}</p>
               </div>
