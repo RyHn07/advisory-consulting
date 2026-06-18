@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroOffice from "@/assets/header-city-hero.jpg";
-import whoWeAreImg from "@/assets/who-we-are.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,14 +113,6 @@ function HomePage() {
             <h2 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
               A strategic partner for <span className="italic">emerging and established</span> advisory firms.
             </h2>
-            <img
-              src={whoWeAreImg}
-              alt="Advisory Consulting Solutions office"
-              className="mt-10 aspect-[4/5] w-full rounded-sm object-cover"
-              width={1024}
-              height={1280}
-              loading="lazy"
-            />
           </div>
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">
             <p>
