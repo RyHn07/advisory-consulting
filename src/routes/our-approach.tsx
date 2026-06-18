@@ -162,7 +162,7 @@ function ApproachPage() {
                 <h3 className="font-serif text-3xl font-semibold text-white transition-colors duration-300 group-hover:text-[#0D182B] md:text-4xl">
                   {p.t}
                 </h3>
-                <p className="mt-5 max-w-md text-base leading-relaxed text-white/80 transition-colors duration-300 group-hover:text-[#0D182B]">
+                <p className="section-body-light mt-5 max-w-md transition-colors duration-300 group-hover:text-[#0D182B]">
                   {p.b}
                 </p>
               </div>
