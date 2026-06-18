@@ -1,13 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText, ShieldCheck, Search, BarChart3, LifeBuoy, GraduationCap } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import servicesHero from "@/assets/hero-office.jpg";
-import s0 from "@/assets/services/service-0.png.asset.json";
-import s1 from "@/assets/services/service-1.png.asset.json";
-import s2 from "@/assets/services/service-2.png.asset.json";
-import s3 from "@/assets/services/service-3.png.asset.json";
-import s4 from "@/assets/services/service-4.png.asset.json";
-import s5 from "@/assets/services/service-5.png.asset.json";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -30,40 +24,34 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
-    img: s0.url,
+    icon: FileText,
     title: "Registration Services",
-    body: "State and federal registration, filings, and licensing — done right the first time.",
-    offset: 0,
+    body: "State and federal registration, filings, and licensing handled end-to-end so your firm launches cleanly and stays in good standing from day one.",
   },
   {
-    img: s4.url,
+    icon: ShieldCheck,
     title: "Compliance Programs",
-    body: "Customized policies, monthly tasks, annual reports, and continuous oversight.",
-    offset: 96,
+    body: "We partner with advisers to develop and maintain compliance programs that evolve alongside regulatory requirements. Through ongoing oversight, regulatory monitoring, compliance testing, and annual reviews, we help ensure your program remains effective, defensible, and examination-ready.",
   },
   {
-    img: s2.url,
+    icon: Search,
     title: "Mock Audits & Risk Assessments",
-    body: "Find and address issues before regulators do.",
-    offset: 192,
+    body: "Independent mock examinations and risk assessments that surface issues before regulators do — with a clear remediation roadmap your team can act on.",
   },
   {
-    img: s1.url,
+    icon: BarChart3,
     title: "Marketing Review",
-    body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and advertisements.",
-    offset: 48,
+    body: "SEC Marketing Rule reviews of websites, decks, social posts, testimonials, and advertisements so every claim you make is substantiated and defensible.",
   },
   {
-    img: s3.url,
+    icon: LifeBuoy,
     title: "Examination Support",
-    body: "Hands-on guidance through SEC and state examinations.",
-    offset: 144,
+    body: "Hands-on guidance through SEC and state examinations — document preparation, response drafting, and on-call senior support from kickoff to close.",
   },
   {
-    img: s5.url,
-    title: "Policies & Procedures",
-    body: "Tailored training to build a culture of compliance at every level.",
-    offset: 240,
+    icon: GraduationCap,
+    title: "Compliance Training",
+    body: "Tailored training programs that build a culture of compliance at every level — from the front office to the C-suite.",
   },
 ];
 
