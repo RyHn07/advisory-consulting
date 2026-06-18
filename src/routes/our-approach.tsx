@@ -209,14 +209,15 @@ function ApproachPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-primary text-primary-foreground">
+      <section style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <p className="font-serif text-3xl italic leading-snug md:text-4xl">
+          <p className="font-serif text-3xl italic leading-snug md:text-4xl" style={{ color: '#0D182B' }}>
             “Our focus is simple — identify and address issues before they become deficiencies.”
           </p>
           <Link
             to="/contact"
-            className="btn-consult mt-10 bg-accent text-accent-foreground transition-all hover:brightness-110"
+            className="btn-consult mt-10 text-white transition-all hover:brightness-110"
+            style={{ backgroundColor: '#0D182B' }}
           >
             Schedule a Consultation
             <ArrowRight className="h-4 w-4" />
