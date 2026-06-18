@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroOffice from "@/assets/header-city-hero.jpg";
-import whoWeAreImg from "@/assets/who-we-are.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
