@@ -95,7 +95,7 @@ function HomePage() {
               </Link>
               <Link
                 to="/services"
-                className="inline-flex min-w-[188px] items-center justify-center rounded-none border border-white px-6 py-[17px] font-serif text-[24px] font-normal text-white transition-colors hover:bg-primary-foreground/10"
+                className="inline-flex h-[64px] items-center justify-center gap-[10px] rounded-none border border-white px-6 py-4 font-serif text-[24px] font-normal text-white transition-colors hover:bg-primary-foreground/10"
               >
                 View Services
               </Link>
