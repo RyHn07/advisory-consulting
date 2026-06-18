@@ -164,7 +164,7 @@ function ServicesPage() {
               How We Work
             </span>
             <h2 className="mt-4 section-title">
-              Engagements built around <span className="italic">your firm</span>.
+              Engagements built around your firm.
             </h2>
           </div>
           <div className="grid gap-x-12 gap-y-14 md:grid-cols-3">
@@ -195,7 +195,7 @@ function ServicesPage() {
                 Industries Served
               </span>
               <h2 className="mt-4 section-title">
-                Specialized across the <span className="italic">adviser landscape</span>.
+                Specialized across the adviser landscape.
               </h2>
             </div>
           </div>
@@ -225,7 +225,7 @@ function ServicesPage() {
 
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="font-serif text-4xl leading-tight md:text-5xl">
+          <h2 className="section-title-light">
             Not sure which services fit?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/75">
