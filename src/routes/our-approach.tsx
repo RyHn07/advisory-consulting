@@ -25,22 +25,22 @@ export const Route = createFileRoute("/our-approach")({
 
 const steps = [
   {
-    step: "01",
+    step: "1",
     title: "Assess",
     body: "We start by evaluating your current compliance framework, operational risks, and regulatory exposure — understanding how your firm actually runs, not just what your manual says.",
   },
   {
-    step: "02",
+    step: "2",
     title: "Design",
     body: "We develop customized policies, procedures, and controls aligned with your business model, operational structure, and regulatory obligations.",
   },
   {
-    step: "03",
+    step: "3",
     title: "Implement",
     body: "We integrate compliance into daily operations through practical processes, oversight, and report-based deliverables your team can actually use.",
   },
   {
-    step: "04",
+    step: "4",
     title: "Test & Improve",
     body: "We conduct mock examinations, periodic reviews, and ongoing testing to maintain regulatory readiness as your firm — and the rules — evolve.",
   },
@@ -106,8 +106,17 @@ function ApproachPage() {
                   aria-hidden
                   className="absolute left-0 top-[3.25rem] hidden h-3.5 w-3.5 -translate-x-[5px] rounded-full border-2 border-accent bg-background md:block transition-transform group-hover:scale-125"
                 />
-                <div className="flex items-start gap-4 md:pl-10">
-                  <span className="font-serif text-[5rem] leading-none text-accent/30 transition-colors group-hover:text-accent md:text-[7rem]">
+                <div className="md:pl-10">
+                  <span
+                    className="flex h-[116px] w-[150px] flex-shrink-0 flex-col justify-center text-center transition-colors"
+                    style={{
+                      color: 'rgba(218, 158, 63, 0.50)',
+                      fontFamily: 'Outfit, sans-serif',
+                      fontSize: '146px',
+                      fontWeight: 600,
+                      lineHeight: '76px',
+                    }}
+                  >
                     {s.step}
                   </span>
                 </div>
