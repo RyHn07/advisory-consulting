@@ -282,7 +282,7 @@ function HomePage() {
           </p>
           <Link
             to="/contact"
-            className="mt-10 inline-flex items-center gap-2 rounded-sm bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent"
+            className="btn-consult mt-10 bg-primary text-primary-foreground transition-colors hover:bg-accent"
           >
             Schedule a Consultation
             <ArrowRight className="h-4 w-4" />
