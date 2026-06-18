@@ -35,9 +35,9 @@ const services = [
   { img: s0.url, title: "Registration Services", body: "State and federal registration, filings, and licensing — done right the first time.", offset: 0 },
   { img: s4.url, title: "Compliance Programs", body: "Customized policies, monthly tasks, annual reports, and continuous oversight.", offset: 96 },
   { img: s2.url, title: "Mock Audits & Risk Assessments", body: "Find and address issues before regulators do.", offset: 192 },
-  { img: s1.url, title: "Marketing Review", body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and ads.", offset: 48 },
+  { img: s1.url, title: "Marketing Review", body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and advertisements.", offset: 48 },
   { img: s3.url, title: "Examination Support", body: "Hands-on guidance through SEC and state examinations.", offset: 144 },
-  { img: s5.url, title: "Policies & Procedures", body: "Custom compliance manuals tailored to your firm.", offset: 240 },
+  { img: s5.url, title: "Policies & Procedures", body: "Tailored training to build a culture of compliance at every level.", offset: 240 },
 ];
 
 const approach = [
