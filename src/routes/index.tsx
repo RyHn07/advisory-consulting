@@ -94,7 +94,8 @@ function HomePage() {
               </Link>
               <Link
                 to="/services"
-                className="inline-flex h-[64px] items-center justify-center gap-[10px] rounded-none border border-white px-6 py-4 font-serif text-[24px] font-normal text-white transition-colors hover:bg-primary-foreground/10"
+                className="inline-flex h-[64px] items-center justify-center gap-[10px] rounded-none border border-white px-6 py-4 text-[22px] font-normal leading-[150%] text-white transition-colors hover:bg-primary-foreground/10"
+                style={{ fontFamily: '"Aptos Serif", ui-serif, Georgia, serif' }}
               >
                 View Services
               </Link>
