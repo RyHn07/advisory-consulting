@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import footerLogo from "@/assets/footer-logo.svg";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -14,20 +15,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-2">
         {/* Left: logo + catalog nav */}
         <div>
-          <div
-            className="flex h-[140px] w-[140px] flex-col items-center justify-center border border-white/40 text-center"
-            style={{
-              fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
-              letterSpacing: "2px",
-              fontSize: "11px",
-              fontWeight: 600,
-              lineHeight: "16px",
-            }}
-          >
-            <span>ADVISORY</span>
-            <span>CONSULTING</span>
-            <span>SOLUTIONS LLC</span>
-          </div>
+          <img src={footerLogo} alt="Advisory Consulting Solutions LLC" className="h-[127px] w-[127px]" />
 
           <div
             className="mt-16 text-white/70"
