@@ -100,7 +100,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div style={{ background: "#172C47" }}>
+      <div style={{ background: "#0D182B" }}>
         <div
           className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 md:flex-row md:items-center"
           style={{
