@@ -88,7 +88,8 @@ function HomePage() {
             <div className="mt-9 flex flex-wrap gap-6">
               <Link
                 to="/contact"
-                className="inline-flex min-w-[291px] items-center justify-center rounded-none bg-accent px-6 py-[17px] font-serif text-[24px] font-normal text-accent-foreground transition-all hover:brightness-110"
+                className="inline-flex h-[64px] items-center justify-center gap-[10px] rounded-none px-6 py-4 font-serif text-[24px] font-normal text-accent-foreground transition-all hover:brightness-110"
+                style={{ background: "#DA9E3F" }}
               >
                 Schedule a Consultation
               </Link>
