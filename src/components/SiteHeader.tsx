@@ -24,7 +24,7 @@ export function SiteHeader() {
       <Link
         to="/"
         aria-label="Advisory Consulting Solutions home"
-        className="absolute left-[calc(1.5rem+5px)] top-0 z-20 hidden h-[140px] w-[140px] md:block lg:left-[calc(6%+5px)] lg:h-[160px] lg:w-[160px] 2xl:left-[calc(16%+5px)] 2xl:h-[184px] 2xl:w-[184px]"
+        className="absolute left-[calc(1.5rem+5px)] top-0 z-30 hidden h-[140px] w-[140px] md:block lg:left-[calc(6%+5px)] lg:h-[160px] lg:w-[160px] 2xl:left-[calc(16%+5px)] 2xl:h-[184px] 2xl:w-[184px]"
       >
         <img
           src={logo}
@@ -34,7 +34,7 @@ export function SiteHeader() {
       </Link>
 
       {/* Top contact bar - full width, lighter background */}
-      <div className="hidden w-full bg-[#293d55] md:block">
+      <div className="relative z-20 hidden w-full bg-[#293d55] md:block">
         <div className="flex h-[43px] items-center justify-end gap-8 pr-6 font-serif text-[20px] font-normal leading-none text-white lg:pr-[6%] 2xl:pr-[16.2%]">
           <a href="mailto:info@adv-cs.com" className="inline-flex items-center gap-3 hover:text-white/80">
             <Mail className="h-4 w-4" strokeWidth={1.5} />
