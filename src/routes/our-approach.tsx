@@ -70,7 +70,7 @@ function ApproachPage() {
               <br />
               <span className="text-accent">regulator-focused.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+            <p className="mt-8 max-w-2xl section-body-light">
               We build compliance programs designed to function in practice, not just on
               paper — programs that are operationally sound, examination-ready, and aligned
               with how your firm actually runs.

@@ -49,7 +49,7 @@ function ContactPage() {
               <br />
               <span className="text-accent">consultation.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+            <p className="mt-8 max-w-2xl section-body-light">
               Whether you are launching a new advisory firm or strengthening an existing
               compliance program, ACS can help you navigate your regulatory obligations with
               confidence.
