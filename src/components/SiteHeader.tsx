@@ -14,29 +14,29 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 bg-primary text-primary-foreground">
+    <header className="absolute left-0 top-0 z-50 w-full bg-transparent text-primary-foreground">
       {/* Logo - overlaps top bar and main bar */}
       <Link
         to="/"
         aria-label="Advisory Consulting Solutions home"
-        className="absolute left-10 top-0 z-20 hidden border border-white/40 p-5 md:block"
+        className="absolute left-[16%] top-0 z-20 hidden h-[184px] w-[184px] md:block"
       >
         <img
           src={logo}
           alt="Advisory Consulting Solutions LLC"
-          className="h-[130px] w-auto"
+          className="h-full w-full object-contain"
         />
       </Link>
 
       {/* Top contact bar - full width, lighter background */}
-      <div className="hidden w-full bg-primary-foreground/[0.08] md:block">
-        <div className="flex h-12 items-center justify-end gap-10 px-10 font-serif text-[20px] font-normal text-white">
+      <div className="hidden w-full bg-[#293d55] md:block">
+        <div className="flex h-[43px] items-center justify-end gap-8 pr-[16.2%] font-serif text-[20px] font-normal leading-none text-white">
           <a href="mailto:info@adv-cs.com" className="inline-flex items-center gap-3 hover:text-white/80">
-            <Mail className="h-5 w-5" strokeWidth={1.5} />
+            <Mail className="h-4 w-4" strokeWidth={1.5} />
             info@adv-cs.com
           </a>
           <a href="tel:+16466183447" className="inline-flex items-center gap-3 hover:text-white/80">
-            <Phone className="h-5 w-5" strokeWidth={1.5} />
+            <Phone className="h-4 w-4" strokeWidth={1.5} />
             (646) 618-3447
           </a>
         </div>
@@ -44,12 +44,12 @@ export function SiteHeader() {
 
       <div className="relative">
         {/* Main bar */}
-        <div className="flex h-24 items-stretch justify-between px-6 md:justify-end md:pr-10">
+        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pr-[16.15%]">
           <Link to="/" className="flex items-center md:hidden" aria-label="Home">
             <img src={logo} alt="ACS" className="h-12 w-auto" />
           </Link>
 
-          <nav className="hidden items-stretch gap-10 md:flex">
+          <nav className="hidden items-stretch gap-[52px] md:flex">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -63,7 +63,7 @@ export function SiteHeader() {
             ))}
             <Link
               to="/contact"
-              className="my-4 inline-flex items-center border border-white/70 px-8 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              className="my-7 inline-flex items-center border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
               Contact
             </Link>

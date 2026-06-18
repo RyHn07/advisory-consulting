@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ClipboardCheck, FileText, Shield, BarChart3, Megaphone, GraduationCap, UserCog, ClipboardList, SlidersHorizontal } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
-import heroOffice from "@/assets/hero-office.jpg";
+import heroOffice from "@/assets/header-city-hero.jpg";
 import whoWeAreImg from "@/assets/who-we-are.jpg";
 
 export const Route = createFileRoute("/")({
@@ -49,42 +49,41 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate min-h-[860px] overflow-hidden pt-[130px]">
         <div className="absolute inset-0 -z-10">
           <img
             src={heroOffice}
             alt=""
-            className="h-full w-full object-cover animate-kenburns"
-            width={1280}
-            height={1600}
+            className="h-full w-full object-cover"
+            width={1920}
+            height={838}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/70 to-primary/90" />
+          <div className="absolute inset-0 bg-primary/55" />
         </div>
-        <div className="mx-auto max-w-7xl px-6 py-28 md:py-40">
-          <div className="max-w-3xl animate-fade-up">
-            <span className="font-['Open_Sans'] text-xs font-semibold uppercase tracking-[0.25em] text-accent">
+        <div className="mx-auto flex min-h-[730px] max-w-[1320px] items-center px-6 py-24 text-center md:justify-center">
+          <div className="max-w-[1180px] animate-fade-up">
+            <span className="font-serif text-[24px] font-semibold uppercase tracking-[0.34em] text-accent">
               Regulatory Compliance
             </span>
-            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]">
+            <h1 className="mt-8 font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[90px] md:leading-[76px]">
               Practical compliance.
               <br />
-              <span className="text-accent">Built to be defensible.</span>
+              <span className="italic text-accent">Built to be defensible.</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-primary-foreground/80 md:text-xl">
+            <p className="mx-auto mt-8 max-w-[1030px] font-serif text-xl leading-[1.55] text-white md:text-[24px]">
               Customized compliance consulting for registered investment advisers — from
               registration through ongoing oversight, mock audits, and exam readiness.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap justify-center gap-6">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-sm bg-accent px-7 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:brightness-110"
+                className="inline-flex min-w-[291px] items-center justify-center rounded-none bg-accent px-6 py-[17px] font-serif text-[24px] font-normal text-accent-foreground transition-all hover:brightness-110"
               >
                 Schedule a Consultation
-                <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 rounded-sm border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                className="inline-flex min-w-[188px] items-center justify-center rounded-none border border-white px-6 py-[17px] font-serif text-[24px] font-normal text-white transition-colors hover:bg-primary-foreground/10"
               >
                 View Services
               </Link>
