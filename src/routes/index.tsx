@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Typewriter } from "@/components/Typewriter";
 import heroOffice from "@/assets/header-city-hero.jpg";
 import s0 from "@/assets/services/service-0.png.asset.json";
 import s1 from "@/assets/services/service-1.png.asset.json";
@@ -71,13 +72,22 @@ function HomePage() {
               Regulatory Compliance
             </span>
             <h1 className="mt-8 self-stretch font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[90px] md:font-semibold md:leading-[100px] md:tracking-[-3.6px]">
-              Practical compliance.
+              <Typewriter
+                text="Practical compliance."
+                speed={55}
+                startDelay={250}
+                caret={false}
+              />
               <br />
               <span
                 className="italic md:tracking-[-1.8px]"
                 style={{ color: "#DA9E3F" }}
               >
-                Built to be defensible.
+                <Typewriter
+                  text="Built to be defensible."
+                  speed={55}
+                  startDelay={250 + 22 * 55 + 250}
+                />
               </span>
             </h1>
             <p
