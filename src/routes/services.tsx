@@ -277,7 +277,7 @@ function ServicesPage() {
           >
             Not sure which services fit?
           </h2>
-          <p className="section-body mx-auto mt-6 max-w-2xl">
+          <p className="section-body mx-auto mt-6 max-w-4xl">
             We'll walk you through your firm's regulatory obligations and recommend
             <br />
             the right mix of services for your stage and structure.
