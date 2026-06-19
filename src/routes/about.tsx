@@ -58,7 +58,7 @@ function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section style={{ backgroundColor: '#F4EFE3' }}>
+      <section style={{ backgroundColor: '#FAF6F1' }}>
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="mb-20">
             <span className="section-eyebrow">What Guides Us</span>
@@ -111,7 +111,17 @@ function AboutPage() {
 
       <section style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="section-title-dark" style={{ color: '#0D182B' }}>
+          <h2
+            style={{
+              color: '#0D182B',
+              textAlign: 'center',
+              fontFamily: '"Playfair Display", Georgia, serif',
+              fontSize: '34px',
+              fontStyle: 'italic',
+              fontWeight: 500,
+              lineHeight: '48px',
+            }}
+          >
             Let's talk about your compliance program.
           </h2>
           <Link
