@@ -73,7 +73,7 @@ const services = [
 function ServicesPage() {
   return (
     <SiteLayout>
-      <section className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
+      <section data-reveal="fade" className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={servicesHero}
@@ -104,7 +104,7 @@ function ServicesPage() {
       </section>
 
       {/* SERVICES — numbered hover-reveal rows */}
-      <section style={{ backgroundColor: '#F1EAE3' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-[1320px] px-6 pb-32 pt-20 md:pt-28">
           {/* Header row */}
           <div className="mb-16 flex flex-col items-start justify-between gap-8 md:mb-20 md:flex-row md:items-end">
@@ -166,7 +166,7 @@ function ServicesPage() {
       </section>
 
       {/* HOW WE WORK */}
-      <section className="text-white" style={{ background: '#172C47', borderBottom: '1px solid #DEDBD9' }}>
+      <section data-reveal="fade" className="text-white" style={{ background: '#172C47', borderBottom: '1px solid #DEDBD9' }}>
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="mb-20">
             <span className="section-eyebrow">How We Work</span>
@@ -217,7 +217,7 @@ function ServicesPage() {
       </section>
 
       {/* INDUSTRIES */}
-      <section style={{ backgroundColor: '#F4EFE3' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#F4EFE3' }}>
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
             <span className="section-eyebrow">
@@ -255,7 +255,7 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#F1EAE3' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2
             style={{

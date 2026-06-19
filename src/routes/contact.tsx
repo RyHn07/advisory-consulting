@@ -28,7 +28,7 @@ function ContactPage() {
 
   return (
     <SiteLayout>
-      <section className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden border-b border-border">
+      <section data-reveal="fade" className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10">
           <img
             src={contactImg}
@@ -59,7 +59,7 @@ function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40">
+      <section data-reveal="fade" className="bg-secondary/40">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12">
           <div className="space-y-8 md:col-span-4">
             <ContactItem
@@ -182,7 +182,7 @@ function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-border bg-background">
+      <section data-reveal="fade" className="border-t border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
             <span className="section-eyebrow">
