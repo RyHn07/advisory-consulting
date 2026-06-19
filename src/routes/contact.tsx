@@ -270,7 +270,17 @@ function ContactItem({
   return (
     <div className="border-l-2 border-accent pl-5">
       <Icon className="mb-3 h-5 w-5 text-accent" strokeWidth={1.5} />
-      <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+      <div
+        className="uppercase"
+        style={{
+          color: "#575E69",
+          fontFamily: '"Aptos Serif"',
+          fontSize: "16px",
+          fontWeight: 700,
+          lineHeight: "150%",
+          letterSpacing: "1.6px",
+        }}
+      >
         {label}
       </div>
       <div className="mt-1 font-serif text-lg text-foreground">{value}</div>
