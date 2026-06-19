@@ -66,12 +66,12 @@ function HomePage() {
         <div className="mx-auto flex min-h-[730px] max-w-[1320px] items-center px-6 py-24 text-left">
           <div className="max-w-[1180px] animate-fade-up">
             <span
-              className="text-[22px] font-bold uppercase leading-[150%] tracking-[4.4px] text-accent"
+              className="text-[16px] md:text-[22px] font-bold uppercase leading-[150%] tracking-[3px] md:tracking-[4.4px] text-accent"
               style={{ fontFamily: '"Aptos Serif", ui-serif, Georgia, serif', color: "#DA9E3F" }}
             >
               Regulatory Compliance
             </span>
-            <h1 className="mt-8 self-stretch font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[72px] md:leading-[82px] md:tracking-[-2.88px] lg:text-[90px] lg:leading-[100px] lg:tracking-[-3.6px]">
+            <h1 className="mt-6 self-stretch font-serif text-[34px] leading-[40px] font-semibold text-white md:mt-8 md:text-[72px] md:leading-[82px] md:tracking-[-2.88px] lg:text-[90px] lg:leading-[100px] lg:tracking-[-3.6px]">
               <Typewriter
                 text="Practical compliance."
                 speed={55}
@@ -95,7 +95,7 @@ function HomePage() {
               </span>
             </h1>
             <p
-              className="mt-8 w-full max-w-[818px] text-[22px] font-normal leading-[150%] text-white"
+              className="mt-6 w-full max-w-[818px] text-[16px] md:mt-8 md:text-[22px] font-normal leading-[150%] text-white"
               style={{ fontFamily: '"Aptos Serif", ui-serif, Georgia, serif' }}
             >
               Customized compliance consulting for registered investment advisers — from
@@ -111,7 +111,7 @@ function HomePage() {
               </Link>
               <Link
                 to="/services"
-                className="inline-flex h-[64px] items-center justify-center gap-[10px] rounded-none border border-white px-6 py-4 text-[22px] font-normal leading-[150%] text-white transition-colors hover:bg-primary-foreground/10"
+                className="inline-flex h-[54px] md:h-[64px] items-center justify-center gap-[10px] rounded-none border border-white px-6 py-4 text-[16px] md:text-[22px] font-normal leading-[150%] text-white transition-colors hover:bg-primary-foreground/10"
                 style={{ fontFamily: '"Aptos Serif", ui-serif, Georgia, serif' }}
               >
                 View Services
