@@ -93,7 +93,7 @@ function ServicesPage() {
                 style={{ fontFamily: 'Playfair Display, Playfair, serif' }}>
               <span style={{ color: '#FFF' }}>Full-lifecycle support</span>
               <br />
-              <span style={{ color: '#DA9E3F' }}>for investment advisers.</span>
+              <span style={{ color: '#DA9E3F', whiteSpace: 'nowrap' }}>for investment advisers.</span>
             </h1>
             <p className="mt-8 max-w-2xl section-body-light">
               From initial registration to ongoing oversight and examination defense, we
