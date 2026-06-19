@@ -336,3 +336,8 @@ button:not(.btn-no-anim):not(:disabled):active {
   color: #DA9E3F !important;
   animation: step-shake 0.6s ease-in-out;
 }
+
+.hww-card { transition: transform 0.4s ease; }
+.hww-card:hover { transform: translateY(-8px); }
+.hww-card:hover .hww-num { transform: scale(1.08); filter: drop-shadow(0 8px 20px rgba(218,158,63,0.45)); }
+.hww-card:hover .hww-rule { width: 80px; }
