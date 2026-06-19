@@ -91,28 +91,46 @@ function CareersPage() {
       </section>
 
       {/* WHAT WE LOOK FOR */}
-      <section className="border-b border-border bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-16 max-w-2xl">
-            <span className="section-eyebrow">
-              What We Look For
-            </span>
-            <h2 className="mt-4 section-title">
-              Senior judgment, not just years.
+      <section style={{ backgroundColor: '#FAF6F1' }}>
+        <div className="mx-auto max-w-7xl px-6 py-24 md:py-28">
+          <div className="mb-16 max-w-3xl">
+            <span className="section-eyebrow">What We Look For</span>
+            <h2 className="mt-6 font-serif text-4xl font-semibold leading-tight md:text-5xl" style={{ color: '#0D182B' }}>
+              Experience That Matters
             </h2>
           </div>
-          <div className="grid gap-px border border-border bg-border md:grid-cols-2">
-            {[
-              { t: "Investment Adviser Depth", b: "Hands-on experience with the Advisers Act, Form ADV, and SEC / state examination practice." },
-              { t: "Client-Ready Communication", b: "You can sit across from a CCO or CEO and translate regulatory complexity into clear guidance." },
-              { t: "Owner's Mindset", b: "You take responsibility for outcomes — not just deliverables." },
-              { t: "Collaborative Default", b: "You'd rather sharpen a colleague's analysis than guard your own corner." },
-            ].map((q) => (
-              <div key={q.t} className="bg-background p-10">
-                <h3 className="font-serif text-2xl text-foreground">{q.t}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{q.b}</p>
-              </div>
-            ))}
+          <div className="grid border" style={{ borderColor: '#E5DCC9' }}>
+            <div className="grid md:grid-cols-2">
+              {[
+                { t: "Investment Adviser Depth", b: "Deep experience advising registered investment advisers on regulatory obligations, compliance programs, and SEC examinations. You bring sound judgment to complex compliance challenges." },
+                { t: "Client-Ready Communication", b: "You can sit across from a CCO or CEO and translate regulatory complexity into clear guidance." },
+                { t: "Owner's Mindset", b: "You take responsibility for outcomes — not just deliverables." },
+                { t: "Collaborative Default", b: "You believe the best client outcomes come from shared expertise, constructive challenge, and a commitment to collective success." },
+              ].map((q, idx) => (
+                <div
+                  key={q.t}
+                  className="px-12 py-14"
+                  style={{
+                    borderRight: idx % 2 === 0 ? '1px solid #E5DCC9' : 'none',
+                    borderBottom: idx < 2 ? '1px solid #E5DCC9' : 'none',
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: '#0D182B',
+                      fontFamily: '"Playfair Display", Georgia, serif',
+                      fontSize: '28px',
+                      fontWeight: 600,
+                      lineHeight: '34px',
+                      letterSpacing: '-0.5px',
+                    }}
+                  >
+                    {q.t}
+                  </h3>
+                  <p className="mt-5 section-body">{q.b}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
