@@ -252,24 +252,20 @@ function HomePage() {
                   />
                 </div>
                 <h3
-                  className="mt-8"
+                  className="mt-6 text-[22px] leading-[28px] tracking-[-0.6px] md:mt-8 md:text-[32px] md:leading-[38px] md:tracking-[-1.2px]"
                   style={{
                     color: "#DA9E3F",
                     fontFamily: '"Playfair Display", Georgia, serif',
-                    fontSize: "32px",
                     fontWeight: 600,
-                    lineHeight: "38px",
-                    letterSpacing: "-1.2px",
                   }}
                 >
                   {s.title}
                 </h3>
                 <p
-                  className="mt-5 max-w-[26rem]"
+                  className="mt-3 max-w-[26rem] text-[16px] md:mt-5 md:text-[22px]"
                   style={{
                     color: "#575E69",
                     fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
-                    fontSize: "22px",
                     lineHeight: "150%",
                   }}
                 >
