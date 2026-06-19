@@ -182,8 +182,9 @@ function ServicesPage() {
               { k: "2", t: "Scoped Engagement", b: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work." },
               { k: "3", t: "Ongoing Partnership", b: "Many engagements roll into retained relationships — quarterly testing, annual reviews, exam standby." },
             ].map((s) => (
-              <div key={s.k}>
+              <div key={s.k} className="hww-card group cursor-default">
                 <div
+                  className="hww-num transition-all duration-500"
                   style={{
                     color: '#DA9E3F',
                     fontFamily: 'Outfit, sans-serif',
@@ -196,9 +197,9 @@ function ServicesPage() {
                 >
                   {s.k}
                 </div>
-                <div className="mt-6 h-px w-12 bg-[#DA9E3F]" />
+                <div className="hww-rule mt-6 h-px w-12 bg-[#DA9E3F] transition-all duration-500" />
                 <h3
-                  className="mt-8 text-white"
+                  className="mt-8 text-white transition-colors duration-300 group-hover:text-[#DA9E3F]"
                   style={{
                     fontFamily: '"Playfair Display", Georgia, serif',
                     fontSize: '28px',
