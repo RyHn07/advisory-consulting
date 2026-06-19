@@ -264,10 +264,20 @@ function ServicesPage() {
 
       <section style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-          <h2 className="section-title-dark" style={{ color: '#0D182B' }}>
+          <h2
+            style={{
+              color: '#0D182B',
+              textAlign: 'center',
+              fontFamily: '"Playfair Display", Georgia, serif',
+              fontSize: '34px',
+              fontStyle: 'italic',
+              fontWeight: 500,
+              lineHeight: '48px',
+            }}
+          >
             Not sure which services fit?
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed" style={{ color: '#0D182B', opacity: 0.8 }}>
+          <p className="section-body mx-auto mt-6 max-w-2xl">
             We'll walk you through your firm's regulatory obligations and recommend the right
             mix of services for your stage and structure.
           </p>
