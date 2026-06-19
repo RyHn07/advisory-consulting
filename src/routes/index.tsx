@@ -71,7 +71,7 @@ function HomePage() {
             >
               Regulatory Compliance
             </span>
-            <h1 className="mt-8 self-stretch font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[90px] md:font-semibold md:leading-[100px] md:tracking-[-3.6px]">
+            <h1 className="mt-8 self-stretch font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[72px] md:leading-[82px] md:tracking-[-2.88px] lg:text-[90px] lg:leading-[100px] lg:tracking-[-3.6px]">
               <Typewriter
                 text="Practical compliance."
                 speed={55}
