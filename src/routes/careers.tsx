@@ -62,7 +62,7 @@ function CareersPage() {
       </section>
 
       {/* WHY ACS */}
-      <section style={{ backgroundColor: '#FAF6F1' }}>
+      <section style={{ backgroundColor: '#F6F2EC' }}>
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-28">
           <div className="grid gap-12 md:grid-cols-3 md:gap-16">
             {[
