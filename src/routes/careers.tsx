@@ -268,11 +268,25 @@ function CareersPage() {
                 </div>
                 <button
                   type="submit"
-                  className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent"
+                  className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-primary-foreground transition-colors hover:bg-accent"
+                  style={{
+                    fontFamily: '"Aptos Serif"',
+                    fontSize: "16px",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                  }}
                 >
                   Submit Confidentially
                 </button>
-                <p className="text-xs text-muted-foreground">
+                <p
+                  style={{
+                    color: "#172C47",
+                    fontFamily: '"Aptos Serif"',
+                    fontSize: "16px",
+                    fontWeight: 400,
+                    lineHeight: "normal",
+                  }}
+                >
                   Information submitted here is treated as confidential and shared only with the
                   ACS hiring team.
                 </p>
