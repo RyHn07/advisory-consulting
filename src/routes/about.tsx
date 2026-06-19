@@ -26,7 +26,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
+      <section data-reveal="fade" className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={aboutImg}
@@ -60,7 +60,7 @@ function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section style={{ backgroundColor: '#FAF6F1' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#FAF6F1' }}>
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="mb-20">
             <span className="section-eyebrow">What Guides Us</span>
@@ -111,7 +111,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#F1EAE3' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2
             style={{

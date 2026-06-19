@@ -50,7 +50,7 @@ function SchedulePage() {
 
   return (
     <SiteLayout>
-      <section className="bg-background pt-40 pb-16 md:pt-48">
+      <section data-reveal="fade" className="bg-background pt-40 pb-16 md:pt-48">
         <div className="mx-auto max-w-6xl px-6 text-center">
           <span className="section-eyebrow">Booking</span>
           <h1
@@ -66,7 +66,7 @@ function SchedulePage() {
         </div>
       </section>
 
-      <section className="bg-background pb-24">
+      <section data-reveal="fade" className="bg-background pb-24">
         <div className="mx-auto max-w-6xl px-6">
           <div
             className="calendly-inline-widget rounded-lg overflow-hidden border border-border"

@@ -29,7 +29,7 @@ function CareersPage() {
 
   return (
     <SiteLayout>
-      <section className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
+      <section data-reveal="fade" className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={careersImg}
@@ -62,7 +62,7 @@ function CareersPage() {
       </section>
 
       {/* WHY ACS */}
-      <section style={{ backgroundColor: '#F6F2EC' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#F6F2EC' }}>
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-28">
           <div className="grid gap-12 md:grid-cols-3 md:gap-16">
             {[
@@ -91,7 +91,7 @@ function CareersPage() {
       </section>
 
       {/* WHAT WE LOOK FOR */}
-      <section style={{ backgroundColor: '#FAF6F1' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#FAF6F1' }}>
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-28">
           <div className="mb-16 max-w-3xl">
             <span className="section-eyebrow">What We Look For</span>
@@ -145,7 +145,7 @@ function CareersPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/40">
+      <section data-reveal="fade" className="bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 py-24">
           <div className="rounded-sm border border-border bg-background p-8 md:p-12">
             <div

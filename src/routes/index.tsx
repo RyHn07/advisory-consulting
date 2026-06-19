@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Typewriter } from "@/components/Typewriter";
 import heroOffice from "@/assets/header-city-hero.jpg";
 import s0 from "@/assets/services/service-0.png.asset.json";
 import s1 from "@/assets/services/service-1.png.asset.json";
@@ -71,13 +72,22 @@ function HomePage() {
               Regulatory Compliance
             </span>
             <h1 className="mt-8 self-stretch font-serif text-5xl font-semibold leading-[1.02] text-white md:text-[90px] md:font-semibold md:leading-[100px] md:tracking-[-3.6px]">
-              Practical compliance.
+              <Typewriter
+                text="Practical compliance."
+                speed={55}
+                startDelay={250}
+                caret={false}
+              />
               <br />
               <span
                 className="italic md:tracking-[-1.8px]"
                 style={{ color: "#DA9E3F" }}
               >
-                Built to be defensible.
+                <Typewriter
+                  text="Built to be defensible."
+                  speed={55}
+                  startDelay={250 + 22 * 55 + 250}
+                />
               </span>
             </h1>
             <p
@@ -110,7 +120,7 @@ function HomePage() {
       {/* INTRO */}
       <section className="border-b border-border bg-background">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-5" data-reveal="left">
             <span className="section-eyebrow">
               Who We Are
             </span>
@@ -118,7 +128,7 @@ function HomePage() {
               A strategic partner for emerging and established advisory firms.
             </h2>
           </div>
-          <div className="section-body space-y-6 md:col-span-7">
+          <div className="section-body space-y-6 md:col-span-7" data-reveal="right" style={{ ['--reveal-delay' as any]: '120ms' }}>
             <p>
               Advisory Consulting Solutions (ACS) provides customized compliance consulting
               services to registered investment advisers. We support firms with registration
@@ -143,7 +153,7 @@ function HomePage() {
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
+            <div data-reveal="up">
               <span className="section-eyebrow">
                 Our Approach
               </span>
@@ -155,13 +165,19 @@ function HomePage() {
               to="/our-approach"
               className="inline-flex items-center gap-2 section-body-light hover:gap-3 transition-all"
               style={{ color: '#DA9E3F' }}
+              data-reveal="fade"
             >
               Explore the methodology <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid gap-px border border-primary-foreground/10 bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
-            {approach.map((a) => (
-              <div key={a.step} className="bg-primary p-8">
+            {approach.map((a, i) => (
+              <div
+                key={a.step}
+                className="bg-primary p-8 transition-colors duration-500 hover:bg-[#0f2138]"
+                data-reveal="up"
+                style={{ ['--reveal-delay' as any]: `${i * 120}ms` }}
+              >
                 <div
                   className="self-stretch font-sans text-[16px] font-bold uppercase text-[#DA9E3F]"
                   style={{ fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif', letterSpacing: '3.2px', lineHeight: 'normal' }}
@@ -184,7 +200,7 @@ function HomePage() {
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-3xl font-serif text-2xl italic text-primary-foreground/90 md:text-3xl">
+          <p className="mt-12 max-w-3xl font-serif text-2xl italic text-primary-foreground/90 md:text-3xl" data-reveal="up">
             “Our focus is simple — identify and address issues before they become deficiencies.”
           </p>
         </div>
@@ -194,7 +210,7 @@ function HomePage() {
       <section className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
+            <div data-reveal="up">
               <span className="section-eyebrow">
                 Services
               </span>
@@ -206,16 +222,18 @@ function HomePage() {
               to="/services"
               className="inline-flex items-center gap-2 section-body hover:gap-3 transition-all"
               style={{ color: '#DA9E3F' }}
+              data-reveal="fade"
             >
               All services <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid gap-x-10 gap-y-16 md:grid-cols-3 md:gap-x-12 md:gap-y-4">
-            {services.map((s) => (
+            {services.map((s, i) => (
               <article
                 key={s.title}
                 className="group flex flex-col"
-                style={{ marginTop: `${s.offset}px` }}
+                style={{ marginTop: `${s.offset}px`, ['--reveal-delay' as any]: `${(i % 3) * 140}ms` }}
+                data-reveal="up"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -264,6 +282,7 @@ function HomePage() {
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2
             className="self-stretch"
+            data-reveal="up"
             style={{
               color: "#172C47",
               textAlign: "center",
@@ -278,7 +297,7 @@ function HomePage() {
             <br />
             your compliance program?
           </h2>
-          <p className="section-body-dark mx-auto mt-6 max-w-2xl text-center">
+          <p className="section-body-dark mx-auto mt-6 max-w-2xl text-center" data-reveal="up" style={{ ['--reveal-delay' as any]: '120ms' }}>
             Whether you are launching a new advisory firm or strengthening an existing program,
             ACS can help you navigate your regulatory obligations with confidence.
           </p>
@@ -286,6 +305,7 @@ function HomePage() {
             to="/schedule"
             className="btn-consult mt-10 text-white transition-all hover:brightness-110"
             style={{ backgroundColor: '#0D182B' }}
+            data-reveal="zoom"
           >
             Schedule a Consultation
             <ArrowRight className="h-4 w-4" />

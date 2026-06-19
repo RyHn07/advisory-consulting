@@ -49,7 +49,7 @@ const steps = [
 function ApproachPage() {
   return (
     <SiteLayout>
-      <section className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
+      <section data-reveal="fade" className="relative isolate flex min-h-[80vh] flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <img
             src={approachImg}
@@ -81,7 +81,7 @@ function ApproachPage() {
       </section>
 
       {/* METHODOLOGY — sleek vertical rhythm, no boxes */}
-      <section className="relative bg-background">
+      <section data-reveal="fade" className="relative bg-background">
         <div className="mx-auto max-w-6xl px-6 py-28 md:py-36">
           <div className="mb-20 max-w-2xl">
             <span className="section-eyebrow">
@@ -135,7 +135,7 @@ function ApproachPage() {
       </section>
 
       {/* PRINCIPLES */}
-      <section style={{ backgroundColor: '#0D182B' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#0D182B' }}>
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
             <span className="section-eyebrow">
@@ -172,7 +172,7 @@ function ApproachPage() {
       </section>
 
       {/* WHAT YOU GET */}
-      <section style={{ backgroundColor: '#F4EFE3' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#F4EFE3' }}>
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 max-w-2xl">
             <span className="section-eyebrow">
@@ -209,7 +209,7 @@ function ApproachPage() {
         </div>
       </section>
 
-      <section style={{ backgroundColor: '#F1EAE3' }}>
+      <section data-reveal="fade" style={{ backgroundColor: '#F1EAE3' }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <p className="font-serif text-3xl italic leading-snug md:text-4xl" style={{ color: '#0D182B' }}>
             “Our focus is simple — identify and address issues before they become deficiencies.”

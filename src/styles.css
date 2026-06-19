@@ -171,3 +171,82 @@
 .animate-fade-up {
   animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+/* =========================================================
+   Scroll reveal — opt in via data-reveal on any element.
+   Variants: data-reveal="up" | "left" | "right" | "fade" | "zoom"
+   Stagger:  data-reveal-delay="100" (ms)
+   ========================================================= */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal="up"],
+[data-reveal=""],
+[data-reveal] {
+  transform: translateY(28px);
+}
+[data-reveal="left"] { transform: translateX(-40px); }
+[data-reveal="right"] { transform: translateX(40px); }
+[data-reveal="fade"] { transform: none; }
+[data-reveal="zoom"] { transform: scale(0.94); }
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   Typewriter caret
+   ========================================================= */
+.typewriter-caret {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.9em;
+  margin-left: 0.06em;
+  vertical-align: -0.08em;
+  background: currentColor;
+  animation: typewriter-blink 0.9s steps(1) infinite;
+  border-radius: 1px;
+}
+.typewriter-caret.is-done {
+  animation: typewriter-blink 1.1s steps(1) infinite;
+  opacity: 0.7;
+}
+@keyframes typewriter-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* =========================================================
+   Subtle hover lift used on cards/images
+   ========================================================= */
+.hover-lift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px -24px rgba(13, 24, 43, 0.35);
+}
+
+/* Image zoom on hover (wrap image in .img-zoom) */
+.img-zoom { overflow: hidden; }
+.img-zoom > img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.img-zoom:hover > img { transform: scale(1.06); }
