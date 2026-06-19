@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import aboutImg from "@/assets/about-office.jpg";
-import founderImg from "@/assets/founder-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -104,93 +103,6 @@ function AboutPage() {
                   {v.t}
                 </h3>
                 <p className="mt-5 section-body">{v.b}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* LEADERSHIP */}
-      <section className="bg-background">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-12 md:py-32">
-          <div className="md:col-span-5">
-            <img
-              src={founderImg}
-              alt="Founder portrait"
-              className="aspect-[4/5] w-full rounded-sm object-cover"
-              width={1280}
-              height={1600}
-              loading="lazy"
-            />
-          </div>
-          <div className="md:col-span-7">
-            <span className="section-eyebrow">
-              Leadership
-            </span>
-            <h2 className="mt-4 section-title">
-              Senior compliance experience, at your side.
-            </h2>
-            <p className="mt-8 section-body">
-              Our principal brings years of regulatory, in-house, and consulting experience
-              advising registered investment advisers — from first-time registrants to multi-
-              billion-dollar firms. The result is judgment-led guidance grounded in how
-              regulators actually examine.
-            </p>
-            <div className="mt-10 inline-flex items-center rounded-sm border border-dashed border-border bg-secondary/40 px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Full founder bio coming soon
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BY THE NUMBERS */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-16 max-w-2xl">
-            <span className="section-eyebrow">
-              By the Numbers
-            </span>
-            <h2 className="mt-4 section-title-light">
-              Experience that compounds.
-            </h2>
-          </div>
-          <div className="grid gap-px border border-primary-foreground/10 bg-primary-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { n: "20+", l: "Years of combined compliance experience" },
-              { n: "100%", l: "Investment adviser focus" },
-              { n: "50+", l: "Firms supported through SEC and state exams" },
-              { n: "1 BD", l: "Average response time" },
-            ].map((s) => (
-              <div key={s.l} className="bg-primary p-10">
-                <div className="font-serif text-5xl text-accent md:text-6xl">{s.n}</div>
-                <p className="mt-4 section-body-light">{s.l}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHO WE SERVE */}
-      <section className="border-b border-border bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-16 max-w-2xl">
-            <span className="section-eyebrow">
-              Who We Serve
-            </span>
-            <h2 className="mt-4 section-title">
-              Built for advisers at every stage.
-            </h2>
-          </div>
-          <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
-            {[
-              { t: "Newly Forming RIAs", b: "First-time registrants navigating Form ADV, policies, and operational setup." },
-              { t: "Established RIAs", b: "Firms scaling their compliance program alongside AUM and headcount growth." },
-              { t: "State-Registered Advisers", b: "Smaller advisers managing state-specific rules and renewal cycles." },
-              { t: "Exempt Reporting Advisers", b: "Private fund advisers meeting their narrower — but still real — obligations." },
-            ].map((g) => (
-              <div key={g.t} className="bg-background p-10">
-                <h3 className="font-serif text-2xl text-foreground">{g.t}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{g.b}</p>
               </div>
             ))}
           </div>
