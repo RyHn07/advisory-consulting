@@ -108,7 +108,7 @@ function ApproachPage() {
                 />
                 <div className="md:pl-10">
                   <span
-                    className="flex h-[116px] w-[150px] flex-shrink-0 flex-col justify-center text-center transition-colors"
+                    className="step-number flex h-[116px] w-[150px] flex-shrink-0 flex-col justify-center text-center transition-colors duration-300 group-hover:[color:#DA9E3F] group-hover:[animation:step-shake_0.6s_ease-in-out]"
                     style={{
                       color: 'rgba(218, 158, 63, 0.50)',
                       fontFamily: 'Outfit, sans-serif',
