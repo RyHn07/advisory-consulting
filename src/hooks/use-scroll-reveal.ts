@@ -12,7 +12,7 @@ export function useScrollReveal() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
       document
-        .querySelectorAll<HTMLElement>("[data-reveal]")
+        .querySelectorAll<HTMLElement>("[data-reveal], [data-reveal-children]")
         .forEach((el) => el.classList.add("is-visible"));
       return;
     }
@@ -31,7 +31,9 @@ export function useScrollReveal() {
 
     const observe = () => {
       document
-        .querySelectorAll<HTMLElement>("[data-reveal]:not(.is-visible)")
+        .querySelectorAll<HTMLElement>(
+          "[data-reveal]:not(.is-visible), [data-reveal-children]:not(.is-visible)"
+        )
         .forEach((el) => io.observe(el));
     };
 
