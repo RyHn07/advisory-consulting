@@ -127,7 +127,17 @@ function CareersPage() {
                   >
                     {q.t}
                   </h3>
-                  <p className="mt-5 section-body">{q.b}</p>
+                  <p
+                    className="mt-5 transition-colors duration-300 text-muted-foreground group-hover:text-[#172C47]"
+                    style={{
+                      fontFamily: '"Aptos Serif", Georgia, serif',
+                      fontSize: '22px',
+                      fontWeight: 400,
+                      lineHeight: '150%',
+                    }}
+                  >
+                    {q.b}
+                  </p>
                 </div>
               ))}
             </div>
