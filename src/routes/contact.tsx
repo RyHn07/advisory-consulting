@@ -205,7 +205,7 @@ function ContactPage() {
                   <h3 className="font-serif text-xl text-foreground md:text-2xl">{f.q}</h3>
                   <span className="mt-1 font-serif text-2xl text-accent transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">{f.a}</p>
+                <p className="mt-4 max-w-3xl section-body">{f.a}</p>
               </details>
             ))}
           </div>
