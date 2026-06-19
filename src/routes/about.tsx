@@ -37,7 +37,7 @@ function AboutPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/95" />
         </div>
-        <div className="mx-auto w-full max-w-6xl px-6 pt-40 pb-28 md:pt-56 md:pb-36">
+        <div className="mx-auto w-full max-w-[1320px] px-6 pt-40 pb-28 md:pt-56 md:pb-36">
           <div className="max-w-3xl animate-fade-up text-left">
             <span className="section-eyebrow">
               About
