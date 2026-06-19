@@ -62,17 +62,28 @@ function CareersPage() {
       </section>
 
       {/* WHY ACS */}
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="grid gap-px border border-border bg-border md:grid-cols-3">
+      <section style={{ backgroundColor: '#FAF6F1' }}>
+        <div className="mx-auto max-w-7xl px-6 py-24 md:py-28">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
             {[
-              { t: "Senior-Level Work", b: "Substantive client engagements from day one — no manual-shuffling, no busywork." },
-              { t: "Collaborative Team", b: "A small, experienced group of compliance professionals who share judgment, not silos." },
-              { t: "Flexible Structure", b: "Remote-first with a results-focused culture built for senior practitioners." },
+              { t: "Senior-Level Work", b: "Real client work. Real responsibility. From day one." },
+              { t: "Collaborative Team", b: "Boutique by design. Collaborative by practice." },
+              { t: "Flexible Structure", b: "Less hierarchy. More autonomy. A culture built around results." },
             ].map((v) => (
-              <div key={v.t} className="bg-background p-10">
-                <h3 className="font-serif text-2xl text-foreground">{v.t}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{v.b}</p>
+              <div key={v.t}>
+                <h3
+                  style={{
+                    color: '#DA9E3F',
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: '28px',
+                    fontWeight: 600,
+                    lineHeight: '34px',
+                    letterSpacing: '-0.5px',
+                  }}
+                >
+                  {v.t}
+                </h3>
+                <p className="mt-5 section-body">{v.b}</p>
               </div>
             ))}
           </div>
