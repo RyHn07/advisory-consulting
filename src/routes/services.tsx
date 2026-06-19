@@ -114,13 +114,6 @@ function ServicesPage() {
                 Compliance programs that work in practice, not just on paper.
               </h2>
             </div>
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 font-serif text-[20px] text-[#DA9E3F] transition-all hover:gap-3"
-            >
-              All services
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
           </div>
 
           {/* Numbered rows with hover-reveal description */}
