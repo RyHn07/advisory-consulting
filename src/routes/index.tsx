@@ -154,6 +154,7 @@ function HomePage() {
             <Link
               to="/our-approach"
               className="inline-flex items-center gap-2 section-body-light hover:gap-3 transition-all"
+              style={{ color: '#DA9E3F' }}
             >
               Explore the methodology <ArrowRight className="h-4 w-4" />
             </Link>
@@ -204,6 +205,7 @@ function HomePage() {
             <Link
               to="/services"
               className="inline-flex items-center gap-2 section-body hover:gap-3 transition-all"
+              style={{ color: '#DA9E3F' }}
             >
               All services <ArrowRight className="h-4 w-4" />
             </Link>
