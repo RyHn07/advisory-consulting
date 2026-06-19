@@ -163,17 +163,21 @@
 
 @utility btn-consult {
   display: inline-flex;
-  height: 64px;
+  height: 54px;
   padding: 13px 24px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 0;
   font-family: "Aptos Serif", ui-serif, Georgia, serif;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+}
+
+@media (min-width: 768px) {
+  .btn-consult { height: 64px; font-size: 22px; }
 }
 
 @keyframes fade-up {
