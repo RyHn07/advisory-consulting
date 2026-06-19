@@ -111,7 +111,7 @@ export function SiteHeader() {
           className={`absolute left-0 top-0 h-full w-[300px] max-w-[85%] bg-primary shadow-2xl transition-transform duration-300 ease-out ${open ? "translate-x-0" : "-translate-x-full"}`}
         >
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
-            <img src={logo} alt="ACS" className="h-12 w-auto" />
+            <img src={logo} alt="ACS" className="h-36 w-auto" />
             <button
               onClick={() => setOpen(false)}
               className="text-white"
