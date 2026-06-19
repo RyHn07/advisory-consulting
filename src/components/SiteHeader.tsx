@@ -57,7 +57,7 @@ export function SiteHeader() {
             <img src={logo} alt="ACS" className="h-12 w-auto" />
           </Link>
 
-          <nav className="hidden items-center gap-6 md:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
+          <nav className="hidden items-center gap-6 lg:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
             {nav.map((n) => (
               <Link
                 key={n.to}
@@ -77,25 +77,57 @@ export function SiteHeader() {
             </Link>
           </nav>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="ml-auto text-white md:hidden"
-            aria-label="Menu"
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          {/* Tablet + mobile cluster: Contact (tablet only) + menu icon */}
+          <div className="ml-auto flex items-center gap-4 lg:hidden">
+            <Link
+              to="/contact"
+              className="hidden h-[54px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground md:inline-flex"
+            >
+              Contact
+            </Link>
+            <button
+              onClick={() => setOpen(!open)}
+              className="text-white"
+              aria-label="Menu"
+            >
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {open && (
-        <div className="bg-primary md:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-6">
+      {/* Slide-in drawer (mobile + tablet) */}
+      <div
+        className={`fixed inset-0 z-[60] lg:hidden ${open ? "pointer-events-auto" : "pointer-events-none"}`}
+        aria-hidden={!open}
+      >
+        {/* Backdrop */}
+        <div
+          onClick={() => setOpen(false)}
+          className={`absolute inset-0 bg-black/60 transition-opacity duration-300 ${open ? "opacity-100" : "opacity-0"}`}
+        />
+        {/* Panel */}
+        <aside
+          className={`absolute left-0 top-0 h-full w-[300px] max-w-[85%] bg-primary shadow-2xl transition-transform duration-300 ease-out ${open ? "translate-x-0" : "-translate-x-full"}`}
+        >
+          <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+            <img src={logo} alt="ACS" className="h-12 w-auto" />
+            <button
+              onClick={() => setOpen(false)}
+              className="text-white"
+              aria-label="Close menu"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+          <nav className="flex flex-col px-6 py-6 gap-1">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="px-2 py-3 text-[13px] font-medium uppercase tracking-[0.18em] text-primary-foreground/80 hover:text-primary-foreground"
+                className="px-2 py-3 font-serif text-[16px] uppercase tracking-[0.12em] text-white/85 hover:text-accent"
+                activeProps={{ className: "text-accent" }}
               >
                 {n.label}
               </Link>
@@ -103,13 +135,13 @@ export function SiteHeader() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-3 border border-primary-foreground/40 px-4 py-3 text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-primary-foreground hover:bg-accent hover:text-accent-foreground"
+              className="mt-4 border border-white/40 px-4 py-3 text-center font-serif text-[14px] uppercase tracking-[0.18em] text-white hover:bg-accent hover:text-accent-foreground"
             >
               Contact
             </Link>
-          </div>
-        </div>
-      )}
+          </nav>
+        </aside>
+      </div>
     </header>
   );
 }
