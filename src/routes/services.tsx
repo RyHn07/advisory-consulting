@@ -176,7 +176,7 @@ function ServicesPage() {
               your firm.
             </h2>
           </div>
-          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-16" data-reveal-children>
             {[
               { k: "1", t: "Discovery", b: "We learn how your firm operates, what regulators have asked of you, and where the real risks sit." },
               { k: "2", t: "Scoped Engagement", b: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work." },
@@ -227,7 +227,7 @@ function ServicesPage() {
               Specialized across<br />the adviser landscape.
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3" data-reveal-children>
             {[
               "Investment Advisers",
               "Private Fund Advisers",
