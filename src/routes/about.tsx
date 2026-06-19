@@ -42,8 +42,8 @@ function AboutPage() {
             <span className="section-eyebrow">
               About
             </span>
-            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
-                style={{ fontFamily: 'Playfair Display, Playfair, serif' }}>
+            <h1 className="mt-6 font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+                style={{ fontFamily: 'Playfair, "Playfair Display", serif' }}>
               <span style={{ color: '#FFF' }}>A specialized partner</span>
               <br />
               <span style={{ color: '#DA9E3F' }}>for advisory firms.</span>

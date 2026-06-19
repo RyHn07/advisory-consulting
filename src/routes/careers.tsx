@@ -45,8 +45,8 @@ function CareersPage() {
             <span className="section-eyebrow">
               Careers
             </span>
-            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
-                style={{ fontFamily: 'Playfair Display, Playfair, serif' }}>
+            <h1 className="mt-6 font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+                style={{ fontFamily: 'Playfair, "Playfair Display", serif' }}>
               <span style={{ color: '#FFF' }}>Join a collaborative,</span>
               <br />
               <span style={{ color: '#DA9E3F' }}>client-focused team.</span>
