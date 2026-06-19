@@ -52,9 +52,9 @@ export function SiteHeader() {
 
       <div className="relative">
         {/* Main bar */}
-        <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pl-[160px] md:pr-6 lg:pl-[calc(6%+180px)] lg:pr-[6%] 2xl:pl-[calc(16%+200px)] 2xl:pr-[16.15%]">
+        <div className="flex h-[140px] items-stretch justify-between bg-primary px-6 md:h-[87px] md:justify-end md:pl-[160px] md:pr-6 lg:pl-[calc(6%+180px)] lg:pr-[6%] 2xl:pl-[calc(16%+200px)] 2xl:pr-[16.15%]">
           <Link to="/" className="flex items-center md:hidden" aria-label="Home">
-            <img src={logo} alt="ACS" className="h-12 w-auto" />
+            <img src={logo} alt="ACS" className="h-32 w-auto" />
           </Link>
 
           <nav className="hidden items-center gap-6 lg:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
