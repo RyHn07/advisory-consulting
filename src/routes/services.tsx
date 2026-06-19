@@ -193,10 +193,12 @@ function ServicesPage() {
                 <div
                   style={{
                     color: '#DA9E3F',
-                    fontFamily: '"Playfair Display", Georgia, serif',
-                    fontSize: '72px',
+                    fontFamily: 'Outfit, sans-serif',
+                    fontSize: '94px',
                     fontWeight: 600,
-                    lineHeight: '1',
+                    lineHeight: '95%',
+                    letterSpacing: '18.8px',
+                    textTransform: 'uppercase',
                   }}
                 >
                   {s.k}
