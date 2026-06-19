@@ -91,7 +91,7 @@ function ApproachPage() {
               A four-part rhythm, repeated as you grow.
             </h2>
           </div>
-          <ol className="relative">
+          <ol className="relative" data-reveal-children>
             {/* vertical accent rail */}
             <span
               aria-hidden
@@ -145,7 +145,7 @@ function ApproachPage() {
               The standards we<br />hold every program to.
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2" data-reveal-children>
             {[
               { t: "Risk-Calibrated", b: "Controls are sized to your firm's actual risk profile — not pulled from a generic template." },
               { t: "Operationally Realistic", b: "Procedures your team can actually follow on a busy week, not aspirational paperwork." },
@@ -182,7 +182,7 @@ function ApproachPage() {
               Concrete deliverables<br />at every step.
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2" data-reveal-children>
             {[
               "Tailored compliance policies and procedures",
               "Annual compliance review report",
