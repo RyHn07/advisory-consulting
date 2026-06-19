@@ -324,3 +324,10 @@ button:not(.btn-no-anim):not(:disabled):active {
 @media (prefers-reduced-motion: reduce) {
   [data-reveal-children] > * { opacity: 1 !important; transform: none !important; }
 }
+@keyframes step-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-4px) rotate(-2deg); }
+  40% { transform: translateX(4px) rotate(2deg); }
+  60% { transform: translateX(-3px) rotate(-1.5deg); }
+  80% { transform: translateX(3px) rotate(1.5deg); }
+}
