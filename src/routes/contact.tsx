@@ -65,7 +65,7 @@ function ContactPage() {
             <ContactItem
               icon={Mail}
               label="Email"
-              value="info@acscompliance.com"
+              value="info@adv-cs.com"
             />
             <ContactItem
               icon={MapPin}
