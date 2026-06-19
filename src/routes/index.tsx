@@ -153,7 +153,7 @@ function HomePage() {
             </div>
             <Link
               to="/our-approach"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 section-body-light hover:gap-3 transition-all"
             >
               Explore the methodology <ArrowRight className="h-4 w-4" />
             </Link>
@@ -203,7 +203,7 @@ function HomePage() {
             </div>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 section-body hover:gap-3 transition-all"
             >
               All services <ArrowRight className="h-4 w-4" />
             </Link>
