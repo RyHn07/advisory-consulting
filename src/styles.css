@@ -91,7 +91,7 @@
 @utility section-eyebrow {
   color: #DA9E3F;
   font-family: "Aptos Serif", ui-serif, Georgia, serif;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
@@ -102,29 +102,29 @@
 @utility section-title {
   color: #0D182B;
   font-family: 'Playfair', 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: 48px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 600;
-  line-height: 60px;
-  letter-spacing: -2.88px;
+  line-height: 38px;
+  letter-spacing: -1.4px;
   align-self: stretch;
 }
 
 @utility section-title-light {
   color: #FFF;
   font-family: 'Playfair', 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: 48px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 600;
-  line-height: 60px;
-  letter-spacing: -2.88px;
+  line-height: 38px;
+  letter-spacing: -1.4px;
   align-self: stretch;
 }
 
 @utility section-body {
   color: #575E69;
   font-family: "Aptos Serif", ui-serif, Georgia, serif;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -133,7 +133,7 @@
 @utility section-body-light {
   color: #FFF;
   font-family: "Aptos Serif", ui-serif, Georgia, serif;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -142,25 +142,42 @@
 @utility section-body-dark {
   color: #575E69;
   font-family: "Aptos Serif", ui-serif, Georgia, serif;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
 }
 
+@media (min-width: 768px) {
+  .section-eyebrow { font-size: 22px; }
+  .section-title,
+  .section-title-light {
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -2.88px;
+  }
+  .section-body,
+  .section-body-light,
+  .section-body-dark { font-size: 22px; }
+}
+
 @utility btn-consult {
   display: inline-flex;
-  height: 64px;
+  height: 54px;
   padding: 13px 24px;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 0;
   font-family: "Aptos Serif", ui-serif, Georgia, serif;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+}
+
+@media (min-width: 768px) {
+  .btn-consult { height: 64px; font-size: 22px; }
 }
 
 @keyframes fade-up {
