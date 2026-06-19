@@ -215,7 +215,7 @@ function ApproachPage() {
             “Our focus is simple — identify and address issues before they become deficiencies.”
           </p>
           <Link
-            to="/contact"
+            to="/schedule"
             className="btn-consult mt-10 text-white transition-all hover:brightness-110"
             style={{ backgroundColor: '#0D182B' }}
           >
