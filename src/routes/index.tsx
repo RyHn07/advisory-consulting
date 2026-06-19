@@ -89,7 +89,7 @@ function HomePage() {
             </p>
             <div className="mt-9 flex flex-wrap gap-6">
               <Link
-                to="/contact"
+                to="/schedule"
                 className="btn-consult text-accent-foreground transition-all hover:brightness-110"
                 style={{ background: "#DA9E3F" }}
               >
@@ -281,7 +281,7 @@ function HomePage() {
             ACS can help you navigate your regulatory obligations with confidence.
           </p>
           <Link
-            to="/contact"
+            to="/schedule"
             className="btn-consult mt-10 text-white transition-all hover:brightness-110"
             style={{ backgroundColor: '#0D182B' }}
           >

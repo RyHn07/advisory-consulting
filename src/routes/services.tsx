@@ -283,7 +283,7 @@ function ServicesPage() {
             the right mix of services for your stage and structure.
           </p>
           <Link
-            to="/contact"
+            to="/schedule"
             className="btn-consult mt-10 text-white transition-all hover:brightness-110"
             style={{ backgroundColor: '#0D182B' }}
           >
