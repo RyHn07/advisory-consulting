@@ -234,17 +234,17 @@ function ServicesPage() {
               Specialized across<br />the adviser landscape.
             </h2>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-3">
             {[
-              "Wealth Management",
-              "Private Funds",
-              "Hedge Funds",
-              "Family Offices",
+              "Investment Advisers",
+              "Private Fund Advisers",
+              "Family Offices & Multi-Family Offices",
               "Robo / Digital Advisers",
               "Institutional Advisers",
-              "Real Estate Advisers",
-              "Venture & PE Advisers",
-              "Multi-Family Offices",
+              "Venture Capital & Private Equity Advisers",
+              "Real Estate Fund Advisers",
+              "Broker-Dealer / RIA Hybrid Firms",
+              "Exempt Reporting Advisers (ERAs)",
             ].map((i) => (
               <div
                 key={i}
