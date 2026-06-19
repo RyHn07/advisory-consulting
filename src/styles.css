@@ -101,7 +101,7 @@
 
 @utility section-title {
   color: #0D182B;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-family: 'Playfair', 'Playfair Display', Georgia, 'Times New Roman', serif;
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
@@ -112,7 +112,7 @@
 
 @utility section-title-light {
   color: #FFF;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-family: 'Playfair', 'Playfair Display', Georgia, 'Times New Roman', serif;
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
