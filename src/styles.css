@@ -250,3 +250,77 @@
   will-change: transform;
 }
 .img-zoom:hover > img { transform: scale(1.06); }
+
+/* =========================================================
+   Buttons — site-wide hover/press animation
+   Applies to:
+     - any element with .btn-consult
+     - native <button> elements (unless they opt out via .btn-no-anim)
+   ========================================================= */
+.btn-consult {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.35s ease, background-color 0.35s ease, color 0.35s ease;
+  isolation: isolate;
+}
+.btn-consult::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+.btn-consult > * { position: relative; z-index: 1; }
+.btn-consult:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px -16px rgba(13, 24, 43, 0.55);
+  filter: brightness(1.08);
+}
+.btn-consult:hover::before { transform: translateX(120%); }
+.btn-consult:active { transform: translateY(-1px) scale(0.99); }
+
+button:not(.btn-no-anim) {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease, background-color 0.25s ease,
+    color 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
+}
+button:not(.btn-no-anim):not(:disabled):hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+button:not(.btn-no-anim):not(:disabled):active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* =========================================================
+   Reveal helper: stagger direct children of a container with
+   data-reveal-children. Each child is auto-revealed.
+   ========================================================= */
+[data-reveal-children] > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal-children].is-visible > * { opacity: 1; transform: none; }
+[data-reveal-children].is-visible > *:nth-child(1) { transition-delay: 0ms; }
+[data-reveal-children].is-visible > *:nth-child(2) { transition-delay: 120ms; }
+[data-reveal-children].is-visible > *:nth-child(3) { transition-delay: 240ms; }
+[data-reveal-children].is-visible > *:nth-child(4) { transition-delay: 360ms; }
+[data-reveal-children].is-visible > *:nth-child(5) { transition-delay: 480ms; }
+[data-reveal-children].is-visible > *:nth-child(6) { transition-delay: 600ms; }
+[data-reveal-children].is-visible > *:nth-child(7) { transition-delay: 720ms; }
+[data-reveal-children].is-visible > *:nth-child(8) { transition-delay: 840ms; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal-children] > * { opacity: 1 !important; transform: none !important; }
+}
