@@ -89,8 +89,8 @@ function ServicesPage() {
             <span className="section-eyebrow">
               Services
             </span>
-            <h1 className="mt-6 font-serif font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
-                style={{ fontFamily: 'Playfair Display, Playfair, serif' }}>
+            <h1 className="mt-6 font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+                style={{ fontFamily: 'Playfair, "Playfair Display", serif' }}>
               <span style={{ color: '#FFF' }}>Full-lifecycle support</span>
               <br />
               <span style={{ color: '#DA9E3F', whiteSpace: 'nowrap' }}>for investment advisers.</span>
