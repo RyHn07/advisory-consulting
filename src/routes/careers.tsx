@@ -145,42 +145,6 @@ function CareersPage() {
         </div>
       </section>
 
-      {/* OPEN ROLES */}
-      <section className="border-b border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <span className="section-eyebrow">
-                Open Roles
-              </span>
-              <h2 className="mt-4 section-title">
-                Where we're hiring.
-              </h2>
-            </div>
-            <p className="max-w-sm text-sm text-muted-foreground">
-              We always welcome confidential introductions from senior compliance professionals, even when a role isn't actively posted.
-            </p>
-          </div>
-          <div className="divide-y divide-border border-y border-border">
-            {[
-              { t: "Senior Compliance Consultant", l: "Remote · Full-time", b: "Lead client engagements across registration, ongoing oversight, and exam support." },
-              { t: "Outsourced CCO", l: "Remote · Full-time", b: "Serve as named CCO for a portfolio of advisory firms with senior-level autonomy." },
-              { t: "Marketing Rule Specialist", l: "Remote · Part-time / Full-time", b: "Review advertising, websites, and marketing materials under SEC Rule 206(4)-1." },
-            ].map((r) => (
-              <article key={r.t} className="grid gap-6 py-10 md:grid-cols-12">
-                <div className="md:col-span-5">
-                  <h3 className="font-serif text-2xl text-foreground md:text-3xl">{r.t}</h3>
-                  <div className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">{r.l}</div>
-                </div>
-                <p className="text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">
-                  {r.b}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 py-24">
           <div className="rounded-sm border border-border bg-background p-8 md:p-12">
