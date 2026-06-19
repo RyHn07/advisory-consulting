@@ -244,7 +244,7 @@ function HomePage() {
                     src={s.img}
                     alt={s.title}
                     loading="lazy"
-                    className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    className="aspect-[4/4.2] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     style={{
                       clipPath:
                         "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
