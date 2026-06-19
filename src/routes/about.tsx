@@ -49,9 +49,11 @@ function AboutPage() {
               <span style={{ color: '#DA9E3F' }}>for advisory firms.</span>
             </h1>
             <p className="mt-8 max-w-2xl section-body-light">
-              Advisory Consulting Solutions is built around one focus — helping registered
-              investment advisers run compliance programs that are practical, defensible, and
-              ready for regulatory scrutiny.
+              Advisory Consulting Solutions is supported by a team with decades of experience
+              across investment adviser compliance, securities law, regulatory oversight, and
+              financial services. Our professionals include attorneys, former regulators,
+              investment adviser and broker-dealer compliance specialists, and experienced
+              consultants who bring diverse perspectives to complex compliance challenges.
             </p>
           </div>
         </div>
