@@ -70,7 +70,7 @@ function AboutPage() {
               Experienced Guidance.
             </h2>
           </div>
-          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-16" data-reveal-children>
             {[
               { k: "1", t: "Specialized Focus", b: "We work exclusively with your team — every policy, control, and review is calibrated to your regulatory reality." },
               { k: "2", t: "Practical Implementation", b: "Programs designed to operate inside your firm's day-to-day workflow, not sit untouched on a shelf." },
