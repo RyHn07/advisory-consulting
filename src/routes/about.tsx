@@ -59,26 +59,51 @@ function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-16 max-w-2xl">
-            <span className="section-eyebrow">
-              What Guides Us
-            </span>
-            <h2 className="mt-4 section-title">
-              Built on judgment, not just checklists.
+      <section style={{ backgroundColor: '#F4EFE3' }}>
+        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
+          <div className="mb-20">
+            <span className="section-eyebrow">What Guides Us</span>
+            <h2 className="mt-6 max-w-2xl font-serif text-4xl font-semibold leading-tight md:text-5xl" style={{ color: '#0D182B' }}>
+              Practical Compliance.
+              <br />
+              Experienced Guidance.
             </h2>
           </div>
-          <div className="grid gap-px border border-border bg-border md:grid-cols-3">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
             {[
-              { k: "01", t: "Specialized Focus", b: "We work exclusively with investment advisers — every policy, control, and review is calibrated to your regulatory reality." },
-              { k: "02", t: "Practical Implementation", b: "Programs designed to operate inside your firm's day-to-day workflow, not sit untouched on a shelf." },
-              { k: "03", t: "Defensible Documentation", b: "Records, testing, and reviews structured to stand up to SEC and state examination scrutiny." },
+              { k: "1", t: "Specialized Focus", b: "We work exclusively with your team — every policy, control, and review is calibrated to your regulatory reality." },
+              { k: "2", t: "Practical Implementation", b: "Programs designed to operate inside your firm's day-to-day workflow, not sit untouched on a shelf." },
+              { k: "3", t: "Defensible Documentation", b: "Records, testing, and reviews structured to stand up to SEC and state examination scrutiny." },
             ].map((v) => (
-              <div key={v.k} className="bg-background p-10">
-                <span className="font-sans text-sm font-semibold text-accent">{v.k}</span>
-                <h3 className="mt-6 font-serif text-2xl text-foreground">{v.t}</h3>
-                <p className="mt-4 text-base leading-relaxed text-muted-foreground">{v.b}</p>
+              <div key={v.k}>
+                <div
+                  style={{
+                    color: '#DA9E3F',
+                    fontFamily: 'Outfit, sans-serif',
+                    fontSize: '94px',
+                    fontWeight: 600,
+                    lineHeight: '95%',
+                    letterSpacing: '18.8px',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {v.k}
+                </div>
+                <div className="mt-6 h-px w-12 bg-[#DA9E3F]" />
+                <h3
+                  className="mt-8"
+                  style={{
+                    color: '#0D182B',
+                    fontFamily: '"Playfair Display", Georgia, serif',
+                    fontSize: '28px',
+                    fontWeight: 600,
+                    lineHeight: '34px',
+                    letterSpacing: '-0.5px',
+                  }}
+                >
+                  {v.t}
+                </h3>
+                <p className="mt-5 section-body">{v.b}</p>
               </div>
             ))}
           </div>
