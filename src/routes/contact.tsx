@@ -103,12 +103,29 @@ function ContactPage() {
                     <Field label="Phone" name="phone" type="tel" />
                   </div>
                   <div>
-                    <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-foreground">
+                    <label
+                      className="mb-2 block uppercase"
+                      style={{
+                        color: "#0D182B",
+                        fontFamily: '"Aptos Serif"',
+                        fontSize: "18px",
+                        fontWeight: 700,
+                        lineHeight: "normal",
+                        letterSpacing: "1.8px",
+                      }}
+                    >
                       Firm type
                     </label>
                     <select
                       name="firm-type"
-                      className="block w-full rounded-sm border border-input bg-background px-4 py-3 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                      className="block w-full rounded-sm border border-input bg-background px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                      style={{
+                        color: "#0D182B",
+                        fontFamily: '"Aptos Serif"',
+                        fontSize: "16px",
+                        fontWeight: 400,
+                        lineHeight: "normal",
+                      }}
                     >
                       <option>Registered Investment Adviser (RIA)</option>
                       <option>Exempt Reporting Adviser (ERA)</option>
@@ -118,19 +135,42 @@ function ContactPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-foreground">
+                    <label
+                      className="mb-2 block uppercase"
+                      style={{
+                        color: "#0D182B",
+                        fontFamily: '"Aptos Serif"',
+                        fontSize: "18px",
+                        fontWeight: 700,
+                        lineHeight: "normal",
+                        letterSpacing: "1.8px",
+                      }}
+                    >
                       How can we help? <span className="text-accent">*</span>
                     </label>
                     <textarea
                       name="message"
                       rows={6}
                       required
-                      className="block w-full rounded-sm border border-input bg-background px-4 py-3 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                      className="block w-full rounded-sm border border-input bg-background px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                      style={{
+                        color: "#0D182B",
+                        fontFamily: '"Aptos Serif"',
+                        fontSize: "16px",
+                        fontWeight: 400,
+                        lineHeight: "normal",
+                      }}
                     />
                   </div>
                   <button
                     type="submit"
-                    className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent"
+                    className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-primary-foreground transition-colors hover:bg-accent"
+                    style={{
+                      fontFamily: '"Aptos Serif"',
+                      fontSize: "16px",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
                   >
                     Request Consultation
                   </button>
@@ -188,14 +228,31 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-foreground">
+      <label
+        className="mb-2 block uppercase"
+        style={{
+          color: "#0D182B",
+          fontFamily: '"Aptos Serif"',
+          fontSize: "18px",
+          fontWeight: 700,
+          lineHeight: "normal",
+          letterSpacing: "1.8px",
+        }}
+      >
         {label} {required && <span className="text-accent">*</span>}
       </label>
       <input
         type={type}
         name={name}
         required={required}
-        className="block w-full rounded-sm border border-input bg-background px-4 py-3 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+        className="block w-full rounded-sm border border-input bg-background px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+        style={{
+          color: "#0D182B",
+          fontFamily: '"Aptos Serif"',
+          fontSize: "16px",
+          fontWeight: 400,
+          lineHeight: "normal",
+        }}
       />
     </div>
   );
