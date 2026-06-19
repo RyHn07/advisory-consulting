@@ -128,17 +128,7 @@ function HomePage() {
             <span className="section-eyebrow">
               Who We Are
             </span>
-            <h2
-              className="mt-4"
-              style={{
-                color: '#0D182B',
-                fontFamily: 'Playfair, "Playfair Display", serif',
-                fontSize: '48px',
-                fontWeight: 600,
-                lineHeight: '60px',
-                letterSpacing: '-2.88px',
-              }}
-            >
+            <h2 className="mt-4 section-title">
               A strategic partner for emerging and established advisory firms.
             </h2>
           </div>
