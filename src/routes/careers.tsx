@@ -212,24 +212,58 @@ function CareersPage() {
                 <Field label="Years of compliance experience" name="experience" />
                 <Field label="Role of interest" name="role" placeholder="e.g. Senior Consultant, Outsourced CCO" />
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-foreground">
+                  <label
+                    className="mb-2 block uppercase"
+                    style={{
+                      color: "#0D182B",
+                      fontFamily: '"Aptos Serif"',
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      lineHeight: "normal",
+                      letterSpacing: "1.8px",
+                    }}
+                  >
                     Resume / CV
                   </label>
                   <input
                     type="file"
                     name="resume"
                     accept=".pdf,.doc,.docx"
-                    className="block w-full rounded-sm border border-input bg-background px-4 py-3 text-sm file:mr-4 file:rounded-sm file:border-0 file:bg-secondary file:px-4 file:py-2 file:text-xs file:font-semibold file:uppercase file:tracking-widest file:text-foreground hover:file:bg-accent hover:file:text-accent-foreground"
+                    className="acs-file-input block w-full rounded-sm border border-input bg-background px-4 py-3 file:mr-4 file:rounded-sm file:border-0 file:bg-secondary file:px-4 file:py-2 file:text-foreground hover:file:bg-accent hover:file:text-accent-foreground"
+                    style={{
+                      color: "#0D182B",
+                      fontFamily: '"Aptos Serif"',
+                      fontSize: "16px",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
                   />
                 </div>
                 <div>
-                  <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-foreground">
+                  <label
+                    className="mb-2 block uppercase"
+                    style={{
+                      color: "#0D182B",
+                      fontFamily: '"Aptos Serif"',
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      lineHeight: "normal",
+                      letterSpacing: "1.8px",
+                    }}
+                  >
                     Cover note
                   </label>
                   <textarea
                     name="note"
                     rows={5}
-                    className="block w-full rounded-sm border border-input bg-background px-4 py-3 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                    className="acs-input block w-full rounded-sm border border-input bg-background px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                    style={{
+                      color: "#0D182B",
+                      fontFamily: '"Aptos Serif"',
+                      fontSize: "16px",
+                      fontWeight: 400,
+                      lineHeight: "normal",
+                    }}
                   />
                 </div>
                 <button
@@ -266,7 +300,17 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-2 block text-xs font-semibold uppercase tracking-widest text-foreground">
+      <label
+        className="mb-2 block uppercase"
+        style={{
+          color: "#0D182B",
+          fontFamily: '"Aptos Serif"',
+          fontSize: "18px",
+          fontWeight: 700,
+          lineHeight: "normal",
+          letterSpacing: "1.8px",
+        }}
+      >
         {label} {required && <span className="text-accent">*</span>}
       </label>
       <input
@@ -274,7 +318,14 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="block w-full rounded-sm border border-input bg-background px-4 py-3 text-sm text-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+        className="acs-input block w-full rounded-sm border border-input bg-background px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+        style={{
+          color: "#0D182B",
+          fontFamily: '"Aptos Serif"',
+          fontSize: "16px",
+          fontWeight: 400,
+          lineHeight: "normal",
+        }}
       />
     </div>
   );
