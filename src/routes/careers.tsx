@@ -109,7 +109,7 @@ function CareersPage() {
               ].map((q, idx) => (
                 <div
                   key={q.t}
-                  className="px-12 py-14"
+                  className="group px-12 py-14 transition-colors duration-300 hover:bg-[#DA9E3F]"
                   style={{
                     borderRight: idx % 2 === 0 ? '1px solid #E5DCC9' : 'none',
                     borderBottom: idx < 2 ? '1px solid #E5DCC9' : 'none',
