@@ -224,19 +224,17 @@ function ServicesPage() {
       </section>
 
       {/* INDUSTRIES */}
-      <section className="bg-background">
+      <section style={{ backgroundColor: '#F4EFE3' }}>
         <div className="mx-auto max-w-7xl px-6 py-24">
-          <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <span className="section-eyebrow">
-                Industries Served
-              </span>
-              <h2 className="mt-4 section-title">
-                Specialized across the adviser landscape.
-              </h2>
-            </div>
+          <div className="mb-16 max-w-2xl">
+            <span className="section-eyebrow">
+              Industries Served
+            </span>
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight md:text-5xl" style={{ color: '#0D182B' }}>
+              Specialized across<br />the adviser landscape.
+            </h2>
           </div>
-          <div className="grid gap-x-8 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {[
               "Wealth Management",
               "Private Funds",
@@ -250,10 +248,14 @@ function ServicesPage() {
             ].map((i) => (
               <div
                 key={i}
-                className="group flex items-center justify-between gap-4 border-b border-border/60 py-5 transition-colors hover:border-accent"
+                className="group relative flex items-center px-8 py-7 transition-all duration-300 hover:translate-x-1"
+                style={{ backgroundColor: '#FAF6EC' }}
               >
-                <span className="font-serif text-xl text-foreground">{i}</span>
-                <ArrowRight className="h-4 w-4 -translate-x-2 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                <span
+                  className="absolute left-0 top-1/2 h-[60%] w-[3px] -translate-y-1/2 transition-all duration-300 group-hover:h-[80%]"
+                  style={{ backgroundColor: '#DA9E3F' }}
+                />
+                <span className="font-serif text-lg md:text-xl" style={{ color: '#0D182B' }}>{i}</span>
               </div>
             ))}
           </div>
