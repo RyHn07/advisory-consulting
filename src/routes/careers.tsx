@@ -184,8 +184,18 @@ function CareersPage() {
       <section className="bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 py-24">
           <div className="rounded-sm border border-border bg-background p-8 md:p-12">
-            <div className="mb-8 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accent">
-              <Lock className="h-3.5 w-3.5" />
+            <div
+              className="mb-8 flex items-center gap-2 uppercase"
+              style={{
+                color: "#DA9E3F",
+                fontFamily: '"Aptos Serif"',
+                fontSize: "18px",
+                fontWeight: 700,
+                lineHeight: "normal",
+                letterSpacing: "1.8px",
+              }}
+            >
+              <Lock className="h-4 w-4" />
               Confidential Submission
             </div>
             {submitted ? (
