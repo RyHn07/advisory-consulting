@@ -36,5 +36,5 @@ second migration creates the private career-submission table and private resume 
 4. Attach the production domain and enable SSL.
 5. Test `/`, `/contact`, `/careers`, and `/schedule`; submit one test contact and career form.
 
-Build output is generated at `.output/`; Hostinger starts `.output/server/index.mjs` through
+Build output is generated at `dist/`; Hostinger starts `dist/server/index.mjs` through
 the package start script.
