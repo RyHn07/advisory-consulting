@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 import contactImg from "@/assets/contact-meeting.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -25,6 +27,34 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: String(fd.get("name") || "").trim(),
+      firm: String(fd.get("firm") || "").trim() || null,
+      email: String(fd.get("email") || "").trim(),
+      phone: String(fd.get("phone") || "").trim() || null,
+      firm_type: String(fd.get("firm-type") || "").trim() || null,
+      message: String(fd.get("message") || "").trim(),
+    };
+    if (!payload.name || !payload.email || !payload.message) {
+      toast.error("Please fill in name, email, and message.");
+      setSubmitting(false);
+      return;
+    }
+    const { error } = await supabase.from("contact_submissions").insert(payload);
+    setSubmitting(false);
+    if (error) {
+      toast.error("Could not send your message. Please try again.");
+      return;
+    }
+    setSubmitted(true);
+  }
 
   return (
     <SiteLayout>
@@ -89,13 +119,7 @@ function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
-                  className="grid gap-6"
-                >
+                <form onSubmit={handleSubmit} className="grid gap-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <Field label="Full name" name="name" required />
                     <Field label="Firm name" name="firm" required />
@@ -164,6 +188,7 @@ function ContactPage() {
                   </div>
                   <button
                     type="submit"
+                    disabled={submitting}
                     className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-primary-foreground transition-colors hover:bg-accent"
                     style={{
                       fontFamily: '"Aptos Serif"',
@@ -172,7 +197,7 @@ function ContactPage() {
                       lineHeight: "normal",
                     }}
                   >
-                    Request Consultation
+                    {submitting ? "Sending..." : "Request Consultation"}
                   </button>
                 </form>
               )}
