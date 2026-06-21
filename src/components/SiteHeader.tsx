@@ -36,7 +36,7 @@ export function SiteHeader() {
       {/* Top contact bar - full width, lighter background */}
       <div className="relative z-20 hidden w-full bg-[#293d55] md:block">
         <div
-          className="flex h-[43px] items-center justify-end gap-8 pr-6 text-[20px] font-normal leading-none text-white lg:pr-[6%] 2xl:pr-[16.2%]"
+          className="flex h-[43px] flex-nowrap items-center justify-end gap-4 whitespace-nowrap pr-6 text-[16px] font-normal leading-none text-white lg:gap-8 lg:pr-[6%] lg:text-[20px] 2xl:pr-[16.2%]"
           style={{ fontFamily: '"Aptos Serif", "Source Serif Pro", Georgia, serif' }}
         >
           <a href="mailto:info@adv-cs.com" className="inline-flex items-center gap-3 hover:text-white/80">
