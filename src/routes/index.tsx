@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Typewriter } from "@/components/Typewriter";
 import heroOffice from "@/assets/header-city-hero.jpg";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import s0 from "@/assets/services/service-0.png.asset.json";
 import s1 from "@/assets/services/service-1.png.asset.json";
 import s2 from "@/assets/services/service-2.png.asset.json";
@@ -54,12 +55,14 @@ function HomePage() {
       {/* HERO */}
       <section className="relative isolate min-h-[860px] overflow-hidden pt-[130px]">
         <div className="absolute inset-0 -z-10">
-          <img
-            src={heroOffice}
-            alt=""
+          <video
+            src={heroVideo.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={heroOffice}
             className="h-full w-full object-cover"
-            width={1920}
-            height={838}
           />
           <div className="absolute inset-0 bg-primary/55" />
         </div>
