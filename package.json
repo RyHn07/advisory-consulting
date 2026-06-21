@@ -1,3 +1,7 @@
+"scripts": {
+  "build": "vite build",
+  "start": "node dist/server/server.js"
+}
 {
   "name": "tanstack_start_ts",
   "private": true,
