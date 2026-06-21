@@ -26,13 +26,13 @@ export function useScrollReveal() {
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
 
     const observe = () => {
       document
         .querySelectorAll<HTMLElement>(
-          "[data-reveal]:not(.is-visible), [data-reveal-children]:not(.is-visible)"
+          "[data-reveal]:not(.is-visible), [data-reveal-children]:not(.is-visible)",
         )
         .forEach((el) => io.observe(el));
     };

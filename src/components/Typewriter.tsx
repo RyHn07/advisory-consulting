@@ -90,12 +90,7 @@ export function Typewriter({
   return (
     <span className={className} style={style}>
       {out}
-      {caret && (
-        <span
-          aria-hidden="true"
-          className={`typewriter-caret${done ? " is-done" : ""}`}
-        />
-      )}
+      {caret && <span aria-hidden="true" className={`typewriter-caret${done ? " is-done" : ""}`} />}
     </span>
   );
 }

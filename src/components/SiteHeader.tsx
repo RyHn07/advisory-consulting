@@ -39,7 +39,10 @@ export function SiteHeader() {
           className="flex h-[43px] flex-nowrap items-center justify-end gap-4 whitespace-nowrap pr-6 text-[16px] font-normal leading-none text-white lg:gap-8 lg:pr-[6%] lg:text-[20px] 2xl:pr-[16.2%]"
           style={{ fontFamily: '"Aptos Serif", "Source Serif Pro", Georgia, serif' }}
         >
-          <a href="mailto:info@adv-cs.com" className="inline-flex items-center gap-3 hover:text-white/80">
+          <a
+            href="mailto:info@adv-cs.com"
+            className="inline-flex items-center gap-3 hover:text-white/80"
+          >
             <Mail className="h-4 w-4" strokeWidth={1.5} />
             info@adv-cs.com
           </a>
@@ -53,11 +56,7 @@ export function SiteHeader() {
       <div className="relative">
         {/* Main bar */}
         <div className="flex h-[87px] items-stretch justify-between bg-primary px-6 md:justify-end md:pl-[160px] md:pr-6 lg:pl-[calc(6%+180px)] lg:pr-[6%] 2xl:pl-[calc(16%+200px)] 2xl:pr-[16.15%]">
-          <Link
-            to="/"
-            className="absolute left-4 top-2 z-40 md:hidden"
-            aria-label="Home"
-          >
+          <Link to="/" className="absolute left-4 top-2 z-40 md:hidden" aria-label="Home">
             <img src={logo} alt="ACS" className="h-32 w-auto drop-shadow-lg" />
           </Link>
 
@@ -89,11 +88,7 @@ export function SiteHeader() {
             >
               Contact
             </Link>
-            <button
-              onClick={() => setOpen(!open)}
-              className="text-white"
-              aria-label="Menu"
-            >
+            <button onClick={() => setOpen(!open)} className="text-white" aria-label="Menu">
               {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -116,11 +111,7 @@ export function SiteHeader() {
         >
           <div className="flex items-center justify-between px-6 py-5 border-b border-white/10">
             <img src={logo} alt="ACS" className="h-36 w-auto" />
-            <button
-              onClick={() => setOpen(false)}
-              className="text-white"
-              aria-label="Close menu"
-            >
+            <button onClick={() => setOpen(false)} className="text-white" aria-label="Close menu">
               <X className="h-6 w-6" />
             </button>
           </div>

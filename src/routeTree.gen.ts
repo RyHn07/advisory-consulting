@@ -16,6 +16,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiSubmissionsRouteImport } from './routes/api/submissions'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -52,6 +53,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSubmissionsRoute = ApiSubmissionsRouteImport.update({
+  id: '/api/submissions',
+  path: '/api/submissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/our-approach': typeof OurApproachRoute
   '/schedule': typeof ScheduleRoute
   '/services': typeof ServicesRoute
+  '/api/submissions': typeof ApiSubmissionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/our-approach': typeof OurApproachRoute
   '/schedule': typeof ScheduleRoute
   '/services': typeof ServicesRoute
+  '/api/submissions': typeof ApiSubmissionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/our-approach': typeof OurApproachRoute
   '/schedule': typeof ScheduleRoute
   '/services': typeof ServicesRoute
+  '/api/submissions': typeof ApiSubmissionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/our-approach'
     | '/schedule'
     | '/services'
+    | '/api/submissions'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/our-approach'
     | '/schedule'
     | '/services'
+    | '/api/submissions'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/our-approach'
     | '/schedule'
     | '/services'
+    | '/api/submissions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,6 +131,7 @@ export interface RootRouteChildren {
   OurApproachRoute: typeof OurApproachRoute
   ScheduleRoute: typeof ScheduleRoute
   ServicesRoute: typeof ServicesRoute
+  ApiSubmissionsRoute: typeof ApiSubmissionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/submissions': {
+      id: '/api/submissions'
+      path: '/api/submissions'
+      fullPath: '/api/submissions'
+      preLoaderRoute: typeof ApiSubmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   OurApproachRoute: OurApproachRoute,
   ScheduleRoute: ScheduleRoute,
   ServicesRoute: ServicesRoute,
+  ApiSubmissionsRoute: ApiSubmissionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

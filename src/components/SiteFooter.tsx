@@ -15,7 +15,11 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-16 px-6 py-20 md:grid-cols-2">
         {/* Left: logo + catalog nav */}
         <div>
-          <img src={footerLogo} alt="Advisory Consulting Solutions LLC" className="h-[127px] w-[127px]" />
+          <img
+            src={footerLogo}
+            alt="Advisory Consulting Solutions LLC"
+            className="h-[127px] w-[127px]"
+          />
 
           <div
             className="mt-16"
@@ -50,7 +54,10 @@ export function SiteFooter() {
               <div key={rIdx} className="flex flex-wrap items-center gap-x-5 gap-y-2">
                 {row.map((link, i) => (
                   <span key={link.to} className="flex items-center gap-x-5">
-                    <Link to={link.to} className="text-white transition-colors hover:text-[#DA9E3F]">
+                    <Link
+                      to={link.to}
+                      className="text-white transition-colors hover:text-[#DA9E3F]"
+                    >
                       {link.label}
                     </Link>
                     {i < row.length - 1 && (
@@ -90,10 +97,16 @@ export function SiteFooter() {
               fontWeight: 500,
             }}
           >
-            <a href="tel:+16466183447" className="block text-white transition-colors hover:text-[#DA9E3F]">
+            <a
+              href="tel:+16466183447"
+              className="block text-white transition-colors hover:text-[#DA9E3F]"
+            >
               (646) 618-3447
             </a>
-            <a href="mailto:info@adv-cs.com" className="block text-white transition-colors hover:text-[#DA9E3F]">
+            <a
+              href="mailto:info@adv-cs.com"
+              className="block text-white transition-colors hover:text-[#DA9E3F]"
+            >
               info@adv-cs.com
             </a>
           </div>

@@ -17,12 +17,8 @@ export const Route = createFileRoute("/schedule")({
         content: "Pick a time that works for you and book a consultation.",
       },
     ],
-    links: [
-      { rel: "stylesheet", href: "https://assets.calendly.com/assets/external/widget.css" },
-    ],
-    scripts: [
-      { src: "https://assets.calendly.com/assets/external/widget.js", async: true },
-    ],
+    links: [{ rel: "stylesheet", href: "https://assets.calendly.com/assets/external/widget.css" }],
+    scripts: [{ src: "https://assets.calendly.com/assets/external/widget.js", async: true }],
   }),
   component: SchedulePage,
 });
@@ -60,8 +56,8 @@ function SchedulePage() {
             Schedule a Consultation
           </h1>
           <p className="mt-6 mx-auto max-w-2xl section-body">
-            Pick a time that works for you. We'll confirm your meeting by email
-            with everything you need to get started.
+            Pick a time that works for you. We'll confirm your meeting by email with everything you
+            need to get started.
           </p>
         </div>
       </section>

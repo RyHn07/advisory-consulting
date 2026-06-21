@@ -1,15 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import type { CSSProperties } from "react";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Typewriter } from "@/components/Typewriter";
 import heroOffice from "@/assets/header-city-hero.jpg";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
-import s0 from "@/assets/services/service-0.png.asset.json";
-import s1 from "@/assets/services/service-1.png.asset.json";
-import s2 from "@/assets/services/service-2.png.asset.json";
-import s3 from "@/assets/services/service-3.png.asset.json";
-import s4 from "@/assets/services/service-4.png.asset.json";
-import s5 from "@/assets/services/service-5.png.asset.json";
+import heroVideo from "@/assets/hero-video.mp4";
+import s0 from "@/assets/services/service-0.png";
+import s1 from "@/assets/services/service-1.png";
+import s2 from "@/assets/services/service-2.png";
+import s3 from "@/assets/services/service-3.png";
+import s4 from "@/assets/services/service-4.png";
+import s5 from "@/assets/services/service-5.png";
+
+type RevealStyle = CSSProperties & { "--reveal-delay"?: string };
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,19 +37,65 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { img: s0.url, title: "Registration Services", body: "State and federal registration, filings, and licensing — done right the first time.", offset: 0 },
-  { img: s4.url, title: "Compliance Programs", body: "Customized policies, monthly tasks, annual reports, and continuous oversight.", offset: 72 },
-  { img: s2.url, title: "Mock Audits & Risk Assessments", body: "Find and address issues before regulators do.", offset: 144 },
-  { img: s1.url, title: "Marketing Review", body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and advertisements.", offset: 36 },
-  { img: s3.url, title: "Examination Support", body: "Hands-on guidance through SEC and state examinations.", offset: 108 },
-  { img: s5.url, title: "Policies & Procedures", body: "Tailored training to build a culture of compliance at every level.", offset: 180 },
+  {
+    img: s0,
+    title: "Registration Services",
+    body: "State and federal registration, filings, and licensing — done right the first time.",
+    offset: 0,
+  },
+  {
+    img: s4,
+    title: "Compliance Programs",
+    body: "Customized policies, monthly tasks, annual reports, and continuous oversight.",
+    offset: 72,
+  },
+  {
+    img: s2,
+    title: "Mock Audits & Risk Assessments",
+    body: "Find and address issues before regulators do.",
+    offset: 144,
+  },
+  {
+    img: s1,
+    title: "Marketing Review",
+    body: "SEC Marketing Rule reviews of websites, decks, social, testimonials, and advertisements.",
+    offset: 36,
+  },
+  {
+    img: s3,
+    title: "Examination Support",
+    body: "Hands-on guidance through SEC and state examinations.",
+    offset: 108,
+  },
+  {
+    img: s5,
+    title: "Policies & Procedures",
+    body: "Tailored training to build a culture of compliance at every level.",
+    offset: 180,
+  },
 ];
 
 const approach = [
-  { step: "1", title: "Assess", body: "Evaluate your current compliance framework, operational risks, and regulatory exposure." },
-  { step: "2", title: "Design", body: "Develop customized policies, procedures, and controls aligned with your business model." },
-  { step: "3", title: "Implement", body: "Integrate compliance into daily operations through practical processes and report-based deliverables." },
-  { step: "4", title: "Test & Improve", body: "Conduct mock examinations, reviews, and ongoing testing to maintain regulatory readiness." },
+  {
+    step: "1",
+    title: "Assess",
+    body: "Evaluate your current compliance framework, operational risks, and regulatory exposure.",
+  },
+  {
+    step: "2",
+    title: "Design",
+    body: "Develop customized policies, procedures, and controls aligned with your business model.",
+  },
+  {
+    step: "3",
+    title: "Implement",
+    body: "Integrate compliance into daily operations through practical processes and report-based deliverables.",
+  },
+  {
+    step: "4",
+    title: "Test & Improve",
+    body: "Conduct mock examinations, reviews, and ongoing testing to maintain regulatory readiness.",
+  },
 ];
 
 function HomePage() {
@@ -56,7 +105,7 @@ function HomePage() {
       <section className="relative isolate min-h-[860px] overflow-hidden pt-[130px]">
         <div className="absolute inset-0 -z-10">
           <video
-            src={heroVideo.url}
+            src={heroVideo}
             autoPlay
             loop
             muted
@@ -84,10 +133,7 @@ function HomePage() {
                 loopDelay={10000}
               />
               <br />
-              <span
-                className="italic md:tracking-[-1.8px]"
-                style={{ color: "#DA9E3F" }}
-              >
+              <span className="italic md:tracking-[-1.8px]" style={{ color: "#DA9E3F" }}>
                 <Typewriter
                   text="Built to be defensible."
                   speed={55}
@@ -128,19 +174,21 @@ function HomePage() {
       <section className="border-b border-border bg-background">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-12">
           <div className="md:col-span-5" data-reveal="left">
-            <span className="section-eyebrow">
-              Who We Are
-            </span>
+            <span className="section-eyebrow">Who We Are</span>
             <h2 className="mt-4 section-title">
               A strategic partner for emerging and established advisory firms.
             </h2>
           </div>
-          <div className="section-body space-y-6 md:col-span-7" data-reveal="right" style={{ ['--reveal-delay' as any]: '120ms' }}>
+          <div
+            className="section-body space-y-6 md:col-span-7"
+            data-reveal="right"
+            style={{ "--reveal-delay": "120ms" } as RevealStyle}
+          >
             <p>
-              Advisory Consulting Solutions (ACS) provides customized compliance consulting
-              services to registered investment advisers. We support firms with registration
-              and licensing, compliance program development, regulatory filings, annual
-              reviews, mock audits, risk assessments, testing, and ongoing compliance oversight.
+              Advisory Consulting Solutions (ACS) provides customized compliance consulting services
+              to registered investment advisers. We support firms with registration and licensing,
+              compliance program development, regulatory filings, annual reviews, mock audits, risk
+              assessments, testing, and ongoing compliance oversight.
             </p>
             <p>
               We combine regulatory knowledge with practical implementation, helping firms move
@@ -148,9 +196,9 @@ function HomePage() {
               exam-ready.
             </p>
             <p>
-              Through a hands-on and responsive approach, we help firms strengthen their
-              compliance programs, prepare for regulatory examinations, and confidently manage
-              day-to-day compliance responsibilities.
+              Through a hands-on and responsive approach, we help firms strengthen their compliance
+              programs, prepare for regulatory examinations, and confidently manage day-to-day
+              compliance responsibilities.
             </p>
           </div>
         </div>
@@ -161,9 +209,7 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div data-reveal="up">
-              <span className="section-eyebrow">
-                Our Approach
-              </span>
+              <span className="section-eyebrow">Our Approach</span>
               <h2 className="mt-4 max-w-2xl section-title-light">
                 Compliance programs that work in practice, not just on paper.
               </h2>
@@ -171,7 +217,7 @@ function HomePage() {
             <Link
               to="/our-approach"
               className="inline-flex items-center gap-2 section-body-light hover:gap-3 transition-all"
-              style={{ color: '#DA9E3F' }}
+              style={{ color: "#DA9E3F" }}
               data-reveal="fade"
             >
               Explore the methodology <ArrowRight className="h-4 w-4" />
@@ -183,11 +229,15 @@ function HomePage() {
                 key={a.step}
                 className="bg-primary p-8 transition-colors duration-500 hover:bg-[#0f2138]"
                 data-reveal="up"
-                style={{ ['--reveal-delay' as any]: `${i * 120}ms` }}
+                style={{ "--reveal-delay": `${i * 120}ms` } as RevealStyle}
               >
                 <div
                   className="self-stretch font-sans text-[16px] font-bold uppercase text-[#DA9E3F]"
-                  style={{ fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif', letterSpacing: '3.2px', lineHeight: 'normal' }}
+                  style={{
+                    fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
+                    letterSpacing: "3.2px",
+                    lineHeight: "normal",
+                  }}
                 >
                   {a.step}
                 </div>
@@ -195,10 +245,10 @@ function HomePage() {
                   className="mt-6 self-stretch text-white"
                   style={{
                     fontFamily: '"Playfair Display", Georgia, serif',
-                    fontSize: '38px',
+                    fontSize: "38px",
                     fontWeight: 600,
-                    lineHeight: '42px',
-                    letterSpacing: '-2.28px',
+                    lineHeight: "42px",
+                    letterSpacing: "-2.28px",
                   }}
                 >
                   {a.title}
@@ -207,7 +257,10 @@ function HomePage() {
               </div>
             ))}
           </div>
-          <p className="mt-12 max-w-3xl font-serif text-2xl italic text-primary-foreground/90 md:text-3xl" data-reveal="up">
+          <p
+            className="mt-12 max-w-3xl font-serif text-2xl italic text-primary-foreground/90 md:text-3xl"
+            data-reveal="up"
+          >
             “Our focus is simple — identify and address issues before they become deficiencies.”
           </p>
         </div>
@@ -218,9 +271,7 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div data-reveal="up">
-              <span className="section-eyebrow">
-                Services
-              </span>
+              <span className="section-eyebrow">Services</span>
               <h2 className="mt-4 max-w-2xl section-title">
                 Comprehensive support across the compliance lifecycle.
               </h2>
@@ -228,7 +279,7 @@ function HomePage() {
             <Link
               to="/services"
               className="inline-flex items-center gap-2 section-body hover:gap-3 transition-all"
-              style={{ color: '#DA9E3F' }}
+              style={{ color: "#DA9E3F" }}
               data-reveal="fade"
             >
               All services <ArrowRight className="h-4 w-4" />
@@ -239,7 +290,12 @@ function HomePage() {
               <article
                 key={s.title}
                 className="group flex flex-col"
-                style={{ marginTop: `${s.offset}px`, ['--reveal-delay' as any]: `${(i % 3) * 140}ms` }}
+                style={
+                  {
+                    marginTop: `${s.offset}px`,
+                    "--reveal-delay": `${(i % 3) * 140}ms`,
+                  } as RevealStyle
+                }
                 data-reveal="up"
               >
                 <div className="relative overflow-hidden">
@@ -249,8 +305,7 @@ function HomePage() {
                     loading="lazy"
                     className="aspect-[4/4.2] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     style={{
-                      clipPath:
-                        "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
+                      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
                     }}
                   />
                 </div>
@@ -281,7 +336,7 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section style={{ backgroundColor: '#F1EAE3' }}>
+      <section style={{ backgroundColor: "#F1EAE3" }}>
         <div className="mx-auto max-w-5xl px-6 py-24 text-center">
           <h2
             className="self-stretch"
@@ -300,14 +355,18 @@ function HomePage() {
             <br />
             your compliance program?
           </h2>
-          <p className="section-body-dark mx-auto mt-6 max-w-2xl text-center" data-reveal="up" style={{ ['--reveal-delay' as any]: '120ms' }}>
-            Whether you are launching a new advisory firm or strengthening an existing program,
-            ACS can help you navigate your regulatory obligations with confidence.
+          <p
+            className="section-body-dark mx-auto mt-6 max-w-2xl text-center"
+            data-reveal="up"
+            style={{ "--reveal-delay": "120ms" } as RevealStyle}
+          >
+            Whether you are launching a new advisory firm or strengthening an existing program, ACS
+            can help you navigate your regulatory obligations with confidence.
           </p>
           <Link
             to="/schedule"
             className="btn-consult mt-10 text-white transition-all hover:brightness-110"
-            style={{ backgroundColor: '#0D182B' }}
+            style={{ backgroundColor: "#0D182B" }}
             data-reveal="zoom"
           >
             Schedule a Consultation
