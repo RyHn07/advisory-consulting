@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
-import approachImg from "@/assets/approach-architecture.jpg";
+import approachImg from "@/assets/our-approach-background.png";
 
 export const Route = createFileRoute("/our-approach")({
   head: () => ({
@@ -57,11 +57,10 @@ function ApproachPage() {
           <img
             src={approachImg}
             alt=""
-            className="h-full w-full object-cover animate-kenburns"
+            className="h-full w-full object-cover"
             width={1280}
             height={1600}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/75 to-primary/95" />
         </div>
         <div className="mx-auto w-full max-w-[1320px] px-6 pt-40 pb-28 md:pt-56 md:pb-36">
           <div className="max-w-3xl animate-fade-up text-left">
@@ -75,9 +74,9 @@ function ApproachPage() {
               <span style={{ color: "#DA9E3F" }}>regulator-focused.</span>
             </h1>
             <p className="mt-8 max-w-2xl section-body-light">
-              We build compliance programs designed to function in practice, not just on paper
-              programs that are operationally sound, examination-ready, and aligned with how your
-              firm actually runs.
+              We build compliance programs designed to function in practice, not just on
+              paper—programs that are operationally sound, examination-ready, and aligned with how
+              your firm actually runs.
             </p>
           </div>
         </div>
@@ -86,10 +85,6 @@ function ApproachPage() {
       {/* METHODOLOGY — sleek vertical rhythm, no boxes */}
       <section data-reveal="fade" className="relative bg-background">
         <div className="mx-auto max-w-6xl px-6 py-28 md:py-36">
-          <div className="mb-20 max-w-2xl">
-            <span className="section-eyebrow">Methodology</span>
-            <h2 className="mt-4 section-title">A four-part rhythm, repeated as you grow.</h2>
-          </div>
           <ol className="relative" data-reveal-children>
             {/* vertical accent rail */}
             <span
@@ -120,7 +115,18 @@ function ApproachPage() {
                   </span>
                 </div>
                 <div className="pt-3 md:pt-6">
-                  <h3 className="font-serif text-4xl text-foreground md:text-5xl">{s.title}</h3>
+                  <h3
+                    style={{
+                      color: "#0D182B",
+                      fontFamily: '"Playfair Display", Georgia, serif',
+                      fontSize: "60px",
+                      fontStyle: "normal",
+                      fontWeight: 600,
+                      lineHeight: "54px",
+                    }}
+                  >
+                    {s.title}
+                  </h3>
                   <p className="mt-5 max-w-xl section-body">{s.body}</p>
                 </div>
               </li>
@@ -143,11 +149,11 @@ function ApproachPage() {
           <div className="grid gap-6 md:grid-cols-2" data-reveal-children>
             {[
               {
-                t: "Risk-Calibrated",
+                t: "Assess",
                 b: "Controls are sized to your firm's actual risk profile — not pulled from a generic template.",
               },
               {
-                t: "Operationally Realistic",
+                t: "Design",
                 b: "Procedures your team can actually follow on a busy week, not aspirational paperwork.",
               },
               {

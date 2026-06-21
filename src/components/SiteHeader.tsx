@@ -18,13 +18,13 @@ export function SiteHeader() {
       {/* Left fill behind logo - matches logo height, header (primary) color */}
       <div
         aria-hidden
-        className="absolute left-0 top-0 z-0 hidden bg-primary md:block md:h-[140px] md:w-[calc(1.5rem+5px+140px)] lg:h-[160px] lg:w-[calc(6%+5px+160px)] 2xl:h-[184px] 2xl:w-[calc(16%+5px+184px)]"
+        className="absolute left-0 top-0 z-0 hidden bg-primary md:block md:h-[140px] md:w-[calc(1.5rem+5px+140px)] lg:h-[160px] lg:w-[calc(6%+5px+160px)] 2xl:h-[184px] 2xl:w-[calc(16%+184px)]"
       />
       {/* Logo - overlaps top bar and main bar */}
       <Link
         to="/"
         aria-label="Advisory Consulting Solutions home"
-        className="absolute left-[calc(1.5rem+5px)] top-0 z-30 hidden h-[140px] w-[140px] md:block lg:left-[calc(6%+5px)] lg:h-[160px] lg:w-[160px] 2xl:left-[calc(16%+5px)] 2xl:h-[184px] 2xl:w-[184px]"
+        className="absolute left-[calc(1.5rem+5px)] top-0 z-30 hidden h-[140px] w-[140px] md:block lg:left-[calc(6%+5px)] lg:h-[160px] lg:w-[160px] 2xl:left-[16%] 2xl:h-[184px] 2xl:w-[184px]"
       >
         <img
           src={logo}
@@ -35,10 +35,7 @@ export function SiteHeader() {
 
       {/* Top contact bar - full width, lighter background */}
       <div className="relative z-20 hidden w-full bg-[#293d55] md:block">
-        <div
-          className="flex h-[43px] flex-nowrap items-center justify-end gap-4 whitespace-nowrap pr-6 text-[16px] font-normal leading-none text-white lg:gap-8 lg:pr-[6%] lg:text-[20px] 2xl:pr-[16.2%]"
-          style={{ fontFamily: '"Aptos Serif", "Source Serif Pro", Georgia, serif' }}
-        >
+        <div className="site-header-serif flex h-[43px] flex-nowrap items-center justify-end gap-4 whitespace-nowrap pr-6 text-[16px] leading-none text-white lg:gap-8 lg:pr-[6%] lg:text-[20px] 2xl:pr-[16.2%]">
           <a
             href="mailto:info@adv-cs.com"
             className="inline-flex items-center gap-3 hover:text-white/80"
@@ -60,12 +57,12 @@ export function SiteHeader() {
             <img src={logo} alt="ACS" className="h-32 w-auto drop-shadow-lg" />
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
+          <nav className="site-header-menu hidden translate-y-[8px] items-center gap-6 lg:flex lg:gap-8 xl:gap-10 2xl:gap-[52px]">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
-                className="group relative inline-flex items-center whitespace-nowrap font-serif text-[18px] font-normal uppercase leading-none text-white transition-colors hover:text-white/80"
+                className="group relative inline-flex items-center whitespace-nowrap transition-colors hover:text-white/80"
                 activeProps={{ className: "text-accent" }}
               >
                 {n.label}
@@ -74,7 +71,7 @@ export function SiteHeader() {
             ))}
             <Link
               to="/contact"
-              className="inline-flex h-[54px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
+              className="inline-flex h-[48px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-[22px] transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground"
             >
               Contact
             </Link>
@@ -84,7 +81,7 @@ export function SiteHeader() {
           <div className="ml-auto flex items-center gap-4 lg:hidden">
             <Link
               to="/contact"
-              className="hidden h-[54px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-6 font-serif text-[18px] font-normal uppercase leading-none text-white transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground md:inline-flex"
+              className="site-header-menu hidden h-[48px] items-center justify-center gap-[10px] whitespace-nowrap border border-white/90 px-[22px] transition-all hover:border-accent hover:bg-accent hover:text-accent-foreground md:inline-flex"
             >
               Contact
             </Link>

@@ -2,6 +2,24 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "ACS Aptos Serif";
+  src:
+    local("Aptos Serif Regular"),
+    local("Aptos Serif");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ACS Aptos Serif";
+  src: local("Aptos Serif Light");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -57,7 +75,27 @@
   --input: oklch(0.21 0.04 260 / 0.18);
   --ring: oklch(0.74 0.13 75);
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-header-serif: "Aptos Serif", "Source Serif 4", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.site-header-serif {
+  font-family: var(--font-header-serif);
+  font-synthesis: none;
+  font-weight: 400;
+}
+
+.site-header-menu {
+  color: #fff;
+  font-family: "ACS Aptos Serif", "Aptos Serif", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-stretch: normal;
+  font-synthesis: none;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
 @layer base {
@@ -71,6 +109,10 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  p {
+    font-weight: 300;
   }
 
   h1,
@@ -131,28 +173,28 @@
 
 @utility section-body {
   color: #575e69;
-  font-family: "Aptos Serif", ui-serif, Georgia, serif;
+  font-family: "ACS Aptos Serif", "Aptos Serif", "Source Serif 4", ui-serif, Georgia, serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 150%;
 }
 
 @utility section-body-light {
   color: #fff;
-  font-family: "Aptos Serif", ui-serif, Georgia, serif;
+  font-family: "ACS Aptos Serif", "Aptos Serif", "Source Serif 4", ui-serif, Georgia, serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 150%;
 }
 
 @utility section-body-dark {
   color: #575e69;
-  font-family: "Aptos Serif", ui-serif, Georgia, serif;
+  font-family: "ACS Aptos Serif", "Aptos Serif", "Source Serif 4", ui-serif, Georgia, serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 150%;
 }
 

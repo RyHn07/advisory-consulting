@@ -35,6 +35,10 @@ function ContactPage() {
     const form = new FormData(e.currentTarget);
     form.set("kind", "contact");
     form.set("firm_type", String(form.get("firm-type") || ""));
+    const linkedin = String(form.get("linkedin") || "").trim();
+    if (linkedin) {
+      form.set("message", `${String(form.get("message") || "")}\n\nLinkedIn URL: ${linkedin}`);
+    }
     if (!form.get("name") || !form.get("email") || !form.get("message")) {
       toast.error("Please fill in name, email, and message.");
       setSubmitting(false);
@@ -91,7 +95,7 @@ function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12">
           <div className="space-y-8 md:col-span-4">
             <ContactItem icon={Mail} label="Email" value="info@adv-cs.com" />
-            <ContactItem icon={MapPin} label="Office" value="United States" />
+            <ContactItem icon={MapPin} label="Office" value="United State" />
             <ContactItem icon={Clock} label="Response Time" value="Within one business day" />
           </div>
 
@@ -116,9 +120,9 @@ function ContactPage() {
                   />
                   <div className="grid gap-6 md:grid-cols-2">
                     <Field label="Full name" name="name" required />
-                    <Field label="Firm name" name="firm" required />
                     <Field label="Email" name="email" type="email" required />
                     <Field label="Phone" name="phone" type="tel" />
+                    <Field label="LinkedIn URL" name="linkedin" type="url" />
                   </div>
                   <div>
                     <label
@@ -136,6 +140,8 @@ function ContactPage() {
                     </label>
                     <select
                       name="firm-type"
+                      defaultValue=""
+                      required
                       className="block w-full rounded-sm border border-input bg-background px-4 py-3 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                       style={{
                         color: "#0D182B",
@@ -145,6 +151,9 @@ function ContactPage() {
                         lineHeight: "normal",
                       }}
                     >
+                      <option value="" disabled>
+                        Select One
+                      </option>
                       <option>Registered Investment Adviser (RIA)</option>
                       <option>Exempt Reporting Adviser (ERA)</option>
                       <option>State-registered Adviser</option>
@@ -164,7 +173,7 @@ function ContactPage() {
                         letterSpacing: "1.8px",
                       }}
                     >
-                      How can we help? <span className="text-accent">*</span>
+                      How can we help?
                     </label>
                     <textarea
                       name="message"
@@ -271,7 +280,7 @@ function Field({
           letterSpacing: "1.8px",
         }}
       >
-        {label} {required && <span className="text-accent">*</span>}
+        {label}
       </label>
       <input
         type={type}

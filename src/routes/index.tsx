@@ -102,7 +102,7 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* HERO */}
-      <section className="relative isolate min-h-[860px] overflow-hidden pt-[130px]">
+      <section className="relative isolate h-screen overflow-hidden pt-[130px]">
         <div className="absolute inset-0 -z-10">
           <video
             src={heroVideo}
@@ -115,7 +115,7 @@ function HomePage() {
           />
           <div className="absolute inset-0 bg-primary/55" />
         </div>
-        <div className="mx-auto flex min-h-[730px] max-w-[1320px] items-center px-6 py-24 text-left">
+        <div className="mx-auto flex h-full max-w-[1320px] items-center px-6 py-24 text-left">
           <div className="max-w-[1180px] animate-fade-up">
             <span
               className="text-[16px] md:text-[22px] font-bold uppercase leading-[150%] tracking-[3px] md:tracking-[4.4px] text-accent"
@@ -144,7 +144,7 @@ function HomePage() {
               </span>
             </h1>
             <p
-              className="mt-6 w-full max-w-[818px] text-[16px] md:mt-8 md:text-[22px] font-normal leading-[150%] text-white"
+              className="mt-6 w-full max-w-[818px] text-[16px] md:mt-8 md:text-[22px] font-light leading-[150%] text-white"
               style={{ fontFamily: '"Aptos Serif", ui-serif, Georgia, serif' }}
             >
               Customized compliance consulting for registered investment advisers — from
@@ -227,12 +227,12 @@ function HomePage() {
             {approach.map((a, i) => (
               <div
                 key={a.step}
-                className="bg-primary p-8 transition-colors duration-500 hover:bg-[#0f2138]"
+                className="group bg-primary p-8 transition-colors duration-500 hover:bg-[#DA9E3F]"
                 data-reveal="up"
                 style={{ "--reveal-delay": `${i * 120}ms` } as RevealStyle}
               >
                 <div
-                  className="self-stretch font-sans text-[16px] font-bold uppercase text-[#DA9E3F]"
+                  className="self-stretch font-sans text-[16px] font-bold uppercase text-[#DA9E3F] transition-colors duration-500 group-hover:text-[#0D182B]"
                   style={{
                     fontFamily: '"Open Sans", ui-sans-serif, system-ui, sans-serif',
                     letterSpacing: "3.2px",
@@ -242,7 +242,7 @@ function HomePage() {
                   {a.step}
                 </div>
                 <h3
-                  className="mt-6 self-stretch text-white"
+                  className="mt-6 self-stretch text-white transition-colors duration-500 group-hover:text-[#0D182B]"
                   style={{
                     fontFamily: '"Playfair Display", Georgia, serif',
                     fontSize: "38px",
@@ -253,7 +253,9 @@ function HomePage() {
                 >
                   {a.title}
                 </h3>
-                <p className="mt-3 section-body-light">{a.body}</p>
+                <p className="mt-3 section-body-light transition-colors duration-500 group-hover:text-[#0D182B]">
+                  {a.body}
+                </p>
               </div>
             ))}
           </div>
@@ -271,9 +273,9 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div data-reveal="up">
-              <span className="section-eyebrow">Services</span>
+              <span className="section-eyebrow">Our Approach</span>
               <h2 className="mt-4 max-w-2xl section-title">
-                Comprehensive support across the compliance lifecycle.
+                Compliance programs that work in practice, not just on paper.
               </h2>
             </div>
             <Link

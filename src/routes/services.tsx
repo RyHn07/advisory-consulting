@@ -140,7 +140,7 @@ function ServicesPage() {
               return (
                 <article
                   key={s.title}
-                  className="group relative grid grid-cols-1 gap-6 border-b py-8 md:grid-cols-12 md:gap-8 md:py-10"
+                  className="group relative grid grid-cols-1 gap-6 border-b py-8 md:grid-cols-12 md:gap-8 md:py-16"
                   style={{ borderColor: "rgba(13,24,43,0.18)" }}
                 >
                   {/* Left gold bar reveal on hover */}
@@ -149,10 +149,16 @@ function ServicesPage() {
                     className="pointer-events-none absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 transition-all duration-500 group-hover:h-[70%]"
                     style={{ backgroundColor: "#DA9E3F" }}
                   />
-                  <div className="md:col-span-7 flex items-center gap-6 md:gap-10 md:pl-6 self-start">
+                  <div className="flex items-center gap-6 self-start md:col-span-8 md:gap-20 md:pl-8">
                     <span
-                      className="font-serif text-6xl md:text-7xl font-semibold leading-none transition-colors duration-300 group-hover:text-[#DA9E3F] -mt-2"
-                      style={{ color: "#0D182B", fontFamily: '"Playfair Display", Georgia, serif' }}
+                      className="flex h-[116px] w-[150px] flex-shrink-0 flex-col justify-center text-center text-[rgba(218,158,63,0.50)] transition-colors duration-300 group-hover:text-[#DA9E3F]"
+                      style={{
+                        fontFamily: "Outfit, sans-serif",
+                        fontSize: "146px",
+                        fontStyle: "normal",
+                        fontWeight: 600,
+                        lineHeight: "76px",
+                      }}
                     >
                       {num}
                     </span>
@@ -163,7 +169,7 @@ function ServicesPage() {
                         strokeWidth={1.5}
                       />
                       <h3
-                        className="font-serif text-3xl md:text-4xl leading-none"
+                        className="font-serif text-3xl leading-none md:text-[40px] md:leading-[48px]"
                         style={{
                           color: "#DA9E3F",
                           fontFamily: '"Playfair Display", Georgia, serif',
@@ -175,14 +181,12 @@ function ServicesPage() {
                       </h3>
                     </div>
                   </div>
-                  <div className="md:col-span-5 md:pr-2 overflow-hidden grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
+                  <div className="grid grid-rows-[0fr] overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100 md:col-span-4 md:pr-2">
                     <p
-                      className="min-h-0"
+                      className="min-h-0 text-[18px] leading-[1.5] md:text-[24px] md:leading-[1.4]"
                       style={{
                         color: "#0D182B",
                         fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
-                        fontSize: "17px",
-                        lineHeight: "1.65",
                       }}
                     >
                       {s.body}
@@ -215,17 +219,17 @@ function ServicesPage() {
               {
                 k: "1",
                 t: "Discovery",
-                b: "We learn how your firm operates, what regulators have asked of you, and where the real risks sit.",
+                b: "We take the time to understand your business, compliance program, regulatory history, and areas of greatest risk.",
               },
               {
                 k: "2",
                 t: "Scoped Engagement",
-                b: "A clear scope, fixed deliverables, and a named senior consultant accountable for the work.",
+                b: "Every engagement begins with a clearly defined scope, transparent deliverables, and direct access to a senior consultant responsible for the work.",
               },
               {
                 k: "3",
                 t: "Ongoing Partnership",
-                b: "Many engagements roll into retained relationships — quarterly testing, annual reviews, exam standby.",
+                b: "Whether through a defined project or an ongoing engagement, we provide the level of support that best fits your firm's compliance needs.",
               },
             ].map((s) => (
               <div key={s.k} className="hww-card group cursor-default">
@@ -256,7 +260,16 @@ function ServicesPage() {
                 >
                   {s.t}
                 </h3>
-                <p className="mt-5 section-body-light">{s.b}</p>
+                <p
+                  className="mt-5 section-body-light"
+                  style={{
+                    fontFamily: '"Aptos Serif", "Source Serif 4", Georgia, serif',
+                    fontSynthesis: "none",
+                    fontWeight: 300,
+                  }}
+                >
+                  {s.b}
+                </p>
               </div>
             ))}
           </div>
