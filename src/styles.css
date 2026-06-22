@@ -272,10 +272,18 @@
   transform: translateY(28px);
 }
 [data-reveal="left"] {
-  transform: translateX(-40px);
+  transform: translateY(28px);
 }
 [data-reveal="right"] {
-  transform: translateX(40px);
+  transform: translateY(28px);
+}
+@media (min-width: 768px) {
+  [data-reveal="left"] {
+    transform: translateX(-40px);
+  }
+  [data-reveal="right"] {
+    transform: translateX(40px);
+  }
 }
 [data-reveal="fade"] {
   transform: none;
