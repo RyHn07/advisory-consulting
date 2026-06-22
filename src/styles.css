@@ -455,10 +455,55 @@ button:not(.btn-no-anim):not(:disabled):active {
 [data-reveal-children].is-visible > *:nth-child(8) {
   transition-delay: 840ms;
 }
+
+/* Number entrance used by the About page's "What Guides Us" cards. */
+.guide-number {
+  opacity: 0;
+  transform: translateY(0.45em) scale(0.72) rotate(-8deg);
+  transform-origin: left bottom;
+  filter: blur(6px);
+}
+[data-reveal-children].is-visible > * .guide-number {
+  opacity: 1;
+  filter: none;
+  animation: guide-number-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+[data-reveal-children].is-visible > *:nth-child(2) .guide-number {
+  animation-delay: 120ms;
+}
+[data-reveal-children].is-visible > *:nth-child(3) .guide-number {
+  animation-delay: 240ms;
+}
+.guide-card:hover .guide-number {
+  animation: step-shake 0.6s ease-in-out;
+}
+@keyframes guide-number-in {
+  0% {
+    opacity: 0;
+    transform: translateY(0.45em) scale(0.72) rotate(-8deg);
+    filter: blur(6px);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-0.05em) scale(1.04) rotate(1deg);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   [data-reveal-children] > * {
     opacity: 1 !important;
     transform: none !important;
+  }
+  .guide-number {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
   }
 }
 @keyframes step-shake {
@@ -497,4 +542,52 @@ button:not(.btn-no-anim):not(:disabled):active {
 }
 .hww-card:hover .hww-rule {
   width: 80px;
+}
+
+/* Careers page benefit cards. */
+.career-benefit {
+  position: relative;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.career-benefit::before {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #da9e3f;
+  content: "";
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.career-benefit h3,
+.career-benefit p {
+  transition:
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.career-benefit:hover {
+  transform: translateY(-7px);
+}
+.career-benefit:hover::before {
+  width: 56px;
+}
+.career-benefit:hover h3 {
+  color: #0d182b !important;
+  transform: translateX(6px);
+}
+.career-benefit:hover p {
+  color: #0d182b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career-benefit,
+  .career-benefit::before,
+  .career-benefit h3,
+  .career-benefit p {
+    transition: none !important;
+  }
+  .career-benefit:hover,
+  .career-benefit:hover h3 {
+    transform: none !important;
+  }
 }

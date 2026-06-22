@@ -44,7 +44,7 @@ function AboutPage() {
           <div className="max-w-3xl animate-fade-up text-left">
             <span className="section-eyebrow">About</span>
             <h1
-              className="mt-6 font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+              className="mt-6 text-[clamp(36px,10.5vw,44px)] leading-[1.08] tracking-[-1px] font-semibold text-white md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
               style={{ fontFamily: 'Playfair, "Playfair Display", serif' }}
             >
               <span style={{ color: "#FFF" }}>A specialized partner</span>
@@ -94,8 +94,9 @@ function AboutPage() {
                 b: "Records, testing, and reviews structured to stand up to SEC and state examination scrutiny.",
               },
             ].map((v) => (
-              <div key={v.k}>
+              <div key={v.k} className="guide-card">
                 <div
+                  className="guide-number"
                   style={{
                     color: "#DA9E3F",
                     fontFamily: "Outfit, sans-serif",

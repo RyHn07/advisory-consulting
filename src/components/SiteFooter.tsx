@@ -22,11 +22,10 @@ export function SiteFooter() {
           />
 
           <div
-            className="mt-16"
+            className="mt-16 text-[15px] md:text-[18px]"
             style={{
               color: "rgba(255, 255, 255, 0.60)",
               fontFamily: '"Aptos Serif", Georgia, serif',
-              fontSize: "18px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "140%",
@@ -39,11 +38,10 @@ export function SiteFooter() {
           </div>
 
           <nav
-            className="mt-6 space-y-3"
+            className="mt-6 space-y-3 text-[19px] md:text-[24px]"
             style={{
               color: "#FFF",
               fontFamily: '"Aptos Serif", Georgia, serif',
-              fontSize: "24px",
               fontWeight: 400,
               fontStyle: "normal",
               lineHeight: "120%",
@@ -75,10 +73,10 @@ export function SiteFooter() {
         {/* Right: contact */}
         <div className="md:justify-self-end">
           <div
+            className="text-[15px] md:text-[18px]"
             style={{
               color: "rgba(255, 255, 255, 0.60)",
               fontFamily: '"Aptos Serif", Georgia, serif',
-              fontSize: "18px",
               fontStyle: "normal",
               fontWeight: 700,
               lineHeight: "140%",
@@ -90,10 +88,9 @@ export function SiteFooter() {
             CONTACT US
           </div>
           <div
-            className="mt-8 space-y-5"
+            className="mt-8 space-y-4 text-[18px] md:space-y-5 md:text-[22px]"
             style={{
               fontFamily: '"Playfair Display", Georgia, serif',
-              fontSize: "22px",
               fontWeight: 500,
             }}
           >
@@ -115,11 +112,10 @@ export function SiteFooter() {
 
       <div style={{ background: "#0D182B" }}>
         <div
-          className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-6 md:flex-row md:items-center"
+          className="mx-auto flex max-w-7xl flex-row items-center justify-between gap-3 px-6 py-6 text-[clamp(13px,4vw,17px)] whitespace-nowrap md:gap-4 md:text-[22px]"
           style={{
             color: "#FFF",
             fontFamily: '"Aptos Serif", Georgia, serif',
-            fontSize: "22px",
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "140%",

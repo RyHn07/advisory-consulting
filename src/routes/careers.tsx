@@ -68,7 +68,7 @@ function CareersPage() {
           <div className="max-w-3xl animate-fade-up text-left">
             <span className="section-eyebrow">Careers</span>
             <h1
-              className="mt-6 font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+              className="mt-6 text-[clamp(36px,10.5vw,44px)] leading-[1.08] tracking-[-1px] font-semibold text-white md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
               style={{ fontFamily: 'Playfair, "Playfair Display", serif' }}
             >
               <span style={{ color: "#FFF" }}>Join a collaborative,</span>
@@ -88,7 +88,7 @@ function CareersPage() {
       {/* WHY ACS */}
       <section data-reveal="fade" style={{ backgroundColor: "#F6F2EC" }}>
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-28">
-          <div className="grid gap-12 md:grid-cols-3 md:gap-16">
+          <div className="grid gap-12 md:grid-cols-3 md:gap-16" data-reveal-children>
             {[
               { t: "Senior-Level Work", b: "Real client work. Real responsibility. From day one." },
               { t: "Collaborative Team", b: "Boutique by design. Collaborative by practice." },
@@ -97,7 +97,7 @@ function CareersPage() {
                 b: "Less hierarchy. More autonomy. A culture built around results.",
               },
             ].map((v) => (
-              <div key={v.t}>
+              <div key={v.t} className="career-benefit">
                 <h3
                   style={{
                     color: "#DA9E3F",

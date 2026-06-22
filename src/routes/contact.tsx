@@ -76,7 +76,7 @@ function ContactPage() {
           <div className="max-w-3xl animate-fade-up text-left">
             <span className="section-eyebrow">Contact</span>
             <h1
-              className="mt-6 font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+              className="mt-6 text-[clamp(36px,10.5vw,44px)] leading-[1.08] tracking-[-1px] font-semibold text-white md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
               style={{ fontFamily: 'Playfair, "Playfair Display", serif' }}
             >
               <span style={{ color: "#FFF" }}>Schedule a</span>

@@ -66,7 +66,7 @@ function ApproachPage() {
           <div className="max-w-3xl animate-fade-up text-left">
             <span className="section-eyebrow">Our Approach</span>
             <h1
-              className="mt-6 font-semibold text-white text-5xl leading-[1.05] md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
+              className="mt-6 text-[clamp(36px,10.5vw,44px)] leading-[1.08] tracking-[-1px] font-semibold text-white md:text-[90px] md:leading-[76px] md:tracking-[-5.4px]"
               style={{ fontFamily: 'Playfair, "Playfair Display", serif' }}
             >
               <span style={{ color: "#FFF" }}>Practical, scalable,</span>
@@ -94,7 +94,7 @@ function ApproachPage() {
             {steps.map((s, i) => (
               <li
                 key={s.step}
-                className="group relative grid grid-cols-[auto_1fr] gap-x-8 gap-y-4 py-12 md:grid-cols-[200px_1fr] md:gap-x-16"
+                className="group relative grid grid-cols-[auto_1fr] gap-x-5 gap-y-4 py-12 md:grid-cols-[200px_1fr] md:gap-x-16"
               >
                 <span
                   aria-hidden
@@ -102,13 +102,11 @@ function ApproachPage() {
                 />
                 <div className="md:pl-10">
                   <span
-                    className="step-number flex h-[116px] w-[150px] flex-shrink-0 flex-col justify-center text-center transition-colors duration-300 group-hover:[color:#DA9E3F] group-hover:[animation:step-shake_0.6s_ease-in-out]"
+                    className="step-number flex h-[88px] w-[92px] flex-shrink-0 flex-col justify-center text-center text-[84px] leading-[0.8] transition-colors duration-300 group-hover:[color:#DA9E3F] group-hover:[animation:step-shake_0.6s_ease-in-out] md:h-[116px] md:w-[150px] md:text-[146px] md:leading-[76px]"
                     style={{
                       color: "rgba(218, 158, 63, 0.50)",
                       fontFamily: "Outfit, sans-serif",
-                      fontSize: "146px",
                       fontWeight: 600,
-                      lineHeight: "76px",
                     }}
                   >
                     {s.step}
@@ -116,13 +114,12 @@ function ApproachPage() {
                 </div>
                 <div className="pt-3 md:pt-6">
                   <h3
+                    className="text-[38px] leading-[42px] md:text-[60px] md:leading-[54px]"
                     style={{
                       color: "#0D182B",
                       fontFamily: '"Playfair Display", Georgia, serif',
-                      fontSize: "60px",
                       fontStyle: "normal",
                       fontWeight: 600,
-                      lineHeight: "54px",
                     }}
                   >
                     {s.title}
