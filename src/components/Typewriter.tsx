@@ -30,8 +30,8 @@ export function Typewriter({
   loopDelay = 10000,
   deleteSpeed = 30,
 }: TypewriterProps) {
-  const [out, setOut] = useState("");
-  const [done, setDone] = useState(false);
+  const [out, setOut] = useState(text);
+  const [done, setDone] = useState(true);
 
   useEffect(() => {
     setOut("");

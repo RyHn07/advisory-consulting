@@ -104,6 +104,7 @@ function HomePage() {
       {/* HERO */}
       <section className="relative isolate h-screen overflow-hidden pt-[130px]">
         <div className="absolute inset-0 -z-10">
+          <img src={heroOffice} alt="" className="absolute inset-0 h-full w-full object-cover" />
           <video
             src={heroVideo}
             autoPlay
@@ -111,7 +112,7 @@ function HomePage() {
             muted
             playsInline
             poster={heroOffice}
-            className="h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-primary/55" />
         </div>
@@ -305,6 +306,12 @@ function HomePage() {
                     src={s.img}
                     alt={s.title}
                     loading="lazy"
+                    onError={(event) => {
+                      if (!event.currentTarget.dataset.fallbackApplied) {
+                        event.currentTarget.dataset.fallbackApplied = "true";
+                        event.currentTarget.src = heroOffice;
+                      }
+                    }}
                     className="aspect-[4/4.2] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     style={{
                       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 18% 100%, 0% 82%)",
