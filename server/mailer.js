@@ -3,6 +3,8 @@ import { contactFormTemplate } from "./emailTemplates/contactFormTemplate.js";
 import { consultationFormTemplate } from "./emailTemplates/consultationFormTemplate.js";
 
 const MAX_FIELD_LENGTH = 5000;
+const DUPLICATE_WINDOW_MS = 5 * 60 * 1000;
+const recentSubmissions = new Map();
 
 function text(value, maxLength = MAX_FIELD_LENGTH) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
@@ -41,6 +43,37 @@ function createTransporter() {
       pass: requireEnv("SMTP_PASS"),
     },
   });
+}
+
+function duplicateKey(payload) {
+  return [
+    payload.formType,
+    payload.name,
+    payload.email,
+    payload.phone,
+    payload.company,
+    payload.service,
+    payload.message,
+  ]
+    .map((value) =>
+      String(value || "")
+        .trim()
+        .toLowerCase(),
+    )
+    .join("|");
+}
+
+function reserveSubmission(payload) {
+  const now = Date.now();
+  for (const [key, expiresAt] of recentSubmissions) {
+    if (expiresAt <= now) recentSubmissions.delete(key);
+  }
+
+  const key = duplicateKey(payload);
+  if (recentSubmissions.has(key)) return { key, duplicate: true };
+
+  recentSubmissions.set(key, now + DUPLICATE_WINDOW_MS);
+  return { key, duplicate: false };
 }
 
 export function normalizeSubmission(body) {
@@ -90,18 +123,27 @@ function subjectFor(payload) {
 }
 
 export async function sendSubmissionEmail(payload) {
+  const reservation = reserveSubmission(payload);
+  if (reservation.duplicate) return { duplicate: true };
+
   const fromName = process.env.MAIL_FROM_NAME || "Advisory Consulting Solutions";
   const smtpUser = requireEnv("SMTP_USER");
   const mailTo = requireEnv("MAIL_TO");
   const { html, text: plainText } = templateFor(payload);
 
   const transporter = createTransporter();
-  await transporter.sendMail({
-    from: `"${fromName.replace(/"/g, "'")}" <${smtpUser}>`,
-    to: mailTo,
-    replyTo: payload.email,
-    subject: subjectFor(payload),
-    text: plainText,
-    html,
-  });
+  try {
+    await transporter.sendMail({
+      from: `"${fromName.replace(/"/g, "'")}" <${smtpUser}>`,
+      to: mailTo,
+      replyTo: payload.email,
+      subject: subjectFor(payload),
+      text: plainText,
+      html,
+    });
+    return { duplicate: false };
+  } catch (error) {
+    recentSubmissions.delete(reservation.key);
+    throw error;
+  }
 }

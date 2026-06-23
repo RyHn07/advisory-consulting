@@ -26,7 +26,6 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const formRef = useRef<HTMLFormElement>(null);
   const submitLockRef = useRef(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -136,8 +135,16 @@ function ContactPage() {
           <div className="md:col-span-8">
             <div className="rounded-sm border border-border bg-background p-8 md:p-12">
               <>
+                <iframe
+                  name="contact-submit-frame"
+                  title="Contact form submission"
+                  className="hidden"
+                />
                 <form
                   ref={formRef}
+                  action="/api/contact"
+                  method="post"
+                  target="contact-submit-frame"
                   onSubmit={handleSubmit}
                   onChange={handleFormChange}
                   className="grid gap-6"
@@ -225,9 +232,8 @@ function ContactPage() {
                     />
                   </div>
                   <button
-                    type="button"
+                    type="submit"
                     disabled={submitting || sent}
-                    onClick={() => formRef.current?.requestSubmit()}
                     className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-primary-foreground transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60"
                     style={{
                       fontFamily: '"Aptos Serif"',

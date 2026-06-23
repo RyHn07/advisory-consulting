@@ -256,7 +256,7 @@ function CareersPage() {
                   <Field label="Full name" name="name" required />
                   <Field label="Email" name="email" type="email" required />
                   <Field label="Phone" name="phone" type="tel" />
-                  <Field label="LinkedIn URL" name="linkedin" type="url" />
+                  <Field label="Business Website" name="linkedin" type="url" />
                 </div>
                 <Field label="Years of compliance experience" name="experience" />
                 <Field
