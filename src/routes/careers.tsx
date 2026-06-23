@@ -32,17 +32,48 @@ function CareersPage() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting) return;
+    const formElement = event.currentTarget;
     setSubmitting(true);
 
     try {
-      const form = new FormData(event.currentTarget);
-      form.set("kind", "career");
-      const response = await fetch("/api/submissions", { method: "POST", body: form });
-      const result = (await response.json()) as { error?: string };
-      if (!response.ok) throw new Error(result.error || "Submission failed.");
+      const form = new FormData(formElement);
+      const resume = form.get("resume");
+      const note = String(form.get("note") || "").trim();
+      const role = String(form.get("role") || "").trim();
+      const experience = String(form.get("experience") || "").trim();
+      const message =
+        note ||
+        [
+          "Confidential careers submission.",
+          role ? `Role of interest: ${role}` : "",
+          experience ? `Experience: ${experience}` : "",
+        ]
+          .filter(Boolean)
+          .join("\n");
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Career Form",
+          name: String(form.get("name") || ""),
+          email: String(form.get("email") || ""),
+          phone: String(form.get("phone") || ""),
+          subject: "Confidential Career Submission",
+          service: "Careers",
+          experience,
+          role,
+          resumeName: resume instanceof File ? resume.name : "",
+          message,
+          pageUrl: window.location.href,
+        }),
+      });
+      if (!response.ok) throw new Error("Submission failed.");
+      formElement.reset();
       setSubmitted(true);
-    } catch (error) {
-      toast.error(error instanceof Error ? error.message : "Could not submit your application.");
+      toast.success("Thank you. Your message has been sent successfully.");
+    } catch {
+      toast.error("Message could not be sent. Please try again later.");
     } finally {
       setSubmitting(false);
     }
@@ -208,7 +239,7 @@ function CareersPage() {
               <div className="py-12 text-center">
                 <h2 className="font-serif text-3xl text-foreground">Thank you.</h2>
                 <p className="mt-4 text-muted-foreground">
-                  Your submission has been received. We will be in touch directly.
+                  Thank you. Your message has been sent successfully.
                 </p>
               </div>
             ) : (

@@ -18,15 +18,16 @@ Hostinger supplies the listening port through `PORT`; do not hard-code one.
 Add these in the Node.js application's environment-variable panel:
 
 - `NODE_ENV=production`
-- `SUPABASE_URL=https://<project-ref>.supabase.co`
-- `SUPABASE_SERVICE_ROLE_KEY=<service-role-key>`
+- `ALLOWED_ORIGIN=https://advisoryconsultingsolutions.com,https://www.advisoryconsultingsolutions.com`
+- `SMTP_HOST=smtp.hostinger.com`
+- `SMTP_PORT=465`
+- `SMTP_SECURE=true`
+- `SMTP_USER=noreply@advisoryconsultingsolutions.com`
+- `SMTP_PASS=<Hostinger mailbox password>`
+- `MAIL_FROM_NAME=Advisory Consulting Solutions`
+- `MAIL_TO=info@adv-cs.com`
 
-The service-role key is server-only. Never name it with a `VITE_` prefix or commit it.
-
-## Database setup
-
-Apply every SQL file in `supabase/migrations` to the Supabase project, in filename order. The
-second migration creates the private career-submission table and private resume bucket.
+SMTP values are server-only. Never name them with a `VITE_` prefix or commit them in `.env`.
 
 ## Deploy
 
@@ -36,5 +37,6 @@ second migration creates the private career-submission table and private resume 
 4. Attach the production domain and enable SSL.
 5. Test `/`, `/contact`, `/careers`, and `/schedule`; submit one test contact and career form.
 
-Build output is generated at `dist/`; Hostinger starts `dist/server/index.mjs` through
-the package start script.
+Build output is generated at `dist/`; Hostinger starts `server.js` through the package start script.
+Express handles `/api/contact`, serves built static assets from `dist/public`, and proxies page
+rendering to the generated Nitro server.

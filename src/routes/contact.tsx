@@ -31,26 +31,42 @@ function ContactPage() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (submitting) return;
+    const formElement = e.currentTarget;
     setSubmitting(true);
-    const form = new FormData(e.currentTarget);
-    form.set("kind", "contact");
-    form.set("firm_type", String(form.get("firm-type") || ""));
+    const form = new FormData(formElement);
+    const firmType = String(form.get("firm-type") || "").trim();
     const linkedin = String(form.get("linkedin") || "").trim();
+    let message = String(form.get("message") || "").trim();
     if (linkedin) {
-      form.set("message", `${String(form.get("message") || "")}\n\nLinkedIn URL: ${linkedin}`);
+      message = `${message}\n\nLinkedIn URL: ${linkedin}`;
     }
-    if (!form.get("name") || !form.get("email") || !form.get("message")) {
+    if (!form.get("name") || !form.get("email") || !message) {
       toast.error("Please fill in name, email, and message.");
       setSubmitting(false);
       return;
     }
 
     try {
-      const response = await fetch("/api/submissions", { method: "POST", body: form });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Consultation Form",
+          name: String(form.get("name") || ""),
+          email: String(form.get("email") || ""),
+          phone: String(form.get("phone") || ""),
+          subject: "Consultation Request",
+          service: firmType,
+          message,
+          pageUrl: window.location.href,
+        }),
+      });
       if (!response.ok) throw new Error("Submission failed.");
+      formElement.reset();
       setSubmitted(true);
+      toast.success("Thank you. Your message has been sent successfully.");
     } catch {
-      toast.error("Could not send your message. Please try again.");
+      toast.error("Message could not be sent. Please try again later.");
     } finally {
       setSubmitting(false);
     }
@@ -105,7 +121,7 @@ function ContactPage() {
                 <div className="py-12 text-center">
                   <h2 className="font-serif text-3xl text-foreground">Thank you.</h2>
                   <p className="mt-4 text-muted-foreground">
-                    We have received your request and will be in touch within one business day.
+                    Thank you. Your message has been sent successfully.
                   </p>
                 </div>
               ) : (
