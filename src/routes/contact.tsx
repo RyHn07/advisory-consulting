@@ -2,8 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
+import Lottie from "lottie-react";
 import contactImg from "@/assets/contact-meeting.jpg";
+import successAnimation from "@/assets/success-animation.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -121,17 +124,16 @@ function ContactPage() {
 
           <div className="md:col-span-8">
             <div className="rounded-sm border border-border bg-background p-8 md:p-12">
-              {submitted ? (
-                <div className="py-12 text-center">
-                  <h2 className="font-serif text-3xl text-foreground">Thank you.</h2>
-                  <p className="mt-4 text-muted-foreground">
-                    Thank you. Your message has been sent successfully.
-                  </p>
-                </div>
-              ) : (
+              <>
+                <iframe
+                  name="contact-submit-frame"
+                  title="Contact form submission"
+                  className="hidden"
+                />
                 <form
                   action="/api/contact"
                   method="post"
+                  target="contact-submit-frame"
                   onSubmit={handleSubmit}
                   className="grid gap-6"
                 >
@@ -231,11 +233,36 @@ function ContactPage() {
                     {submitting ? "Sending..." : "Request Consultation"}
                   </button>
                 </form>
-              )}
+              </>
             </div>
           </div>
         </div>
       </section>
+
+      <Dialog open={submitted} onOpenChange={setSubmitted}>
+        <DialogContent className="max-w-[420px] rounded-sm border-border bg-background p-8 text-center">
+          <div className="mx-auto h-36 w-36">
+            <Lottie animationData={successAnimation} loop={false} autoplay />
+          </div>
+          <DialogTitle className="mt-4 font-serif text-3xl text-foreground">Thank you.</DialogTitle>
+          <DialogDescription className="mt-3 text-base leading-7 text-muted-foreground">
+            Your message has been sent successfully.
+          </DialogDescription>
+          <button
+            type="button"
+            onClick={() => setSubmitted(false)}
+            className="mt-6 inline-flex w-full items-center justify-center rounded-sm bg-primary px-6 py-3 text-primary-foreground transition-colors hover:bg-accent"
+            style={{
+              fontFamily: '"Aptos Serif"',
+              fontSize: "16px",
+              fontWeight: 400,
+              lineHeight: "normal",
+            }}
+          >
+            Close
+          </button>
+        </DialogContent>
+      </Dialog>
 
       {/* FAQ */}
       <section data-reveal="fade" className="border-t border-border bg-background">
