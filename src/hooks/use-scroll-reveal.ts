@@ -9,6 +9,8 @@ export function useScrollReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    document.documentElement.classList.add("js-reveal-ready");
+
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
       document
