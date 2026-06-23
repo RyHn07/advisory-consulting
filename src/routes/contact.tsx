@@ -1,12 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Mail, MapPin, Clock } from "lucide-react";
+import { useRef, useState } from "react";
+import { Check, Mail, MapPin, Clock } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import Lottie from "lottie-react";
 import contactImg from "@/assets/contact-meeting.jpg";
-import successAnimation from "@/assets/success-animation.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -28,13 +26,17 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const submitLockRef = useRef(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (submitting) return;
+    if (submitting || submitLockRef.current) return;
     const formElement = e.currentTarget;
+    submitLockRef.current = true;
     setSubmitting(true);
     const form = new FormData(formElement);
     const firmType = String(form.get("firm-type") || "").trim();
@@ -45,6 +47,7 @@ function ContactPage() {
     }
     if (!form.get("name") || !form.get("email") || !message) {
       toast.error("Please fill in name, email, and message.");
+      submitLockRef.current = false;
       setSubmitting(false);
       return;
     }
@@ -66,13 +69,21 @@ function ContactPage() {
       });
       if (!response.ok) throw new Error("Submission failed.");
       formElement.reset();
+      setSent(true);
       setSubmitted(true);
       toast.success("Thank you. Your message has been sent successfully.");
     } catch {
+      submitLockRef.current = false;
       toast.error("Message could not be sent. Please try again later.");
     } finally {
       setSubmitting(false);
     }
+  }
+
+  function handleFormChange() {
+    if (!sent) return;
+    submitLockRef.current = false;
+    setSent(false);
   }
 
   return (
@@ -125,16 +136,10 @@ function ContactPage() {
           <div className="md:col-span-8">
             <div className="rounded-sm border border-border bg-background p-8 md:p-12">
               <>
-                <iframe
-                  name="contact-submit-frame"
-                  title="Contact form submission"
-                  className="hidden"
-                />
                 <form
-                  action="/api/contact"
-                  method="post"
-                  target="contact-submit-frame"
+                  ref={formRef}
                   onSubmit={handleSubmit}
+                  onChange={handleFormChange}
                   className="grid gap-6"
                 >
                   <input type="hidden" name="formType" value="Consultation Form" />
@@ -220,9 +225,10 @@ function ContactPage() {
                     />
                   </div>
                   <button
-                    type="submit"
-                    disabled={submitting}
-                    className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-primary-foreground transition-colors hover:bg-accent"
+                    type="button"
+                    disabled={submitting || sent}
+                    onClick={() => formRef.current?.requestSubmit()}
+                    className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-primary-foreground transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60"
                     style={{
                       fontFamily: '"Aptos Serif"',
                       fontSize: "16px",
@@ -230,7 +236,7 @@ function ContactPage() {
                       lineHeight: "normal",
                     }}
                   >
-                    {submitting ? "Sending..." : "Request Consultation"}
+                    {submitting ? "Sending..." : sent ? "Sent" : "Request Consultation"}
                   </button>
                 </form>
               </>
@@ -241,8 +247,8 @@ function ContactPage() {
 
       <Dialog open={submitted} onOpenChange={setSubmitted}>
         <DialogContent className="max-w-[420px] rounded-sm border-border bg-background p-8 text-center">
-          <div className="mx-auto h-36 w-36">
-            <Lottie animationData={successAnimation} loop={false} autoplay />
+          <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-accent/15 text-accent ring-1 ring-accent/30">
+            <Check className="h-12 w-12" strokeWidth={2.25} aria-hidden="true" />
           </div>
           <DialogTitle className="mt-4 font-serif text-3xl text-foreground">Thank you.</DialogTitle>
           <DialogDescription className="mt-3 text-base leading-7 text-muted-foreground">
