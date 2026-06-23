@@ -295,7 +295,7 @@ function ServicesPage() {
               "Investment Advisers",
               "Private Fund Advisers",
               "Family Offices & Multi-Family Offices",
-              "Robo / Digital Advisers",
+              "Robo Advisers / Digital Advisers",
               "Institutional Advisers",
               "Venture Capital & Private Equity Advisers",
               "Real Estate Fund Advisers",

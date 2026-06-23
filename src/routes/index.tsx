@@ -139,6 +139,7 @@ function HomePage() {
                   text="Built to be defensible."
                   speed={55}
                   startDelay={250 + 22 * 55 + 250}
+                  caret={false}
                   loop
                   loopDelay={10000}
                 />

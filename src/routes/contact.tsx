@@ -35,10 +35,10 @@ function ContactPage() {
     setSubmitting(true);
     const form = new FormData(formElement);
     const firmType = String(form.get("firm-type") || "").trim();
-    const linkedin = String(form.get("linkedin") || "").trim();
+    const businessWebsite = String(form.get("business-website") || "").trim();
     let message = String(form.get("message") || "").trim();
-    if (linkedin) {
-      message = `${message}\n\nLinkedIn URL: ${linkedin}`;
+    if (businessWebsite) {
+      message = `${message}\n\nBusiness Website: ${businessWebsite}`;
     }
     if (!form.get("name") || !form.get("email") || !message) {
       toast.error("Please fill in name, email, and message.");
@@ -111,7 +111,7 @@ function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12">
           <div className="space-y-8 md:col-span-4">
             <ContactItem icon={Mail} label="Email" value="info@adv-cs.com" />
-            <ContactItem icon={MapPin} label="Office" value="United State" />
+            <ContactItem icon={MapPin} label="Office" value={"275 Madison Avenue, FL 8\nNew York, NY 10016"} />
             <ContactItem icon={Clock} label="Response Time" value="Within one business day" />
           </div>
 
@@ -138,7 +138,7 @@ function ContactPage() {
                     <Field label="Full name" name="name" required />
                     <Field label="Email" name="email" type="email" required />
                     <Field label="Phone" name="phone" type="tel" />
-                    <Field label="LinkedIn URL" name="linkedin" type="url" />
+                    <Field label="Business Website" name="business-website" type="url" />
                   </div>
                   <div>
                     <label
@@ -340,7 +340,7 @@ function ContactItem({
       >
         {label}
       </div>
-      <div className="mt-1 font-serif text-lg text-foreground">{value}</div>
+      <div className="mt-1 whitespace-pre-line font-serif text-lg text-foreground">{value}</div>
     </div>
   );
 }
