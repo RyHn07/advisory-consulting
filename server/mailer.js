@@ -22,6 +22,15 @@ function requireEnv(name) {
   return value;
 }
 
+function read(body, ...names) {
+  if (!body || typeof body !== "object") return "";
+  for (const name of names) {
+    const value = body[name];
+    if (typeof value === "string") return value;
+  }
+  return "";
+}
+
 function createTransporter() {
   return nodemailer.createTransport({
     host: requireEnv("SMTP_HOST"),
@@ -36,19 +45,19 @@ function createTransporter() {
 
 export function normalizeSubmission(body) {
   const payload = {
-    formType: text(body.formType, 100) || "Website Form",
-    name: text(body.name, 200),
-    email: text(body.email, 255).toLowerCase(),
-    phone: text(body.phone, 80),
-    company: text(body.company, 200),
-    subject: text(body.subject, 200),
-    service: text(body.service, 200),
-    budget: text(body.budget, 100),
-    experience: text(body.experience, 200),
-    role: text(body.role, 200),
-    resumeName: text(body.resumeName, 255),
-    message: text(body.message),
-    pageUrl: text(body.pageUrl, 1000),
+    formType: text(read(body, "formType", "form-type"), 100) || "Website Form",
+    name: text(read(body, "name"), 200),
+    email: text(read(body, "email"), 255).toLowerCase(),
+    phone: text(read(body, "phone"), 80),
+    company: text(read(body, "company", "businessWebsite", "business-website"), 200),
+    subject: text(read(body, "subject"), 200),
+    service: text(read(body, "service", "firmType", "firm-type"), 200),
+    budget: text(read(body, "budget"), 100),
+    experience: text(read(body, "experience"), 200),
+    role: text(read(body, "role"), 200),
+    resumeName: text(read(body, "resumeName", "resume-name"), 255),
+    message: text(read(body, "message", "note")),
+    pageUrl: text(read(body, "pageUrl", "page-url"), 1000),
     submittedAt: new Date().toISOString(),
   };
 

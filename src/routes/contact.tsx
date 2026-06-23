@@ -111,7 +111,11 @@ function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-12">
           <div className="space-y-8 md:col-span-4">
             <ContactItem icon={Mail} label="Email" value="info@adv-cs.com" />
-            <ContactItem icon={MapPin} label="Office" value={"275 Madison Avenue, FL 8\nNew York, NY 10016"} />
+            <ContactItem
+              icon={MapPin}
+              label="Office"
+              value={"275 Madison Avenue, FL 8\nNew York, NY 10016"}
+            />
             <ContactItem icon={Clock} label="Response Time" value="Within one business day" />
           </div>
 
@@ -125,7 +129,15 @@ function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="grid gap-6">
+                <form
+                  action="/api/contact"
+                  method="post"
+                  onSubmit={handleSubmit}
+                  className="grid gap-6"
+                >
+                  <input type="hidden" name="formType" value="Consultation Form" />
+                  <input type="hidden" name="subject" value="Consultation Request" />
+                  <input type="hidden" name="page-url" value="/contact" />
                   <input
                     type="text"
                     name="website"

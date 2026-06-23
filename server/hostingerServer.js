@@ -32,6 +32,31 @@ function allowedOrigins(port) {
   return new Set(origins);
 }
 
+function htmlResponse(title, message) {
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>${title}</title>
+    <style>
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f8f2ec; color: #0d182b; font-family: Georgia, serif; }
+      main { width: min(90vw, 640px); padding: 48px; border: 1px solid #ddd2c8; background: #fffaf6; text-align: center; }
+      h1 { margin: 0 0 16px; font-size: 36px; }
+      p { font-size: 18px; line-height: 1.6; }
+      a { color: #0d182b; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>${title}</h1>
+      <p>${message}</p>
+      <p><a href="/contact">Back to contact</a></p>
+    </main>
+  </body>
+</html>`;
+}
+
 export function startHostingerServer() {
   const app = express();
   const publicDir = path.join(rootDir, "dist", "public");
@@ -62,22 +87,51 @@ export function startHostingerServer() {
     }),
   );
 
-  app.post("/api/contact", express.json({ limit: "25kb" }), async (req, res) => {
-    const { payload, errors } = normalizeSubmission(req.body || {});
+  app.post(
+    "/api/contact",
+    express.urlencoded({ extended: false, limit: "25kb" }),
+    express.json({ limit: "25kb" }),
+    async (req, res) => {
+      const isHtmlForm = !req.is("application/json");
+      const { payload, errors } = normalizeSubmission(req.body || {});
 
-    if (errors.length) {
-      res.status(400).json({ error: "Please complete all required fields." });
-      return;
-    }
+      if (errors.length) {
+        if (isHtmlForm) {
+          res
+            .status(400)
+            .send(htmlResponse("Please try again.", "Please complete all required fields."));
+          return;
+        }
+        res.status(400).json({ error: "Please complete all required fields." });
+        return;
+      }
 
-    try {
-      await sendSubmissionEmail(payload);
-      res.json({ ok: true });
-    } catch (error) {
-      console.error("Email submission failed:", error instanceof Error ? error.message : error);
-      res.status(500).json({ error: "Message could not be sent. Please try again later." });
-    }
-  });
+      try {
+        await sendSubmissionEmail(payload);
+        if (isHtmlForm) {
+          res.send(
+            htmlResponse("Thank you.", "Thank you. Your message has been sent successfully."),
+          );
+          return;
+        }
+        res.json({ ok: true });
+      } catch (error) {
+        console.error("Email submission failed:", error instanceof Error ? error.message : error);
+        if (isHtmlForm) {
+          res
+            .status(500)
+            .send(
+              htmlResponse(
+                "Message could not be sent.",
+                "Please try again later or email us directly.",
+              ),
+            );
+          return;
+        }
+        res.status(500).json({ error: "Message could not be sent. Please try again later." });
+      }
+    },
+  );
 
   if (existsSync(publicDir)) {
     app.use(express.static(publicDir, { index: false, maxAge: "1y", immutable: true }));
