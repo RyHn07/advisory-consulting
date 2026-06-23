@@ -141,7 +141,6 @@ function ContactPage() {
                   className="hidden"
                 />
                 <form
-                  ref={formRef}
                   action="/api/contact"
                   method="post"
                   target="contact-submit-frame"
