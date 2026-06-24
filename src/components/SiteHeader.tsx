@@ -20,6 +20,10 @@ export function SiteHeader() {
         aria-hidden
         className="absolute left-0 top-0 z-0 hidden bg-primary md:block md:h-[140px] md:w-[calc(1.5rem+5px+140px)] lg:h-[160px] lg:w-[calc(6%+5px+160px)] 2xl:h-[184px] 2xl:w-[calc(16%+184px)]"
       />
+      <div
+        aria-hidden
+        className="absolute left-0 top-0 z-10 h-[138px] w-[146px] bg-primary md:hidden"
+      />
       {/* Logo - overlaps top bar and main bar */}
       <Link
         to="/"
