@@ -1,21 +1,27 @@
-# Hostinger Business deployment
+# Hostinger deployment
 
-This project is configured for Hostinger's Managed Node.js application hosting.
+This project is a Lovable Vite app that builds as a TanStack Start/Nitro Node server.
+Use Hostinger's Nuxt/Node-compatible server preset, not a static Vite deployment.
 
 ## hPanel settings
 
-- Runtime: Node.js 22
-- Install command: `npm ci`
+- Framework preset: `Nuxt`
+- Branch: `main`
+- Runtime: Node.js 24.x
+- Root directory: `./`
+- Package manager: `npm`
 - Build command: `npm run build`
-- Start command: `npm start`
-- Application root: repository root (the folder containing `package.json`)
+- Output directory: `dist`
+- Entry file: `server/index.mjs`
 - Health URL: `/`
 
-Hostinger supplies the listening port through `PORT`; do not hard-code one.
+Hostinger supplies the listening port through `PORT`; do not hard-code a production port.
+
+If Hostinger asks for a start command instead of an entry file, use `npm start`.
 
 ## Environment variables
 
-Add these in the Node.js application's environment-variable panel:
+Add these in Hostinger's environment-variable panel:
 
 - `NODE_ENV=production`
 - `ALLOWED_ORIGIN=https://advisoryconsultingsolutions.com,https://www.advisoryconsultingsolutions.com`
@@ -26,17 +32,22 @@ Add these in the Node.js application's environment-variable panel:
 - `SMTP_PASS=<Hostinger mailbox password>`
 - `MAIL_FROM_NAME=Advisory Consulting Solutions`
 - `MAIL_TO=info@adv-cs.com`
+- `SUPABASE_PROJECT_ID=<project-id>`
+- `SUPABASE_PUBLISHABLE_KEY=<publishable-key>`
+- `SUPABASE_URL=<project-url>`
+- `VITE_SUPABASE_PROJECT_ID=<project-id>`
+- `VITE_SUPABASE_PUBLISHABLE_KEY=<publishable-key>`
+- `VITE_SUPABASE_URL=<project-url>`
 
 SMTP values are server-only. Never name them with a `VITE_` prefix or commit them in `.env`.
 
 ## Deploy
 
 1. Push the repository to the Git provider connected to Hostinger.
-2. In hPanel, create a Node.js application and select that repository/branch.
+2. In hPanel, create the application and select the repository/branch.
 3. Enter the settings and environment variables above, then deploy.
-4. Attach the production domain and enable SSL.
+4. Clear Hostinger/cache/CDN cache after a successful deploy.
 5. Test `/`, `/contact`, `/careers`, and `/schedule`; submit one test contact and career form.
 
-Build output is generated at `dist/`; Hostinger starts `server.js` through the package start script.
-Express handles `/api/contact`, serves built static assets from `dist/public`, and proxies page
-rendering to the generated Nitro server.
+Build output is generated at `dist/`; Hostinger runs `dist/server/index.mjs`.
+Client assets, CSS, images, and videos are generated in `dist/public`.
