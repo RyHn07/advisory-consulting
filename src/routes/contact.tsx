@@ -30,6 +30,8 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [statusType, setStatusType] = useState<"success" | "error" | "">("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,6 +39,8 @@ function ContactPage() {
     const formElement = e.currentTarget;
     submitLockRef.current = true;
     setSubmitting(true);
+    setStatusMessage("");
+    setStatusType("");
     const form = new FormData(formElement);
     const firmType = String(form.get("firm-type") || "").trim();
     const businessWebsite = String(form.get("business-website") || "").trim();
@@ -45,6 +49,8 @@ function ContactPage() {
       message = `${message}\n\nBusiness Website: ${businessWebsite}`;
     }
     if (!form.get("name") || !form.get("email") || !message) {
+      setStatusType("error");
+      setStatusMessage("Please fill in name, email, and message.");
       toast.error("Please fill in name, email, and message.");
       submitLockRef.current = false;
       setSubmitting(false);
@@ -70,9 +76,13 @@ function ContactPage() {
       formElement.reset();
       setSent(true);
       setSubmitted(true);
+      setStatusType("success");
+      setStatusMessage("Thank you. Your message has been sent successfully.");
       toast.success("Thank you. Your message has been sent successfully.");
     } catch {
       submitLockRef.current = false;
+      setStatusType("error");
+      setStatusMessage("Message could not be sent. Please try again later.");
       toast.error("Message could not be sent. Please try again later.");
     } finally {
       setSubmitting(false);
@@ -83,6 +93,8 @@ function ContactPage() {
     if (!sent) return;
     submitLockRef.current = false;
     setSent(false);
+    setStatusMessage("");
+    setStatusType("");
   }
 
   return (
@@ -243,6 +255,25 @@ function ContactPage() {
                   >
                     {submitting ? "Sending..." : sent ? "Sent" : "Request Consultation"}
                   </button>
+                  {statusMessage ? (
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className={
+                        statusType === "success"
+                          ? "rounded-sm border border-accent/30 bg-accent/10 px-4 py-3 text-center text-sm text-foreground"
+                          : "rounded-sm border border-destructive/30 bg-destructive/10 px-4 py-3 text-center text-sm text-destructive"
+                      }
+                      style={{
+                        fontFamily: '"Aptos Serif"',
+                        fontSize: "16px",
+                        fontWeight: 400,
+                        lineHeight: "normal",
+                      }}
+                    >
+                      {statusMessage}
+                    </div>
+                  ) : null}
                 </form>
               </>
             </div>
