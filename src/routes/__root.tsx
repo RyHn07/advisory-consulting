@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
+  useLocation,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -12,6 +14,16 @@ import { Toaster } from "@/components/ui/sonner";
 import appCss from "../styles.css?url";
 import faviconDark from "@/assets/favicon-dark.svg";
 import faviconLight from "@/assets/favicon-light.svg";
+
+const GA_MEASUREMENT_ID = "G-DQLNXWTN9F";
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+    __acsLastGaPagePath?: string;
+  }
+}
 
 function NotFoundComponent() {
   return (
@@ -158,6 +170,17 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
+            `,
+          }}
+        />
       </head>
       <body>
         {children}
@@ -169,6 +192,19 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const location = useLocation();
+
+  useEffect(() => {
+    const pagePath = `${location.pathname}${location.searchStr || ""}`;
+    if (window.__acsLastGaPagePath === pagePath) return;
+
+    window.__acsLastGaPagePath = pagePath;
+    window.gtag?.("event", "page_view", {
+      page_path: pagePath,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [location.pathname, location.searchStr]);
 
   return (
     <QueryClientProvider client={queryClient}>
