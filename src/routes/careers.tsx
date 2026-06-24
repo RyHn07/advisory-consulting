@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Lock } from "lucide-react";
+import { Check, Lock } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { toast } from "sonner";
 import careersImg from "@/assets/careers-workspace.jpg";
+
+const MAX_RESUME_SIZE_BYTES = 4 * 1024 * 1024;
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -38,6 +40,12 @@ function CareersPage() {
     try {
       const form = new FormData(formElement);
       const resume = form.get("resume");
+      if (resume instanceof File && resume.size > MAX_RESUME_SIZE_BYTES) {
+        toast.error("Resume file must be 4MB or smaller.");
+        setSubmitting(false);
+        return;
+      }
+
       const note = String(form.get("note") || "").trim();
       const role = String(form.get("role") || "").trim();
       const experience = String(form.get("experience") || "").trim();
@@ -51,27 +59,22 @@ function CareersPage() {
           .filter(Boolean)
           .join("\n");
 
+      form.set("formType", "Career Form");
+      form.set("subject", "Confidential Career Submission");
+      form.set("service", "Careers");
+      form.set("message", message);
+      form.set("pageUrl", window.location.href);
+      if (resume instanceof File && resume.size > 0) {
+        form.set("resumeName", resume.name);
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          formType: "Career Form",
-          name: String(form.get("name") || ""),
-          email: String(form.get("email") || ""),
-          phone: String(form.get("phone") || ""),
-          subject: "Confidential Career Submission",
-          service: "Careers",
-          experience,
-          role,
-          resumeName: resume instanceof File ? resume.name : "",
-          message,
-          pageUrl: window.location.href,
-        }),
+        body: form,
       });
       if (!response.ok) throw new Error("Submission failed.");
       formElement.reset();
       setSubmitted(true);
-      toast.success("Thank you. Your message has been sent successfully.");
     } catch {
       toast.error("Message could not be sent. Please try again later.");
     } finally {
@@ -237,9 +240,12 @@ function CareersPage() {
             </div>
             {submitted ? (
               <div className="py-12 text-center">
-                <h2 className="font-serif text-3xl text-foreground">Thank you.</h2>
-                <p className="mt-4 text-muted-foreground">
-                  Thank you. Your message has been sent successfully.
+                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-accent/15 text-accent ring-1 ring-accent/30">
+                  <Check className="h-12 w-12" strokeWidth={2.25} aria-hidden="true" />
+                </div>
+                <h2 className="mt-6 font-serif text-3xl text-foreground">Thank you.</h2>
+                <p className="mx-auto mt-4 max-w-sm text-base leading-7 text-muted-foreground">
+                  Your message has been sent successfully.
                 </p>
               </div>
             ) : (
@@ -291,6 +297,9 @@ function CareersPage() {
                       lineHeight: "normal",
                     }}
                   />
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    PDF, DOC, or DOCX. Maximum file size 4MB.
+                  </p>
                 </div>
                 <div>
                   <label

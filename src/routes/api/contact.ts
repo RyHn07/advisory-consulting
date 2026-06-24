@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { normalizeSubmission, sendSubmissionEmail } from "../../../server/mailer";
+import {
+  createResumeAttachment,
+  normalizeSubmission,
+  sendSubmissionEmail,
+  validateResumeFile,
+} from "../../../server/mailer";
 
 const WINDOW_MS = 15 * 60 * 1000;
 const LIMIT = 20;
@@ -39,6 +44,7 @@ export const Route = createFileRoute("/api/contact")({
         }
 
         let body: unknown;
+        let attachments: Array<{ filename: string; contentType: string; content: Buffer }> = [];
         let isHtmlForm = false;
         try {
           const contentType = request.headers.get("content-type") || "";
@@ -46,7 +52,28 @@ export const Route = createFileRoute("/api/contact")({
             body = await request.json();
           } else {
             isHtmlForm = true;
-            body = Object.fromEntries((await request.formData()).entries());
+            const formData = await request.formData();
+            const resume = formData.get("resume");
+            body = Object.fromEntries(formData.entries());
+
+            if (resume instanceof File && resume.size > 0) {
+              const fileError = validateResumeFile({
+                filename: resume.name,
+                contentType: resume.type,
+                size: resume.size,
+              });
+              if (fileError) {
+                return Response.json({ error: fileError }, { status: 400 });
+              }
+
+              (body as Record<string, unknown>).resumeName = resume.name;
+              const attachment = createResumeAttachment({
+                filename: resume.name,
+                contentType: resume.type,
+                content: Buffer.from(await resume.arrayBuffer()),
+              });
+              if (attachment) attachments = [attachment];
+            }
           }
         } catch {
           return Response.json({ error: "Invalid request body." }, { status: 400 });
@@ -65,7 +92,7 @@ export const Route = createFileRoute("/api/contact")({
         }
 
         try {
-          await sendSubmissionEmail(payload);
+          await sendSubmissionEmail(payload, attachments);
           if (isHtmlForm) {
             return new Response("Thank you. Your message has been sent successfully.", {
               headers: { "content-type": "text/plain; charset=utf-8" },

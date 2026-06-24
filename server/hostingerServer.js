@@ -7,7 +7,14 @@ import { fileURLToPath } from "node:url";
 import cors from "cors";
 import express from "express";
 import rateLimit from "express-rate-limit";
-import { normalizeSubmission, sendSubmissionEmail } from "./mailer.js";
+import multer from "multer";
+import {
+  createResumeAttachment,
+  MAX_RESUME_SIZE_BYTES,
+  normalizeSubmission,
+  sendSubmissionEmail,
+  validateResumeFile,
+} from "./mailer.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -59,6 +66,10 @@ function htmlResponse(title, message) {
 
 export function startHostingerServer() {
   const app = express();
+  const resumeUpload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: MAX_RESUME_SIZE_BYTES },
+  });
   const publicDir = path.join(rootDir, "dist", "public");
   const nitroEntry = path.join(rootDir, "dist", "server", "index.mjs");
   const port = Number(process.env.PORT || 3000);
@@ -89,11 +100,50 @@ export function startHostingerServer() {
 
   app.post(
     "/api/contact",
+    (req, res, next) => {
+      if (req.is("multipart/form-data")) {
+        resumeUpload.single("resume")(req, res, (error) => {
+          if (error instanceof multer.MulterError && error.code === "LIMIT_FILE_SIZE") {
+            res.status(400).json({ error: "Resume file must be 4MB or smaller." });
+            return;
+          }
+          next(error);
+        });
+        return;
+      }
+      next();
+    },
     express.urlencoded({ extended: false, limit: "25kb" }),
     express.json({ limit: "25kb" }),
     async (req, res) => {
       const isHtmlForm = !req.is("application/json");
-      const { payload, errors } = normalizeSubmission(req.body || {});
+      const uploadedResume = req.file;
+      const fileError = uploadedResume
+        ? validateResumeFile({
+            filename: uploadedResume.originalname,
+            contentType: uploadedResume.mimetype,
+            size: uploadedResume.size,
+          })
+        : "";
+      if (fileError) {
+        res.status(400).json({ error: fileError });
+        return;
+      }
+
+      const body = {
+        ...(req.body || {}),
+        ...(uploadedResume ? { resumeName: uploadedResume.originalname } : {}),
+      };
+      const attachments = uploadedResume
+        ? [
+            createResumeAttachment({
+              filename: uploadedResume.originalname,
+              contentType: uploadedResume.mimetype,
+              content: uploadedResume.buffer,
+            }),
+          ].filter(Boolean)
+        : [];
+      const { payload, errors } = normalizeSubmission(body);
 
       if (errors.length) {
         if (isHtmlForm) {
@@ -107,7 +157,7 @@ export function startHostingerServer() {
       }
 
       try {
-        await sendSubmissionEmail(payload);
+        await sendSubmissionEmail(payload, attachments);
         if (isHtmlForm) {
           res.send(
             htmlResponse("Thank you.", "Thank you. Your message has been sent successfully."),

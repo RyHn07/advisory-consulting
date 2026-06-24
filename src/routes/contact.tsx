@@ -76,9 +76,8 @@ function ContactPage() {
       formElement.reset();
       setSent(true);
       setSubmitted(true);
-      setStatusType("success");
-      setStatusMessage("Thank you. Your message has been sent successfully.");
-      toast.success("Thank you. Your message has been sent successfully.");
+      setStatusType("");
+      setStatusMessage("");
     } catch {
       submitLockRef.current = false;
       setStatusType("error");

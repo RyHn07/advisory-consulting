@@ -5,6 +5,14 @@ import { consultationFormTemplate } from "./emailTemplates/consultationFormTempl
 const MAX_FIELD_LENGTH = 5000;
 const DUPLICATE_WINDOW_MS = 5 * 60 * 1000;
 const recentSubmissions = new Map();
+export const MAX_RESUME_SIZE_BYTES = 4 * 1024 * 1024;
+export const ALLOWED_RESUME_MIME_TYPES = new Set([
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+]);
+
+const ALLOWED_RESUME_EXTENSIONS = new Set(["pdf", "doc", "docx"]);
 
 function text(value, maxLength = MAX_FIELD_LENGTH) {
   return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
@@ -31,6 +39,29 @@ function read(body, ...names) {
     if (typeof value === "string") return value;
   }
   return "";
+}
+
+function sanitizeFilename(filename) {
+  return text(filename, 255).replace(/[\\/:*?"<>|]/g, "_") || "resume.pdf";
+}
+
+export function validateResumeFile({ filename = "", contentType = "", size = 0 } = {}) {
+  if (!filename && !size) return "";
+  const extension = filename.split(".").pop()?.toLowerCase() || "";
+  if (size > MAX_RESUME_SIZE_BYTES) return "Resume file must be 4MB or smaller.";
+  if (!ALLOWED_RESUME_MIME_TYPES.has(contentType) && !ALLOWED_RESUME_EXTENSIONS.has(extension)) {
+    return "Resume file must be a PDF, DOC, or DOCX file.";
+  }
+  return "";
+}
+
+export function createResumeAttachment({ filename, contentType, content }) {
+  if (!content) return null;
+  return {
+    filename: sanitizeFilename(filename),
+    contentType: contentType || "application/octet-stream",
+    content,
+  };
 }
 
 function createTransporter() {
@@ -122,7 +153,7 @@ function subjectFor(payload) {
   return `[Consultation Form] New submission from ${name}`;
 }
 
-export async function sendSubmissionEmail(payload) {
+export async function sendSubmissionEmail(payload, attachments = []) {
   const reservation = reserveSubmission(payload);
   if (reservation.duplicate) return { duplicate: true };
 
@@ -140,6 +171,7 @@ export async function sendSubmissionEmail(payload) {
       subject: subjectFor(payload),
       text: plainText,
       html,
+      attachments,
     });
     return { duplicate: false };
   } catch (error) {
