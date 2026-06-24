@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import type { CSSProperties } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Typewriter } from "@/components/Typewriter";
@@ -99,6 +99,35 @@ const approach = [
 ];
 
 function HomePage() {
+  const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    const tryPlay = () => {
+      if (!video.paused) return;
+      void video.play().catch(() => {
+        // iOS can block autoplay in Low Power Mode; the poster remains as fallback.
+      });
+    };
+
+    tryPlay();
+    video.addEventListener("canplay", tryPlay);
+    document.addEventListener("visibilitychange", tryPlay);
+    window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+
+    return () => {
+      video.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("visibilitychange", tryPlay);
+      window.removeEventListener("touchstart", tryPlay);
+    };
+  }, []);
+
   return (
     <SiteLayout>
       {/* HERO */}
@@ -106,14 +135,17 @@ function HomePage() {
         <div className="absolute inset-0 -z-10">
           <img src={heroOffice} alt="" className="absolute inset-0 h-full w-full object-cover" />
           <video
-            src={heroVideo}
+            ref={heroVideoRef}
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             poster={heroOffice}
             className="absolute inset-0 h-full w-full object-cover"
-          />
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-primary/55" />
         </div>
         <div className="mx-auto flex h-full max-w-[1320px] items-center px-6 py-24 text-left">
