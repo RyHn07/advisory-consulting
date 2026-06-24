@@ -7,9 +7,23 @@ type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
 
+type NitroViteServices = {
+  ssr?: ServerEntry;
+};
+
 let serverEntryPromise: Promise<ServerEntry> | undefined;
 
+function isRunningInsideNitroSsrService() {
+  return import.meta.url.replace(/\\/g, "/").includes("/_ssr/");
+}
+
 async function getServerEntry(): Promise<ServerEntry> {
+  const nitroServices = (globalThis as { __nitro_vite_envs__?: NitroViteServices })
+    .__nitro_vite_envs__;
+  if (nitroServices?.ssr && !isRunningInsideNitroSsrService()) {
+    return nitroServices.ssr;
+  }
+
   if (!serverEntryPromise) {
     serverEntryPromise = import("@tanstack/react-start/server-entry").then(
       (m) => (m as { default?: ServerEntry }).default ?? (m as unknown as ServerEntry),
