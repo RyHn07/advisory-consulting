@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -82,6 +83,16 @@ const services = [
 ];
 
 function ServicesPage() {
+  const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
+
+  const toggleMobileService = (index: number) => {
+    if (typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches) {
+      return;
+    }
+
+    setOpenServiceIndex((current) => (current === index ? null : index));
+  };
+
   return (
     <SiteLayout>
       <section
@@ -137,6 +148,7 @@ function ServicesPage() {
             {services.map((s, i) => {
               const Icon = s.icon;
               const num = String(i + 1);
+              const isOpen = openServiceIndex === i;
               return (
                 <article
                   key={s.title}
@@ -146,18 +158,26 @@ function ServicesPage() {
                   {/* Left gold bar reveal on hover */}
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 transition-all duration-500 group-hover:h-[70%]"
+                    className={`pointer-events-none absolute left-0 top-1/2 w-[3px] -translate-y-1/2 transition-all duration-500 md:h-0 md:group-hover:h-[70%] ${
+                      isOpen ? "h-[70%]" : "h-0"
+                    }`}
                     style={{ backgroundColor: "#DA9E3F" }}
                   />
-                  <div className="flex items-center gap-6 self-start md:col-span-8 md:gap-20 md:pl-8">
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={`service-detail-${i}`}
+                    onClick={() => toggleMobileService(i)}
+                    className="flex items-center gap-6 self-start text-left md:col-span-8 md:cursor-default md:gap-20 md:pl-8"
+                  >
                     <span
-                      className="flex h-[116px] w-[150px] flex-shrink-0 flex-col justify-center text-center text-[rgba(218,158,63,0.50)] transition-colors duration-300 group-hover:text-[#DA9E3F]"
+                      className={`flex h-[90px] w-[108px] flex-shrink-0 flex-col justify-center text-center text-[104px] leading-[58px] transition-colors duration-300 md:h-[116px] md:w-[150px] md:text-[146px] md:leading-[76px] md:text-[rgba(218,158,63,0.50)] md:group-hover:text-[#DA9E3F] ${
+                        isOpen ? "text-[#DA9E3F]" : "text-[rgba(218,158,63,0.50)]"
+                      }`}
                       style={{
                         fontFamily: "Outfit, sans-serif",
-                        fontSize: "146px",
                         fontStyle: "normal",
                         fontWeight: 600,
-                        lineHeight: "76px",
                       }}
                     >
                       {num}
@@ -180,8 +200,13 @@ function ServicesPage() {
                         {s.title}
                       </h3>
                     </div>
-                  </div>
-                  <div className="grid grid-rows-[0fr] overflow-hidden opacity-0 transition-all duration-500 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100 md:col-span-4 md:pr-2">
+                  </button>
+                  <div
+                    id={`service-detail-${i}`}
+                    className={`grid overflow-hidden pl-6 transition-all duration-500 ease-out md:col-span-4 md:grid-rows-[0fr] md:pl-0 md:opacity-0 md:group-hover:grid-rows-[1fr] md:group-hover:opacity-100 md:pr-2 ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
                     <p
                       className="min-h-0 text-[18px] leading-[1.5] md:text-[24px] md:leading-[1.4]"
                       style={{
@@ -263,7 +288,7 @@ function ServicesPage() {
                 <p
                   className="mt-5 section-body-light"
                   style={{
-                    fontFamily: '"Aptos Serif", "Source Serif 4", Georgia, serif',
+                    fontFamily: '"Aptos Serif", ui-serif, Georgia, serif',
                     fontSynthesis: "none",
                     fontWeight: 300,
                   }}

@@ -38,7 +38,7 @@ export function SiteFooter() {
           </div>
 
           <nav
-            className="mt-6 space-y-3 text-[19px] md:text-[24px]"
+            className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-[17px] sm:gap-x-5 sm:text-[19px] md:text-[24px]"
             style={{
               color: "#FFF",
               fontFamily: '"Aptos Serif", Georgia, serif',
@@ -48,24 +48,17 @@ export function SiteFooter() {
               fontVariantNumeric: "oldstyle-nums proportional-nums",
             }}
           >
-            {[navLinks.slice(0, 3), navLinks.slice(3)].map((row, rIdx) => (
-              <div key={rIdx} className="flex flex-wrap items-center gap-x-5 gap-y-2">
-                {row.map((link, i) => (
-                  <span key={link.to} className="flex items-center gap-x-5">
-                    <Link
-                      to={link.to}
-                      className="text-white transition-colors hover:text-[#DA9E3F]"
-                    >
-                      {link.label}
-                    </Link>
-                    {i < row.length - 1 && (
-                      <span className="text-white/40" aria-hidden="true">
-                        /
-                      </span>
-                    )}
+            {navLinks.map((link, index) => (
+              <span key={link.to} className="flex items-center gap-x-4 whitespace-nowrap sm:gap-x-5">
+                <Link to={link.to} className="text-white transition-colors hover:text-[#DA9E3F]">
+                  {link.label}
+                </Link>
+                {index < navLinks.length - 1 && (
+                  <span className="text-white/40" aria-hidden="true">
+                    /
                   </span>
-                ))}
-              </div>
+                )}
+              </span>
             ))}
           </nav>
         </div>
